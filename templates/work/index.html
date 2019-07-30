@@ -1,0 +1,82 @@
+{# Load CSS #}
+{% do view.registerCssFile("/css/pages/work.css") %}
+{% do view.registerJsFile("/js/vendors/jquery/jquery-3.1.0.min.js") %}
+
+
+{% extends "_layout" %}
+
+{% block content %}
+
+{% include "components/header" with { "clear" : true, "active" : "work" } %}
+
+{% set query = {
+    section : 'work',
+    limit : null
+} %}
+
+{% if category is defined %}
+    {% set query = query|merge({
+        search : 'work-categories:'~category.slug
+    }) %}
+{% else %}
+    {% set query = query|merge({
+        search : 'work-categories'
+    }) %}
+{% endif %}
+
+{# Fetch entries #}
+{% set entries = craft.entries(query) %}
+
+<ul class="tabs" id="filtermenu">
+    <li><a id="all" href="{{siteUrl}}work/" class="{% if category is defined %}tab{% else %}tab active{% endif %}">All</a></li>
+    {% for cat in craft.categories.all() %}
+        <li><a id="{{cat.slug}}" href="{{siteUrl}}work/{{cat.slug}}" class="tab {% if category is defined and category|replace(' ', '-')|lower is same as(cat.slug) %}active{% endif %}">{{cat.title}}</a></li>
+    {% endfor %}
+</ul>
+
+<div class="category-content">
+
+    {% if category is defined %}
+        {% set headline = category.headline %}
+        {% set title = category.title %}
+        {% set body = category.body %}
+    {% else %}
+        {% set headline = entry.headline %}
+        {% set title = entry.title %}
+        {% set body = entry.body %}
+    {% endif %}
+
+    <section class="intro">
+        <h4>{{headline}}</h4>
+        <h1>{{title}}</h1>
+        {{body}}
+    </section>
+
+
+    <section class="grid">
+
+        {% if category is defined %}
+            {% set workCollection = craft.entries.relatedTo(category) %}
+        {% else %}
+            {% set workCollection = craft.entries.section('videos') %}
+        {% endif %}
+
+
+            {% for video in workCollection.all() %}
+
+                {% set quicktime = video.quicktime.one().getUrl() %}
+                {% set poster = video.posterImage.one().getUrl() %}
+
+                <video controls poster="{{poster}}" class="video">
+                    <source src="{{quicktime}}" type="video/mp4">
+                </video>
+
+            {% endfor %}
+
+    </section>
+
+</div>
+
+{% do view.registerJsFile("/js/main.js") %}
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{# Load CSS #}
+{% includeCssFile "/css/pages/services.css" %}
+{% includeJsFile "/js/vendors/jquery/jquery-3.1.0.min.js" %}
+
+
+{% extends "_layout" %}
+
+{% block content %}
+
+{% include "components/header" with { "clear" : true, "active" : "services" } %}
+
+
+
+<section class="intro first">
+    <h4>{{entry.headline}}</h4>
+    <h1>{{entry.title}}</h1>
+    {{entry.body}}
+</section>
+
+
+<section class="cards solo">
+
+    {% set categories = craft.categories().group('workCategories').all() %}
+    {% for category in categories %}
+        <a href="/work/{{category.slug}}" class="card">
+            <h4>{{category.title}}</h4>
+            <p>{{category.body}}</p>
+            <button class="text">View Work</button>
+        </a>
+    {% endfor %}
+
+</section>
+
+
+
+{% includeJsFile "/js/main.js" %}
+
+{% endblock %}

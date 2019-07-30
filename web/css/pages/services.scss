@@ -1,0 +1,6 @@
+@import "./base/variables";
+
+section.cards {
+    background: $background-highlight;
+    border-bottom:1px solid lighten($background-highlight, 2%);
+}

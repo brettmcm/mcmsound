@@ -1,0 +1,30 @@
+{% block content %}
+
+<header>
+    <div class="header-bg{% if clear %} clear{% endif %}"></div>
+    <div class="content">
+        <a href="/" class="logo outer-link"><img src="/lib/img/branding/mcm-logo-small.svg" class="logo"></a>
+        <div class="links">
+            {% set mainMenu = craft.entries.section('mainMenu').level(1).all() %}
+            {% for section in mainMenu %}
+                <a href="{{section.associatedSection.one().getUrl()}}" class="outer-link {%if active == section.title|lower %}active{% endif %}">{{section.title}}</a>
+            {% endfor %}
+            <button class="secondary">Contact us</button>
+        </div>
+        <div class="menu">
+            <div class="line top"></div>
+            <div class="line middle"></div>
+            <div class="line bottom"></div>
+        </div>
+        <div class="nav">
+            <ul>
+                {% for section in mainMenu %}
+                    <a href="{{section.associatedSection.one().getUrl()}}" class="outer-link {%if active == section.title|lower %}active{% endif %}"><li>{{section.title}}</li></a>
+                {% endfor %}
+                <a href="/" class="outer-link {%if active == 'contact' %}active{% endif %}"><li>Contact Us</li></a>
+            </ul>
+        </div>
+    </div>
+</header>
+
+{% endblock %}

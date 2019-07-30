@@ -1,0 +1,60 @@
+{# Load CSS #}
+{% includeCssFile "/css/pages/about.css" %}
+
+
+{% extends "_layout" %}
+
+{% block content %}
+
+{% include "components/header" with { "clear" : true, "active" : "about" } %}
+
+
+
+<section class="intro first">
+    <div class="copy">
+        <h4>{{entry.headline}}</h4>
+        <h1>{{entry.title}}</h1>
+        {{entry.body}}
+    </div>
+</section>
+
+
+
+<section class="cards">
+
+    Start
+
+    {% set igParams = {
+            url: 'https://api.instagram.com/v1/users/self/media/recent/?access_token=5077962860.4ce868f.2a0ad7b3470b4b45acd544906f8f1b28',
+            type: 'json',
+            element: 'data',
+            cache: 60
+        } %}
+        {% set igFeed = craft.feedme.feed(igParams) %}
+
+
+        {% for i, item in igFeed %}
+            {% if i < 12 %}
+
+                {% set imgUrl = item.images.standard_resolution.url %}
+                {% set postLink = item.link %}
+
+                    <a href="{{postLink}}" target="_new" class="card">
+                    {% if imgUrl is defined and imgUrl is not empty %}
+                            <img src="{{imgUrl}}">
+                    {% endif %}
+                    </a>
+            {% endif %}
+
+        {% endfor %}
+
+    End
+
+</section>
+
+
+
+
+{% includeJsFile "/js/main.js" %}
+
+{% endblock %}

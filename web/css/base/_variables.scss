@@ -1,0 +1,17 @@
+@-ms-viewport{
+  width: device-width;
+}
+
+$break-small: 640px;
+$break-large: 960px;
+$break-xl: 1200px;
+$break-xxl: 1400px;
+$break-xxxl: 1920px;
+
+$primary-highlight: rgb(53, 238, 198);
+
+$background: #111;
+$background-highlight: rgb(28, 29, 31);
+$foreground: white;
+
+$easing: cubic-bezier(0.46,0,0.34,1);

@@ -1,0 +1,149 @@
+<html>
+
+<body>
+
+    <style>
+
+    body {
+        position: relative;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background:#111;
+    }
+
+    .logo {
+        display:inline-block;
+        width:150px;
+        margin-bottom:3rem;
+    }
+
+    #convert-link {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        text-align:center;
+        color:white;
+        font-family:arial, sans-sans-serif;
+        letter-spacing: 1px;
+        font-size:1.2rem;
+        font-weight:300;
+    }
+
+    .field {
+        display:block;
+        width:90vw;
+        max-width:900px;
+        padding:1rem;
+        text-align:center;
+        background:#222;
+        outline:none;
+        border:1px solid #333;
+        border-radius: 3px;
+        font-size:1.2rem;
+        color:white;
+    }
+
+    .button {
+        display:inline-block;
+        padding:1rem;
+        background:white;
+        color:black;
+        font-size:0.8rem;
+        letter-spacing:2px;
+        text-transform: uppercase;
+        font-weight:600;
+        border-radius: 3px;
+        margin-top:1rem;
+        margin-bottom:2rem;
+    }
+
+    .message-wrap {
+        position:relative;
+        width:100%;
+        text-align: center;
+    }
+
+    .message {
+        position:absolute;
+        left:0;
+        top:100%;
+        width:100%;
+        height:50px;
+        text-align:center;
+        color:#0f7;
+        font-family:arial, sans-sans-serif;
+        letter-spacing: 1px;
+        font-size:1.2rem;
+        font-weight:300;
+        white-space:nowrap;
+        display:none;
+    }
+
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+        border:1px solid #333;
+        background:#222;
+        -webkit-text-fill-color: white;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+
+    </style>
+
+    <img src="lib/img/branding/mcm-logo-small.svg" class="logo">
+
+    <form id="convert-link">
+
+        <h1>DropBox Link</h1>
+        <input type="text" name="input" size="100" class="field" id="copy-target">
+
+        <div class="message-wrap">
+            <input type="button" value="Convert & Copy" class="button" data-clipboard-target="#copy-target">
+            <div class="message">Converted & copied successfully!</div>
+        </div>
+    </form>
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <script>
+
+    $(function () {
+
+        var clipboard = new ClipboardJS('.button', {
+            text: function(trigger) {
+                var output = $( "input[name=input]" ).val()
+                                .replace('https', 'http')
+                                .replace('www.dropbox.com', 'files.themcmsound.com')
+                                .replace('dl=0', 'dl=1');
+                return output;
+                $('input[name="input"]').val(output);
+            }
+        });
+        clipboard.on('success', function(e) {
+            $('.message').show().delay(2000).fadeOut();
+            e.clearSelection();
+        });
+
+    });
+
+    </script>
+
+</body>
+
+</html>

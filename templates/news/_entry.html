@@ -1,0 +1,31 @@
+{# Load CSS #}
+{% includeCssFile "/css/pages/news.css" %}
+
+
+{% extends "_layout" %}
+
+{% block content %}
+
+{% include "components/header" with { "clear" : true, "active" : "news" } %}
+
+
+<div class="breadcrumb">
+    <a href="/news"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><title>arrow-left</title><g stroke-width="1"><line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="15.5" y1="8.5" x2="0.5" y2="8.5" data-color="color-2"></line> <polyline fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="5.5,3.5 0.5,8.5 5.5,13.5 "></polyline></g></svg>All News</a>
+</div>
+
+<article>
+
+    <p class="caption date">{{entry.postDate|date("F d, y")}}</p>
+    <h1>{{entry.title}}</h1>
+    {% set coverImage = entry.posterImage.first() %}
+    {% if coverImage is defined and coverImage is not null %}
+        <img src="{{coverImage.getUrl()}}" class="cover"/>
+    {% endif %}
+    {% include "routers/newsContent" with {"content": entry.contentModules} %}
+
+</article>
+
+
+{% includeJsFile "/js/main.js" %}
+
+{% endblock %}

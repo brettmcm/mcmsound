@@ -1,0 +1,7 @@
+{% block blockContent %}
+    <section class="gallery {% if block.images|length > 1 %}diptych{% endif %}">
+        {% for image in block.images %}
+            <img src="{{image.getUrl()}}" />
+        {% endfor %}
+    </section>
+{% endblock %}

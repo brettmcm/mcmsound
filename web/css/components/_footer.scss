@@ -1,0 +1,126 @@
+footer {
+  position: relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 90%;
+    box-sizing: border-box;
+    padding: 4em 0;
+
+    .branding {
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items:flex-start;
+
+        .footer-logo {
+            height: 4em;
+        }
+    }
+
+    .nav {
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        width:100%;
+        margin:2em 0;
+        a {
+            margin-bottom:0.5em;
+        }
+    }
+
+    .contact {
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        flex-wrap:wrap;
+        .item {
+            display:flex;
+            flex-direction:row;
+            color:$foreground;
+            margin:0 1em 0.5em 1em;
+            .icon {
+                width: 15px;
+                margin-right:1em;
+            }
+            a { margin: 0; }
+        }
+    }
+    
+    .social {
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        width:100%;
+        margin-top:4em;
+
+        p.caption {
+            margin-bottom: 2em;
+            color:$foreground;
+        }
+        .links {
+            display:flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            height:1em;
+            a {
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width: 25px;
+                height: 25px;
+                .logo {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    opacity:0.7;
+                    transition: opacity 1s;
+                    &:hover {
+                        opacity:1;
+                    }
+                }
+                &:not(:last-child) {
+                    margin-right:1em;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width:$break-xl) {
+        flex-direction:row;
+        .branding {
+            .footer-logo {
+                margin-right:4em;
+            }
+        }
+        .nav {
+            flex-direction:column;
+            margin-right:4em;
+            width:auto;
+            margin:0 4em 0 0;
+        }
+        .contact {
+            flex-direction:column;
+            justify-content: flex-start;
+            border-left:1px solid $foreground;
+            padding-left:4em;
+            .item {
+                margin-bottom:0.5em;
+            }
+        }
+        .social {
+            align-items: flex-end;
+            margin-top:0;
+        }
+    }
+
+  }
+}

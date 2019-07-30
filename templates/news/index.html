@@ -1,0 +1,43 @@
+{# Load CSS #}
+{% do view.registerCssFile("/css/pages/news.css") %}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+{% include "components/header" with { "clear" : true, "active" : "news" } %}
+
+
+
+<section class="intro first">
+    <div class="copy">
+        <h4>{{entry.headline}}</h4>
+        <h1>{{entry.title}}</h1>
+        {{entry.body}}
+    </div>
+</section>
+
+
+<section class="cards solo">
+
+    {% set articles = craft.entries().section('newsFeed').all() %}
+    {% for article in articles %}
+        {% set coverImage = article.posterImage.one() %}
+        <a href="{{article.getUrl()}}" class="card">
+            {% if coverImage is defined and coverImage is not null %}
+                <img src="{{coverImage.getUrl()}}" />
+            {% endif %}
+            <p class="caption date">{{article.postDate|date("F d, y")}}</p>
+            <h3>{{article.title}}</h3>
+            <p>{{article.body}}</p>
+            <button class="text">Read More</button>
+        </a>
+    {% endfor %}
+
+</section>
+
+
+
+{% includeJsFile "/js/main.js" %}
+
+{% endblock %}

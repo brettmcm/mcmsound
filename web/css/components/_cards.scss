@@ -1,0 +1,60 @@
+section.cards {
+    position: relative;
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 5%;
+    .card {
+        width: 100%;
+        margin: 0 0 1em 0;
+        padding: 2em;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border:1px solid lighten($background-highlight, 5%);
+        background: $background;
+        transition: transform 1s, box-shadow 1s;
+        overflow: hidden;
+        img {
+            position:relative;
+            width: calc(100% + 4em + 1px);
+            height: 60%;
+            object-fit: cover;
+            margin:-2em 0 1em -2em;
+
+        }
+        h4, p { text-align: left; }
+        &:hover {
+            border:1px solid lighten($background-highlight, 15%);
+            background: $background-highlight;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 45px rgba(0,0,0,0.5);
+            cursor: pointer;
+            button {
+              color: $primary-highlight;
+              &:after {
+                  right: -15px;
+                  border-right: 2px solid $primary-highlight;
+                  border-bottom: 2px solid $primary-highlight;
+              }
+            }
+        }
+    }
+    &.solo {
+        padding-top: 3em;
+        padding-bottom: 3em;
+    }
+    @media screen and (min-width: $break-large) {
+        flex-direction:row;
+        .card {
+            width: calc(33.33% - 0.5em);
+            margin-right: 0.75em;
+            &:nth-child(3n+3) {
+                margin-right: 0;
+            }
+        }
+    }
+}

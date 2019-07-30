@@ -1,0 +1,207 @@
+html, body {
+  background:$background;
+  height:100%;
+  margin:0;
+  padding:0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:300;
+  line-height:1.5rem;
+}
+pre {
+  color:$foreground;
+}
+ul { margin: 0; list-style-type: none; }
+ul li { margin-left: 0px; }
+a {
+    display: inline-block;
+  text-decoration: none;
+  font-weight: 400;
+  color: $foreground;
+  transition: color 0.3s;
+  &.primary {
+      position:relative;
+      &:after {
+          position:absolute;
+          content:'';
+          width:6px;
+          height:6px;
+          top:6px;
+          right:-12px;
+          transform: rotate(-45deg);
+          border-right: 2px solid $foreground;
+          border-bottom: 2px solid $foreground;
+          transition: border 0.3s, right 0.3s;
+      }
+  }
+  &:hover {
+    color: $primary-highlight;
+    &.primary {
+        &:after {
+            right: -15px;
+            border-right: 2px solid $primary-highlight;
+            border-bottom: 2px solid $primary-highlight;
+        }
+    }
+  }
+}
+p {
+  color:$foreground;
+  margin-bottom:2em;
+  &.caption {
+    font-size:0.7em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin:0;
+    line-height: 1em;
+    &.date {
+        color: $primary-highlight;
+        margin-bottom: 0.5em;
+    }
+  }
+  &.lead {
+      font-size: 1.4em;
+  }
+}
+h1, h2, h3, h4 {
+  color:$foreground;
+  font-weight:700;
+  letter-spacing:0.1vw;
+  margin:0;
+  padding:0;
+  line-height:1em;
+}
+h1 { font-size: 3.5em; }
+h2 { font-size: 2.2em; }
+h3 {
+  font-size: 1.7em;
+}
+h4  {
+  font-size:0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: $primary-highlight;
+}
+h5  {
+  font-size:0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color:lighten($background-highlight, 25%);
+}
+
+button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  position:relative;
+  display:flex;
+  padding:1.25em 1.5em;
+  border:none;
+  outline:none;
+  border-radius:2px;
+
+  font-size:0.8em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.primary {
+    transition: box-shadow 0.6s, transform 0.6s;
+    border: 1px solid $primary-highlight;
+    background: $primary-highlight;
+    color: $background;
+    box-shadow:none;
+    &:hover {
+      border: 1px solid $foreground;
+      color: $background;
+      background: $foreground;
+      box-shadow:0 10px 35px rgba(53, 238, 198,0.3);
+      // box-shadow:0 10px 35px rgba(0,0,0,0.6);
+      transform: translateY(-1px);
+    }
+  }
+  &.secondary {
+    transition: box-shadow 0.6s, transform 0.6s;
+    border: 1px solid $foreground;
+    background: none;
+    color: $foreground;
+    box-shadow:none;
+    &:hover {
+      border: 1px solid $primary-highlight;
+      color: $background;
+      background: $primary-highlight;
+      box-shadow:0 10px 35px rgba(53, 238, 198,0.3);
+      transform: translateY(-1px);
+    }
+  }
+  &.text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      text-decoration: none;
+      font-weight: 400;
+      font-size:1em;
+      letter-spacing: 0em;
+      text-transform: none;
+      color: $foreground;
+      transition: color 0.3s;
+      position:relative;
+      background: none;
+      padding: 0;
+      &:after {
+          position:absolute;
+          content:'';
+          width:6px;
+          height:6px;
+          top:6px;
+          right:-12px;
+          transform: rotate(-45deg);
+          border-right: 2px solid $foreground;
+          border-bottom: 2px solid $foreground;
+          transition: border 0.3s, right 0.3s;
+      }
+      &:hover {
+        color: $primary-highlight;
+        &:after {
+            right: -15px;
+            border-right: 2px solid $primary-highlight;
+            border-bottom: 2px solid $primary-highlight;
+        }
+      }
+  }
+
+}
+
+
+.sep {
+  display:block;
+  position:relative;
+  height: 1px;
+  width: 50px;
+  background: $foreground;
+  margin: 2em 0;
+}
+
+.breadcrumb {
+    position:relative;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    padding: calc(3em + 6vw) 0 0 0;
+    margin: 0 5vw;
+    list-style: none;
+    a {
+        display: inline-block;
+        list-style: none;
+        padding:1em 1.5em 1em 0;
+        svg {
+            margin-right:0.75em;
+            stroke: white;
+        }
+    }
+}

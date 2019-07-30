@@ -1,0 +1,91 @@
+{# Load CSS #}
+{% includeCssFile "/css/pages/home.css" %}
+{% includeJsFile "/js/vendors/jquery/jquery-3.1.0.min.js" %}
+
+
+{% extends "_layout" %}
+
+{% block content %}
+
+{% include "components/header" with { "clear" : true, "active" : "home" } %}
+
+<section class="hero">
+  <img src="/lib/img/bg/desktop.jpg" class="bg">
+  <div class="logo">
+      <img src="/lib/img/branding/mcm-logo.svg" class="logo">
+  </div>
+  <div class="copy">
+    <h4>The McM Sound</h4>
+    <h1>{{entry.headline}}</h1>
+    <div class="sep"></div>
+    <div class="ctas">
+        {% for button in entry.buttons.all() %}
+            <a href="{{button.buttonLink}}"><button class="{{button.style}}">{{button.label}}</button></a>
+        {% endfor %}
+    </div>
+    <svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>arrow-down</title><g fill="#ffffff"><path fill="#ffffff" d="M12.707,22.707L20.414,15L19,13.586l-6,6V2c0-0.553-0.448-1-1-1s-1,0.447-1,1v17.586l-6-6L3.586,15 l7.707,7.707C11.684,23.098,12.316,23.098,12.707,22.707z"></path></g></svg>
+  </div>
+</section>
+
+
+<section class="overview">
+        <h4>{{entry.caption}}</h4>
+        <h2>{{entry.leadText}}</h2>
+        {{entry.body}}
+</section>
+
+<section class="cards">
+
+    {% set categories = craft.categories().group('workCategories').all() %}
+    {% for category in categories %}
+        <a href="/work/{{category.slug}}" class="card">
+            <h4>{{category.title}}</h4>
+            <p>{{category.body}}</p>
+            <button class="text">View Work</button>
+        </a>
+    {% endfor %}
+
+</section>
+
+
+
+
+
+
+
+<section class="clients">
+
+    <h5>Top Content Producers Trust McM Sound</h5>
+    <div class="logos">
+      <div class="logo"><img src="lib/img/clients/nick.svg"></div>
+      <div class="logo"><img src="lib/img/clients/syfy.svg"></div>
+      <div class="logo"><img src="lib/img/clients/epix.svg"></div>
+      <div class="logo"><img src="lib/img/clients/vh1.svg"></div>
+    </div>
+
+</section>
+
+
+
+<section class="stations">
+
+    <a href="" class="station">
+            <img src="/lib/img/mcm-selects-bg.jpg" class="bg">
+            <img src="lib/img/mcm-selects-logo.svg" class="logo" />
+            <p class="lead">Headline For McM Selects</p>
+            <button class="text"><img src="/lib/img/logo-spotify.svg" class="platform">Only on Spotify</button>
+    </a>
+    <a href="" class="station">
+            <img src="/lib/img/mcm-radio-bg.jpg" class="bg">
+            <img src="lib/img/mcm-radio-logo.svg" class="logo" />
+            <p class="lead">Headline For McM Radio</p>
+            <button class="text"><img src="/lib/img/logo-mixcloud.png" class="platform">Only on MixCloud</button>
+    </a>
+
+</section>
+
+
+{% includeJsFile "/js/vendors/anime-master/lib/anime.min.js" %}
+{% includeJsFile "/js/main.js" %}
+
+{% endblock %}

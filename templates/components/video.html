@@ -1,0 +1,15 @@
+{% block blockContent %}
+    <section class="video">
+
+        {% if block.video is defined and block.video is not empty %}
+            {% set video = block.video.first().url %}
+        {% endif %}
+        {% if block.poster is defined and block.poster is not empty %}
+            {% set poster = block.poster.first().url %}
+        {% endif %}
+        <video controls poster="{{poster}}">
+            <source src="{{video}}" type="video/mp4">
+        </video>
+
+    </section>
+{% endblock %}

@@ -1,0 +1,37 @@
+.grid {
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 2em calc(5% - 1em);
+    width: 100%;
+    box-sizing: border-box;
+
+    .video {
+        width: calc(100% - 2em);
+        margin: 0 1em 1em 1em;
+        @media screen and (min-width: $break-large) { width: calc(50% - 2em); }
+    }
+
+    .card {
+        width: 100%;
+        margin:1em;
+        @media screen and (min-width: $break-large) {
+            width: calc(50% - 2em);
+        }
+        @media screen and (min-width: $break-xl) {
+            width: calc(33.33% - 2em);
+        }
+        img.cover {
+          position: relative;
+          width: 100%;
+          height: 10em;
+          object-fit: cover;
+        }
+        .copy {
+            padding:calc(2em + 2vw);
+        }
+    }
+}

@@ -1,0 +1,202 @@
+@import "./base/variables";
+@import "./base/core";
+
+section.hero {
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6em 0 0 0;
+  overflow:hidden;
+  background: #111;
+  width: 100%;
+
+  img.bg {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity:0.5;
+  }
+  img.logo {
+    position: relative;
+    width: 90vw;
+    margin-bottom:2em;
+  }
+  .copy {
+    position: relative;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    h3 {
+      margin: 0;
+      padding: 0;
+      font-weight: normal;
+      font-size:0.8em;
+      text-transform: uppercase;
+      letter-spacing: 0.5em;
+      color: #35ee91;
+    }
+    h1 {
+      margin: 0.25em 0 0 0;
+    }
+    h4 {
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      span {
+        display:inline;
+        white-space: nowrap;
+        &:not(:last-child) {
+          padding-right: 1em;
+          margin-right:1em;
+          border-right: 1px solid white;
+        }
+      }
+    }
+    .ctas {
+      button {
+        display:inline-block;
+        &:not(:last-child) {
+          margin-right:0.5em;
+        }
+      }
+    }
+  }
+  .scroll-indicator {
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    height: 6em;
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: scrollBounce;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+  }
+  @media screen and (min-width: $break-large)  {
+    img.logo {
+      position: absolute;
+      top:50%;
+      left: 0;
+      transform: translate(-40vw, -50%);
+      width: 90vw;
+      max-height:60vh;
+      margin:0;
+    }
+    .copy {
+      position: absolute;
+      width: 35%;
+      top:0;
+      left: 55%;
+      height: 100%;
+    }
+  }
+}
+
+@keyframes scrollBounce {
+  from {transform: translateY(-10px)}
+  to {transform: translateY(0)}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#nav {
+  position:fixed;
+  display: flex;
+  justify-content: space-between;
+  @media screen and (min-width: $break-small) {
+    justify-content: center;
+  }
+  align-items: center;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+  top:0;
+  left:0;
+  width:100vw;
+  padding:3vw 5vw;
+  box-sizing: border-box;
+  background:rgba(0,0,0,0.9);
+  height:50px;
+  z-index:999;
+  .nav-logo {
+    position:relative;
+    width:50px;
+    height:auto;
+    transform: translateY(2px);
+  }
+  .nav-link {
+    margin-left:3vw;
+    color:#999;
+    transition: color 2s;
+    text-decoration: none;
+    font-weight: 500;
+    font-size:0.8rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    &:hover {
+      color:white;
+    }
+  }
+}
+.center-logo {
+  position:relative;
+  width:100vw;
+  height:95vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  .logo {
+    width:70vw;
+    @media screen and (min-width: $break-small) {
+      width:55vw;
+    }
+    @media screen and (min-width: $break-large) {
+      width:40vw;
+    }
+    height:auto;
+    opacity:0.3;
+    transition:all 2s;
+    &:hover {
+      opacity:1;
+      transform:scale(1.02);
+      transition:all 4s;
+    }
+  }
+}
+
+
+.follow-button, .twitter-follow-button {
+  display:block;
+  margin-top:1rem;
+  font-size:0.8rem;
+  font-weight:500;
+  color:#999;
+}
