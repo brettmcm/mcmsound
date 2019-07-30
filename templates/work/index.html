@@ -66,9 +66,11 @@
                 {% set quicktime = video.quicktime.one().getUrl() %}
                 {% set poster = video.posterImage.one().getUrl() %}
 
-                <video controls poster="{{poster}}" class="video">
-                    <source src="{{quicktime}}" type="video/mp4">
-                </video>
+                <div class="video">
+                    <video controls poster="{{poster}}">
+                        <source src="{{quicktime}}" type="video/mp4">
+                    </video>
+                </div>
 
             {% endfor %}
 

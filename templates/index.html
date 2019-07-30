@@ -67,20 +67,35 @@
 
 
 
+
+{% set spotifyParams = {
+        url: 'https://api.spotify.com/v1/users/jdmcm/playlists?access_token=' ~ social.spotifyApiKey,
+        type: 'json',
+        element: 'items',
+        cache: 60
+    } %}
+    {% set spotifyFeed = craft.feedme.feed(spotifyParams) %}
+
+
+
 <section class="stations">
 
-    <a href="" class="station">
-            <img src="/lib/img/mcm-selects-bg.jpg" class="bg">
-            <img src="lib/img/mcm-selects-logo.svg" class="logo" />
-            <p class="lead">Headline For McM Selects</p>
-            <button class="text"><img src="/lib/img/logo-spotify.svg" class="platform">Only on Spotify</button>
-    </a>
-    <a href="" class="station">
-            <img src="/lib/img/mcm-radio-bg.jpg" class="bg">
-            <img src="lib/img/mcm-radio-logo.svg" class="logo" />
-            <p class="lead">Headline For McM Radio</p>
-            <button class="text"><img src="/lib/img/logo-mixcloud.png" class="platform">Only on MixCloud</button>
-    </a>
+    <img src="/lib/img/mcm-selects-bg.jpg" class="bg">
+    <img src="lib/img/mcm-selects-logo.svg" class="logo" />
+
+    <div class="latest">
+
+        {% for i, playlist in spotifyFeed|reverse %}
+            {% if i < 4 %}
+                <a href="{{ playlist.external_urls.spotify }}" class="station">
+                        <img src="{{ playlist.images[0].url }}" class="coverart">
+                        <p>{{ playlist.name }}</p>
+                        <button class="text"><img src="/lib/img/logo-spotify.svg" class="platform">Listen on Spotify</button>
+                </a>
+            {% endif %}
+        {% endfor %}
+
+    </div>
 
 </section>
 
