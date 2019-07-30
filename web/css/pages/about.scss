@@ -1,6 +1,47 @@
 @import "./base/variables";
 @import "./base/core";
 
-sections.cards {
+section.ig-feed {
     background: $background-highlight;
+    box-sizing: border-box;
+    padding: 5%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .ig-post {
+        width: calc(50% - 0.125em);
+        margin-bottom: 0.25em;
+        overflow:hidden;
+        .post-holder {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            img {
+                position: absolute;
+                top:0;
+                left:0;
+                height: 100%;
+                width: 100%;
+                transform: scale(1.02);
+                transition: transform 0.3s;
+                &:hover {
+                    transform: scale(1);
+                }
+            }
+        }
+
+    }
+
+    @media screen and (min-width: $break-large)  {
+
+        .ig-post {
+            width: calc(25% - 0.25em);
+        }
+
+    }
 }

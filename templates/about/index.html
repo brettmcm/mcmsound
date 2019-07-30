@@ -20,12 +20,10 @@
 
 
 
-<section class="cards">
-
-    Start
+<section class="ig-feed">
 
     {% set igParams = {
-            url: 'https://api.instagram.com/v1/users/self/media/recent/?access_token=5077962860.4ce868f.2a0ad7b3470b4b45acd544906f8f1b28',
+            url: 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' ~ social.instagramApiKey,
             type: 'json',
             element: 'data',
             cache: 60
@@ -39,16 +37,15 @@
                 {% set imgUrl = item.images.standard_resolution.url %}
                 {% set postLink = item.link %}
 
-                    <a href="{{postLink}}" target="_new" class="card">
-                    {% if imgUrl is defined and imgUrl is not empty %}
-                            <img src="{{imgUrl}}">
-                    {% endif %}
+                    <a href="{{postLink}}" target="_new" class="ig-post">
+                        {% if imgUrl is defined and imgUrl is not empty %}
+                                <div class="post-holder"><img src="{{imgUrl}}"></div>
+                        {% endif %}
                     </a>
             {% endif %}
 
         {% endfor %}
 
-    End
 
 </section>
 

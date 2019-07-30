@@ -186,7 +186,36 @@ button {
       margin-right: 0.75em;
       stroke: white; }
 
-sections.cards {
-  background: #1c1d1f; }
+section.ig-feed {
+  background: #1c1d1f;
+  box-sizing: border-box;
+  padding: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; }
+  section.ig-feed .ig-post {
+    width: calc(50% - 0.125em);
+    margin-bottom: 0.25em;
+    overflow: hidden; }
+    section.ig-feed .ig-post .post-holder {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%; }
+      section.ig-feed .ig-post .post-holder img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: scale(1.02);
+        transition: transform 0.3s; }
+        section.ig-feed .ig-post .post-holder img:hover {
+          transform: scale(1); }
+  @media screen and (min-width: 960px) {
+    section.ig-feed .ig-post {
+      width: calc(25% - 0.25em); } }
 
 /*# sourceMappingURL=about.css.map */
