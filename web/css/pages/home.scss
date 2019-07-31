@@ -129,6 +129,8 @@ section.clients {
   }
 }
 
+
+
 section.selects-intro {
     display: flex;
     flex-direction: column;
@@ -184,7 +186,11 @@ a.stations {
             margin-bottom: 2em;
         }
     }
-
+    p {
+        text-align: center;
+        width: 80%;
+        max-width: 700px;
+    }
     p, button, .logo { z-index: 4;}
     .platform {
             position:relative;

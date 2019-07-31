@@ -2,7 +2,8 @@
 @import "./base/core";
 
 section.ig-feed {
-    background: $background-highlight;
+    // background: $background-highlight;
+    background-image: linear-gradient($background,$background-highlight);
     box-sizing: border-box;
     padding: 5%;
 

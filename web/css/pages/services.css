@@ -1,6 +1,7 @@
 @-ms-viewport {
   width: device-width; }
 section.services.section {
+  background-image: linear-gradient(#111, #1c1d1f);
   margin-top: 0; }
 
 /*# sourceMappingURL=services.css.map */

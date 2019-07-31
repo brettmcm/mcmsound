@@ -7,7 +7,8 @@ section.intro {
   box-sizing: border-box;
   margin-top: 5em;
   padding: 0 5%;
-  background-image: linear-gradient($background,$background-highlight);
+  // background-image: linear-gradient($background,$background-highlight);
+  background:$background;
   &.first {
       margin-top: calc(6.4em + 10vw);
   }

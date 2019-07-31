@@ -189,6 +189,27 @@ button {
       margin-right: 0.75em;
       stroke: white; }
 
+section.cta {
+  background: #1c1d1f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 3em 5%;
+  margin: calc(3em + 5vw) 0 0 0;
+  width: 100%;
+  border-radius: 2px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05); }
+  section.cta p {
+    text-align: center; }
+  @media screen and (min-width: 960px) {
+    section.cta {
+      flex-direction: row; }
+      section.cta p {
+        margin: 0 2em 0 0; } }
+
 .scroll-indicator {
   position: fixed;
   display: flex;
@@ -357,6 +378,8 @@ footer {
       margin: 2em 0; }
       footer .content .nav a {
         margin-bottom: 0.5em; }
+        footer .content .nav a:not(:last-child) {
+          margin-right: 1em; }
     footer .content .contact {
       display: flex;
       flex-direction: row;
@@ -433,7 +456,7 @@ section.intro {
   box-sizing: border-box;
   margin-top: 5em;
   padding: 0 5%;
-  background-image: linear-gradient(#111, #1c1d1f); }
+  background: #111; }
   section.intro.first {
     margin-top: calc(6.4em + 10vw); }
   section.intro h4 {
@@ -464,6 +487,8 @@ section.overview {
     font-size: 1.5em;
     line-height: 1.3em; }
 
+@-ms-viewport {
+  width: device-width; }
 section.cards {
   position: relative;
   display: flex;
@@ -473,7 +498,8 @@ section.cards {
   flex-wrap: wrap;
   box-sizing: border-box;
   width: 100%;
-  padding: 0 5%; }
+  padding: 0 5%;
+  background-image: linear-gradient(#111, #1c1d1f); }
   section.cards.services {
     align-items: stretch;
     width: 96%;
@@ -556,7 +582,7 @@ section.services {
   border-radius: 2px;
   background-size: cover; }
   section.services.section {
-    background: #1c1d1f;
+    background-image: linear-gradient(#111, #1c1d1f);
     padding-bottom: 10em; }
   section.services .service {
     display: flex;
@@ -571,11 +597,10 @@ section.services {
       border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
     section.services .service .icon {
       width: 30%;
-      max-width: 125px; }
+      max-width: 125px;
+      margin-bottom: 3em; }
     section.services .service h4 {
       margin-bottom: 1em; }
-    section.services .service h4, section.services .service h3, section.services .service p {
-      text-align: left; }
   @media screen and (min-width: 960px) {
     section.services {
       flex-direction: row; }
@@ -588,7 +613,8 @@ section.services {
           border-right: 1px solid rgba(255, 255, 255, 0.05);
           border-bottom: 0; }
         section.services .service:nth-child(3n+3) {
-          margin-right: 0; } }
+          margin-right: 0;
+          border-right: 0; } }
 
 .grid {
   position: relative;

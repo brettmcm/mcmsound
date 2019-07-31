@@ -189,6 +189,27 @@ button {
       margin-right: 0.75em;
       stroke: white; }
 
+section.cta {
+  background: #1c1d1f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 3em 5%;
+  margin: calc(3em + 5vw) 0 0 0;
+  width: 100%;
+  border-radius: 2px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05); }
+  section.cta p {
+    text-align: center; }
+  @media screen and (min-width: 960px) {
+    section.cta {
+      flex-direction: row; }
+      section.cta p {
+        margin: 0 2em 0 0; } }
+
 section.hero {
   position: relative;
   display: flex;
@@ -335,6 +356,10 @@ a.stations {
     width: 80%;
     max-width: 400px;
     margin-bottom: 2em; }
+  a.stations p {
+    text-align: center;
+    width: 80%;
+    max-width: 700px; }
   a.stations p, a.stations button, a.stations .logo {
     z-index: 4; }
   a.stations .platform {

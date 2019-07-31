@@ -86,6 +86,7 @@ section.hero {
 
 
 section.grid {
-    background:$background-highlight;
+    // background:$background-highlight;
+    background-image: linear-gradient($background,$background-highlight);
     padding-bottom:10em;
 }

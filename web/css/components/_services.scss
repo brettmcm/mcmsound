@@ -11,7 +11,8 @@ section.services {
     border-radius: 2px;
     background-size: cover;
     &.section {
-        background: $background-highlight;
+        background-image: linear-gradient($background,$background-highlight);
+        // background: $background-highlight;
         padding-bottom: 10em;
     }
     .service {
@@ -29,10 +30,9 @@ section.services {
         .icon {
             width:30%;
             max-width: 125px;
-            // margin-bottom: 3em;
+            margin-bottom: 3em;
         }
         h4 { margin-bottom: 1em; }
-        h4, h3, p { text-align: left; }
     }
     @media screen and (min-width: $break-large) {
         flex-direction:row;
@@ -47,6 +47,7 @@ section.services {
             }
             &:nth-child(3n+3) {
                 margin-right: 0;
+                border-right: 0;
             }
         }
 

@@ -1,3 +1,4 @@
+@import "./base/variables";
 section.cards {
     position: relative;
     display:flex;
@@ -8,6 +9,7 @@ section.cards {
     box-sizing: border-box;
     width: 100%;
     padding: 0 5%;
+    background-image: linear-gradient($background,$background-highlight);
     &.services {
         align-items: stretch;
         width: 96%;

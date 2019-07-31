@@ -41,7 +41,7 @@
         <div class="service">
             <img src="lib/img/icon-{{category.slug}}.svg" class="icon" />
             {# <h4>{{category.headline}}</h4> #}
-            <div class="sep primary"></div>
+            {# <div class="sep primary"></div> #}
             <h3>{{category.title}}</h3>
             {{category.body}}
             <a href="/work/{{category.slug}}"><button class="secondary">View {{category.title}} Work</button></a>
@@ -66,7 +66,20 @@
       <div class="logo"><img src="lib/img/clients/vh1.svg"></div>
     </div>
 
+    <section class="cta">
+
+        <p class="lead">{{callToAction.headline}}</p>
+        {% for button in callToAction.buttons %}
+            <a href="{{button.buttonLink}}"><button class="{{button.style}}">{{button.label}}</button></a>
+        {% endfor %}
+
+    </section>
+
 </section>
+
+
+
+
 
 
 
@@ -85,7 +98,7 @@
 
     <img src="/lib/img/mcm-selects-bg.jpg" class="bg">
     <img src="lib/img/mcm-radio-logo.svg" class="logo" />
-    <p>Curated playlists crafted for moments</p>
+    <p>Curated playlists crafted from tracks on heavy rotation at the studio.</p>
     <button class="text"><img src="/lib/img/logo-spotify.svg" class="platform">Listen on Spotify</button>
 
 </a>
