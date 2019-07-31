@@ -28,21 +28,22 @@
 </section>
 
 
-<section class="overview">
+<section class="overview lead">
         <h4>{{entry.caption}}</h4>
         <h2>{{entry.leadText}}</h2>
         {{entry.body}}
 </section>
 
-<section class="cards">
+<section class="services">
 
     {% set categories = craft.categories().group('workCategories').all() %}
     {% for category in categories %}
-        <a href="/work/{{category.slug}}" class="card">
-            <h4>{{category.title}}</h4>
-            <p>{{category.body}}</p>
-            <button class="text">View Work</button>
-        </a>
+        <div class="service">
+            <img src="lib/img/icon-{{category.slug}}.svg" class="icon" />
+            <h3>{{category.title}}</h3>
+            {{category.body}}
+            <a href="/work/{{category.slug}}"><button class="text">View {{category.title}} Work</button></a>
+        </div>
     {% endfor %}
 
 </section>
@@ -55,7 +56,7 @@
 
 <section class="clients">
 
-    <h5>Top Content Producers Trust McM Sound</h5>
+    <h5>Top Content Producers Trust <span>McM Sound</span></h5>
     <div class="logos">
       <div class="logo"><img src="lib/img/clients/nick.svg"></div>
       <div class="logo"><img src="lib/img/clients/syfy.svg"></div>

@@ -218,28 +218,8 @@ section.hero {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start; }
-    section.hero .copy h3 {
-      margin: 0;
-      padding: 0;
-      font-weight: normal;
-      font-size: 0.8em;
-      text-transform: uppercase;
-      letter-spacing: 0.5em;
-      color: #35eec6; }
     section.hero .copy h1 {
       margin: 0.25em 0 0 0; }
-    section.hero .copy h4 {
-      margin: 0;
-      padding: 0;
-      text-transform: uppercase;
-      letter-spacing: 0.15em; }
-      section.hero .copy h4 span {
-        display: inline;
-        white-space: nowrap; }
-        section.hero .copy h4 span:not(:last-child) {
-          padding-right: 1em;
-          margin-right: 1em;
-          border-right: 1px solid white; }
     section.hero .copy .ctas button {
       display: inline-block; }
       section.hero .copy .ctas button:not(:last-child) {
@@ -288,6 +268,8 @@ section.clients {
   background-image: linear-gradient(#111, #1c1d1f); }
   section.clients h5 {
     text-align: center; }
+    section.clients h5 span {
+      white-space: nowrap; }
   section.clients .logos {
     display: flex;
     flex-direction: row;

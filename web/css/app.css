@@ -464,17 +464,22 @@ section.overview {
   justify-content: center;
   align-items: flex-start;
   box-sizing: border-box;
-  padding: 6em 5% 6em 5%;
+  padding: calc(6em + 5vw) 5%;
   width: 100%; }
   section.overview h4 {
     margin-bottom: 1em; }
   section.overview p {
-    max-width: 700px; }
+    max-width: 750px; }
   @media screen and (min-width: 960px) {
     section.overview {
       align-items: center; }
       section.overview h4, section.overview h2, section.overview p {
         text-align: center; } }
+  section.overview.lead h2 {
+    font-size: 2.7em; }
+  section.overview.lead p {
+    font-size: 1.5em;
+    line-height: 1.3em; }
 
 section.cards {
   position: relative;
@@ -486,6 +491,14 @@ section.cards {
   box-sizing: border-box;
   width: 100%;
   padding: 0 5%; }
+  section.cards.services {
+    align-items: stretch;
+    width: 96%;
+    background: url("../lib/img/mcm-radio-bg.jpg") center center;
+    background-size: cover;
+    padding: 0;
+    margin: 0 2%;
+    border-radius: 2px; }
   section.cards .card {
     width: 100%;
     margin: 0 0 1em 0;
@@ -516,16 +529,78 @@ section.cards {
           right: -15px;
           border-right: 2px solid #35eec6;
           border-bottom: 2px solid #35eec6; }
+  section.cards .service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: calc(3em + 5vw) 5%;
+    box-sizing: border-box; }
+    section.cards .service:not(:last-child) {
+      border-bottom: 1em solid #111; }
+    section.cards .service .icon {
+      width: 20%;
+      max-width: 200px;
+      margin-bottom: 3em; }
   section.cards.solo {
     padding-top: 3em;
     padding-bottom: 3em; }
   @media screen and (min-width: 960px) {
     section.cards {
       flex-direction: row; }
-      section.cards .card {
+      section.cards .card, section.cards .service {
         width: calc(33.33% - 0.5em);
         margin-right: 0.75em; }
-        section.cards .card:nth-child(3n+3) {
+        section.cards .card:nth-child(3n+3), section.cards .service:nth-child(3n+3) {
+          margin-right: 0; }
+      section.cards .service {
+        text-align: center; }
+        section.cards .service:not(:last-child) {
+          border-right: 1em solid #111;
+          border-bottom: 0; } }
+
+section.services {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 96%;
+  margin: 0 2%;
+  padding: 5%;
+  border-radius: 2px;
+  background: url("../lib/img/mcm-radio-bg.jpg") center center;
+  background-size: cover; }
+  section.services .service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: calc(3em + 5%) 5%;
+    box-sizing: border-box; }
+    section.services .service:not(:last-child) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+    section.services .service .icon {
+      width: 20%;
+      max-width: 200px;
+      margin-bottom: 3em; }
+  @media screen and (min-width: 960px) {
+    section.services {
+      flex-direction: row; }
+      section.services .service {
+        text-align: center;
+        width: calc(33.33% - 0.5em);
+        padding: 5%;
+        margin-right: 0.75em;
+        border-bottom: none; }
+        section.services .service:not(:last-child) {
+          border-right: 1px solid rgba(255, 255, 255, 0.1);
+          border-bottom: 0; }
+        section.services .service:nth-child(3n+3) {
           margin-right: 0; } }
 
 .grid {

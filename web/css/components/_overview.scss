@@ -5,17 +5,26 @@ section.overview {
     align-items: flex-start;
 
     box-sizing: border-box;
-    padding: 6em 5% 6em 5%;
+    padding: calc(6em + 5vw) 5%;
     width: 100%;
 
     h4  {
         margin-bottom: 1em;
     }
     p {
-        max-width: 700px;
+        max-width: 750px;
     }
     @media screen and (min-width: $break-large) {
         align-items: center;
         h4, h2, p { text-align: center; }
+    }
+    &.lead {
+        h2 {
+            font-size: 2.7em;
+        }
+        p {
+            font-size: 1.5em;
+            line-height: 1.3em;
+        }
     }
 }

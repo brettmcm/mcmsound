@@ -8,6 +8,15 @@ section.cards {
     box-sizing: border-box;
     width: 100%;
     padding: 0 5%;
+    &.services {
+        align-items: stretch;
+        width: 96%;
+        background:url('../lib/img/mcm-radio-bg.jpg') center center;
+        background-size: cover;
+        padding: 0;
+        margin: 0 2%;
+        border-radius: 2px;
+    }
     .card {
         width: 100%;
         margin: 0 0 1em 0;
@@ -43,17 +52,41 @@ section.cards {
             }
         }
     }
+    .service {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        padding: calc(3em + 5vw) 5%;
+        box-sizing: border-box;
+        &:not(:last-child) {
+            border-bottom:1em solid $background;
+        }
+        .icon {
+            width: 20%;
+            max-width: 200px;
+            margin-bottom: 3em;
+        }
+    }
     &.solo {
         padding-top: 3em;
         padding-bottom: 3em;
     }
     @media screen and (min-width: $break-large) {
         flex-direction:row;
-        .card {
+        .card, .service {
             width: calc(33.33% - 0.5em);
             margin-right: 0.75em;
             &:nth-child(3n+3) {
                 margin-right: 0;
+            }
+        }
+        .service {
+            text-align: center;
+            &:not(:last-child) {
+                border-right:1em solid $background;
+                border-bottom: 0;
             }
         }
     }
