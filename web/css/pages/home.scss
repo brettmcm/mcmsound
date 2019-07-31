@@ -75,6 +75,9 @@ section.hero {
             position: relative;
             width: 45%;
             margin-top: 1em;
+            h1 {
+                max-width: 700px;
+            }
             .scroll-arrow {
                 display:block;
             }

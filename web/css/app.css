@@ -244,7 +244,8 @@ header {
   align-items: center;
   top: 0;
   box-sizing: border-box;
-  padding: 2em 5%; }
+  padding: 2em 5%;
+  pointer-events: none; }
   header .header-bg {
     position: absolute;
     top: 0;
@@ -253,10 +254,13 @@ header {
     height: 100%;
     background: #111;
     z-index: -2;
-    opacity: 1; }
+    opacity: 1;
+    pointer-events: none; }
     @media screen and (min-width: 960px) {
       header .header-bg.clear {
         opacity: 0; } }
+  header a {
+    pointer-events: all; }
   header .logo {
     height: 2em; }
   header .nav {

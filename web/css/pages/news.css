@@ -51,7 +51,12 @@ article {
         article section.image-with-text.left {
           flex-direction: row; }
         article section.image-with-text.right {
-          flex-direction: row-reverse; } }
+          flex-direction: row-reverse; }
+        article section.image-with-text.center img {
+          margin-bottom: 2em; }
+        article section.image-with-text.center p {
+          width: 90%;
+          max-width: 700px; } }
     article section.gallery {
       max-width: 1400px;
       display: flex;

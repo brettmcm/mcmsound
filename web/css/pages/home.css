@@ -273,6 +273,8 @@ section.hero {
         position: relative;
         width: 45%;
         margin-top: 1em; }
+        section.hero .copy h1 {
+          max-width: 700px; }
         section.hero .copy .scroll-arrow {
           display: block; } }
 
