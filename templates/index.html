@@ -40,9 +40,11 @@
     {% for category in categories %}
         <div class="service">
             <img src="lib/img/icon-{{category.slug}}.svg" class="icon" />
+            {# <h4>{{category.headline}}</h4> #}
+            <div class="sep primary"></div>
             <h3>{{category.title}}</h3>
             {{category.body}}
-            <a href="/work/{{category.slug}}"><button class="text">View {{category.title}} Work</button></a>
+            <a href="/work/{{category.slug}}"><button class="secondary">View {{category.title}} Work</button></a>
         </div>
     {% endfor %}
 
@@ -79,26 +81,14 @@
 
 
 
-<section class="stations">
+<a href="https://open.spotify.com/user/{{social.spotifyHandle}}" target="_new" class="stations">
 
     <img src="/lib/img/mcm-selects-bg.jpg" class="bg">
-    <img src="lib/img/mcm-selects-logo.svg" class="logo" />
+    <img src="lib/img/mcm-radio-logo.svg" class="logo" />
+    <p>Curated playlists crafted for moments</p>
+    <button class="text"><img src="/lib/img/logo-spotify.svg" class="platform">Listen on Spotify</button>
 
-    <div class="latest">
-
-        {% for i, playlist in spotifyFeed|reverse %}
-            {% if i < 4 %}
-                <a href="{{ playlist.external_urls.spotify }}" class="station">
-                        <img src="{{ playlist.images[0].url }}" class="coverart">
-                        <p>{{ playlist.name }}</p>
-                        <button class="text"><img src="/lib/img/logo-spotify.svg" class="platform">Listen on Spotify</button>
-                </a>
-            {% endif %}
-        {% endfor %}
-
-    </div>
-
-</section>
+</a>
 
 
 {% includeJsFile "/js/vendors/anime-master/lib/anime.min.js" %}

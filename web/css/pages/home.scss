@@ -153,7 +153,7 @@ section.selects-intro {
     }
 }
 
-section.stations {
+a.stations {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -162,6 +162,7 @@ section.stations {
     box-sizing: border-box;
     width: 100%;
     padding: 6em 0;
+    overflow:hidden;
 
     img {
         &.bg {
@@ -173,78 +174,36 @@ section.stations {
             object-fit:cover;
             opacity:0.3;
             z-index:0;
+            transform: scale(1.05);
+            transition: transform 0.5s;
         }
         &.logo {
             position:relative;
             width: 80%;
             max-width: 400px;
-            margin-bottom: 6em;
+            margin-bottom: 2em;
         }
     }
 
-    .latest {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: flex-start;
-        flex-wrap: wrap;
+    p, button, .logo { z-index: 4;}
+    .platform {
+            position:relative;
+            margin:0 1em 0 0;
+            width: auto;
+            height: 20px;
+            object-fit: contain;
+    }
 
-        width: 100%;
-
-        .station {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 3em;
-            .coverart {
-                width: 90%;
-                max-width: 300px;
-                height: auto;
-                box-shadow:0 10px 30px rgba(0,0,0,1);
-                transition: transform 0.5s;
-            }
-            p {
-                margin-bottom: 1em;
-            }
-            .platform {
-                    position:relative;
-                    margin:0 1em 0 0;
-                    width: auto;
-                    height: 20px;
-                    object-fit: contain;
-            }
-            &:hover {
-                .coverart {
-                    transform: scale(1.025);
-                }
-                button {
-                    color: $primary-highlight;
-                    &:after {
-                        right: -15px;
-                        border-right: 2px solid $primary-highlight;
-                        border-bottom: 2px solid $primary-highlight;
-                    }
-                }
-            }
-        }
-        @media screen and (min-width: $break-small)  {
-            .station {
-                width: 50%;
-            }
-        }
-        @media screen and (min-width: $break-large)  {
-            .station {
-                width: 25%;
+    &:hover {
+        img.bg { transform: scale(1); }
+        button {
+            color: $primary-highlight;
+            &:after {
+                right: -15px;
+                border-right: 2px solid $primary-highlight;
+                border-bottom: 2px solid $primary-highlight;
             }
         }
     }
-
-
-
 
 }

@@ -183,6 +183,9 @@ button {
   width: 50px;
   background: $foreground;
   margin: 2em 0;
+  &.primary {
+      background: $primary-highlight;
+  }
 }
 
 .breadcrumb {
@@ -192,13 +195,14 @@ button {
     justify-content: flex-start;
     align-items: flex-end;
     border-bottom:1px solid rgba(255,255,255,0.1);
-    padding: calc(3em + 6vw) 0 0 0;
+    padding: 8em 0 0 0;
     margin: 0 5vw;
     list-style: none;
     a {
         display: inline-block;
         list-style: none;
         padding:1em 1.5em 1em 0;
+        margin-bottom:2px;
         svg {
             margin-right:0.75em;
             stroke: white;

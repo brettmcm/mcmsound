@@ -18,15 +18,17 @@
 </section>
 
 
-<section class="services">
+<section class="services section">
 
     {% set categories = craft.categories().group('workCategories').all() %}
     {% for category in categories %}
         <div class="service">
             <img src="lib/img/icon-{{category.slug}}.svg" class="icon" />
+            {# <h4>{{category.headline}}</h4> #}
+            <div class="sep primary"></div>
             <h3>{{category.title}}</h3>
             {{category.body}}
-            <a href="/work/{{category.slug}}"><button class="text">View {{category.title}} Work</button></a>
+            <a href="/work/{{category.slug}}"><button class="secondary">View {{category.title}} Work</button></a>
         </div>
     {% endfor %}
 

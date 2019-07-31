@@ -167,6 +167,8 @@ button {
   width: 50px;
   background: white;
   margin: 2em 0; }
+  .sep.primary {
+    background: #35eec6; }
 
 .breadcrumb {
   position: relative;
@@ -175,13 +177,14 @@ button {
   justify-content: flex-start;
   align-items: flex-end;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: calc(3em + 6vw) 0 0 0;
+  padding: 8em 0 0 0;
   margin: 0 5vw;
   list-style: none; }
   .breadcrumb a {
     display: inline-block;
     list-style: none;
-    padding: 1em 1.5em 1em 0; }
+    padding: 1em 1.5em 1em 0;
+    margin-bottom: 2px; }
     .breadcrumb a svg {
       margin-right: 0.75em;
       stroke: white; }
@@ -193,7 +196,7 @@ button {
   justify-content: flex-start;
   align-items: flex-end;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: calc(3em + 6vw) 0 0 0;
+  padding: 8em 0 0 0;
   margin: 0 5vw;
   list-style: none; }
   .tabs .tab {

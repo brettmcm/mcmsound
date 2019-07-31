@@ -167,6 +167,8 @@ button {
   width: 50px;
   background: white;
   margin: 2em 0; }
+  .sep.primary {
+    background: #35eec6; }
 
 .breadcrumb {
   position: relative;
@@ -175,13 +177,14 @@ button {
   justify-content: flex-start;
   align-items: flex-end;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: calc(3em + 6vw) 0 0 0;
+  padding: 8em 0 0 0;
   margin: 0 5vw;
   list-style: none; }
   .breadcrumb a {
     display: inline-block;
     list-style: none;
-    padding: 1em 1.5em 1em 0; }
+    padding: 1em 1.5em 1em 0;
+    margin-bottom: 2px; }
     .breadcrumb a svg {
       margin-right: 0.75em;
       stroke: white; }
@@ -306,7 +309,7 @@ section.selects-intro {
     height: 20px;
     object-fit: contain; }
 
-section.stations {
+a.stations {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -314,8 +317,9 @@ section.stations {
   align-items: center;
   box-sizing: border-box;
   width: 100%;
-  padding: 6em 0; }
-  section.stations img.bg {
+  padding: 6em 0;
+  overflow: hidden; }
+  a.stations img.bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -323,56 +327,29 @@ section.stations {
     height: 100%;
     object-fit: cover;
     opacity: 0.3;
-    z-index: 0; }
-  section.stations img.logo {
+    z-index: 0;
+    transform: scale(1.05);
+    transition: transform 0.5s; }
+  a.stations img.logo {
     position: relative;
     width: 80%;
     max-width: 400px;
-    margin-bottom: 6em; }
-  section.stations .latest {
+    margin-bottom: 2em; }
+  a.stations p, a.stations button, a.stations .logo {
+    z-index: 4; }
+  a.stations .platform {
     position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    width: 100%; }
-    section.stations .latest .station {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      box-sizing: border-box;
-      margin-bottom: 3em; }
-      section.stations .latest .station .coverart {
-        width: 90%;
-        max-width: 300px;
-        height: auto;
-        box-shadow: 0 10px 30px black;
-        transition: transform 0.5s; }
-      section.stations .latest .station p {
-        margin-bottom: 1em; }
-      section.stations .latest .station .platform {
-        position: relative;
-        margin: 0 1em 0 0;
-        width: auto;
-        height: 20px;
-        object-fit: contain; }
-      section.stations .latest .station:hover .coverart {
-        transform: scale(1.025); }
-      section.stations .latest .station:hover button {
-        color: #35eec6; }
-        section.stations .latest .station:hover button:after {
-          right: -15px;
-          border-right: 2px solid #35eec6;
-          border-bottom: 2px solid #35eec6; }
-    @media screen and (min-width: 640px) {
-      section.stations .latest .station {
-        width: 50%; } }
-    @media screen and (min-width: 960px) {
-      section.stations .latest .station {
-        width: 25%; } }
+    margin: 0 1em 0 0;
+    width: auto;
+    height: 20px;
+    object-fit: contain; }
+  a.stations:hover img.bg {
+    transform: scale(1); }
+  a.stations:hover button {
+    color: #35eec6; }
+    a.stations:hover button:after {
+      right: -15px;
+      border-right: 2px solid #35eec6;
+      border-bottom: 2px solid #35eec6; }
 
 /*# sourceMappingURL=home.css.map */

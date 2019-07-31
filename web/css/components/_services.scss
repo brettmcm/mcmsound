@@ -6,39 +6,43 @@ section.services {
     align-items: stretch;
     flex-wrap: wrap;
     box-sizing: border-box;
-    width: 96%;
-    margin: 0 2%;
+    width: 100%;
     padding:5%;
     border-radius: 2px;
-    background:url('../lib/img/mcm-radio-bg.jpg') center center;
     background-size: cover;
+    &.section {
+        background: $background-highlight;
+        padding-bottom: 10em;
+    }
     .service {
         display:flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
         width: 100%;
-        padding: calc(3em + 5%) 5%;
+        padding: calc(3em + 5%) 0;
         box-sizing: border-box;
         &:not(:last-child) {
-            border-bottom:1px solid rgba(255,255,255,0.1);
+            border-bottom:1px solid rgba(255,255,255,0.05);
         }
         .icon {
-            width: 20%;
-            max-width: 200px;
-            margin-bottom: 3em;
+            width:30%;
+            max-width: 125px;
+            // margin-bottom: 3em;
         }
+        h4 { margin-bottom: 1em; }
+        h4, h3, p { text-align: left; }
     }
     @media screen and (min-width: $break-large) {
         flex-direction:row;
         .service {
-            text-align: center;
             width: calc(33.33% - 0.5em);
             padding: 5%;
             margin-right: 0.75em;
             border-bottom:none;
             &:not(:last-child) {
-                border-right:1px solid rgba(255,255,255,0.1);
+                border-right:1px solid rgba(255,255,255,0.05);
                 border-bottom:0;
             }
             &:nth-child(3n+3) {
