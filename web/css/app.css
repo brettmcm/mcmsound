@@ -332,7 +332,8 @@ header {
     height: 30px;
     margin: 0.72em 0;
     transition: opacity 0.3s;
-    order: 10; }
+    order: 10;
+    pointer-events: all; }
     header .menu .line {
       display: block;
       width: 100%;
