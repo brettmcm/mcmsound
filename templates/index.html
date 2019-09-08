@@ -7,7 +7,7 @@
 
 {% block content %}
 
-{% include "components/header" with { "clear" : true, "active" : "home" } %}
+{% include "components/header" with { "clear" : false, "active" : "home" } %}
 
 <section class="hero">
   <img src="/lib/img/bg/desktop.jpg" class="bg">
@@ -15,7 +15,7 @@
       <img src="/lib/img/branding/mcm-logo.svg" class="logo">
   </div>
   <div class="copy">
-    <h4>The McM Sound</h4>
+    <h4>McM Sound</h4>
     <h1>{{entry.headline}}</h1>
     <div class="sep"></div>
     <div class="ctas">

@@ -124,7 +124,7 @@ header {
           width:100%;
           height:2px;
           background:$foreground;
-          transition:transform  0.5s $easing, background  0.5s $easing;
+          transition:transform  0.1s $easing, background  0.1s $easing;
       }
       &.open {
           .line {

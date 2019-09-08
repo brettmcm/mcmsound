@@ -6,7 +6,7 @@
 
 {% block content %}
 
-{% include "components/header" with { "clear" : true, "active" : "work" } %}
+{% include "components/header" with { "clear" : false, "active" : "work" } %}
 
 {% set query = {
     section : 'work',
@@ -83,7 +83,7 @@
                 {% endfor %}
 
             </section>
-            
+
     </section>
 
 
