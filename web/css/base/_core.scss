@@ -65,7 +65,7 @@ p {
 h1, h2, h3, h4 {
   color:$foreground;
   font-weight:700;
-  letter-spacing:0.1vw;
+  letter-spacing:0.2vw;
   margin:0;
   padding:0;
   line-height:1em;
@@ -78,13 +78,11 @@ h3 {
 h4  {
   font-size:0.8em;
   text-transform: uppercase;
-  letter-spacing: 0.5em;
   color: $primary-highlight;
 }
 h5  {
   font-size:0.9em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
   color:lighten($background-highlight, 25%);
 }
 
@@ -210,6 +208,13 @@ button {
     }
 }
 
+section.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    width: 100%;
+}
 
 section.cta {
     background:$background-highlight;

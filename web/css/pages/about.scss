@@ -1,11 +1,29 @@
 @import "./base/variables";
 @import "./base/core";
 
+section.section-header {
+    margin: 5% 5% 0 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 0;
+    a {
+        display: flex;
+        margin-right: 1em;
+    }
+    img {
+        width: 20px;
+        height: 20px;
+    }
+    h3 { font-size: 0.9em; }
+}
+
 section.ig-feed {
     // background: $background-highlight;
     background-image: linear-gradient($background,$background-highlight);
     box-sizing: border-box;
-    padding: 5%;
+    padding: 1em 5% 5% 5%;
 
     display: flex;
     flex-direction: row;

@@ -63,7 +63,7 @@ p {
 h1, h2, h3, h4 {
   color: white;
   font-weight: 700;
-  letter-spacing: 0.1vw;
+  letter-spacing: 0.2vw;
   margin: 0;
   padding: 0;
   line-height: 1em; }
@@ -80,13 +80,11 @@ h3 {
 h4 {
   font-size: 0.8em;
   text-transform: uppercase;
-  letter-spacing: 0.5em;
   color: #35eec6; }
 
 h5 {
   font-size: 0.9em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
   color: #595c62; }
 
 button {
@@ -188,6 +186,13 @@ button {
     .breadcrumb a svg {
       margin-right: 0.75em;
       stroke: white; }
+
+section.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  width: 100%; }
 
 section.cta {
   background: #1c1d1f;
