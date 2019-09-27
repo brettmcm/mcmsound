@@ -270,6 +270,9 @@ section.hero {
       color: #35eec6; }
     section.hero .copy h1 {
       margin: 0.25em 0 0 0; }
+      @media screen and (max-width: 960px) {
+        section.hero .copy h1 {
+          font-size: 1.5em; } }
     section.hero .copy h4 {
       margin: 0;
       padding: 0;
