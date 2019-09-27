@@ -9,14 +9,33 @@
 {% include "components/header" with { "clear" : false, "active" : "about" } %}
 
 
-
-<section class="intro first">
-    <div class="copy">
-        <h4>{{entry.headline}}</h4>
-        <h1>{{entry.title}}</h1>
-        {{entry.body}}
-    </div>
+<section class="overview hero lead"
+    style="background-image: url('{{entry.posterImage.one().getUrl()}}')"
+>
+    <h4>{{entry.headline}}</h4>
+    <h1>{{entry.title}}</h1>
+    {{entry.body}}
 </section>
+
+{% for section in entry.sections.all() %}
+
+    <section class="content-section {{section.justify}}">
+
+        {% if section.photo is defined and section.photo is not empty %}
+            <img src="{{section.photo.one().getUrl()}}">
+        {% endif %}
+
+        <div class="copy">
+            <h4>{{section.subhead}}</h4>
+            <h2>{{section.headline}}</h2>
+            {{section.body}}
+        </div>
+        {# <img src="/lib/assets/photos/jd.jpg"> #}
+
+
+    </section>
+
+{% endfor %}
 
 
 <section class="section-header">
@@ -53,6 +72,16 @@
         <section class="button">
             <a href="http://instagram.com/{{social.instagramHandle}}"><button class="secondary">Follow</button></a>
         </section>
+
+        <section class="cta">
+
+            <p class="lead">{{callToAction.headline}}</p>
+            {% for button in callToAction.buttons %}
+                <a href="{{button.buttonLink}}"><button class="{{button.style}}">{{button.label}}</button></a>
+            {% endfor %}
+
+        </section>
+
 
 </section>
 
