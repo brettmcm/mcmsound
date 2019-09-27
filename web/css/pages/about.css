@@ -232,6 +232,8 @@ section.content-section {
     max-width: 700px;
     box-sizing: border-box;
     margin-bottom: 2em; }
+    section.content-section .copy h4, section.content-section img h4 {
+      margin-bottom: 1em; }
   @media screen and (min-width: 960px) {
     section.content-section .copy, section.content-section img {
       width: 50%; }
