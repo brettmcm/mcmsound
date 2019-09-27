@@ -16,6 +16,9 @@ article {
   article p, article h1 {
     width: 100%;
     max-width: 1200px; }
+  @media screen and (max-width: 960px) {
+    article h1 {
+      font-size: 1.5em; } }
   article img.cover {
     width: 100%;
     max-width: 1200px;
