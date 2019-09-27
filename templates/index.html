@@ -76,10 +76,10 @@
 
     <h5>Top Content Producers Trust <span>McM Sound</span></h5>
     <div class="logos">
-      <div class="logo"><img src="lib/img/clients/nick.svg"></div>
-      <div class="logo"><img src="lib/img/clients/syfy.svg"></div>
-      <div class="logo"><img src="lib/img/clients/epix.svg"></div>
-      <div class="logo"><img src="lib/img/clients/vh1.svg"></div>
+        {% set clients = craft.entries.section('clients').level(1).all() %}
+        {% for client in clients %}
+            <div class="logo"><img src="{{client.logo.one().getUrl()}}"></div>
+        {% endfor %}
     </div>
 
     <section class="cta">
