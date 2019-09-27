@@ -175,7 +175,7 @@ button {
   justify-content: flex-start;
   align-items: flex-end;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 8em 0 0 0;
+  padding: 10em 0 0 0;
   margin: 0 5vw;
   list-style: none; }
   .breadcrumb a {
@@ -250,7 +250,8 @@ header {
   top: 0;
   box-sizing: border-box;
   padding: 2em 5%;
-  pointer-events: none; }
+  pointer-events: none;
+  border-bottom: 1px solid #1d1d1d; }
   header .header-bg {
     position: absolute;
     top: 0;

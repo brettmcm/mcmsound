@@ -25,7 +25,20 @@
 
 </article>
 
+<section class="article-footer">
 
+    <section class="cta">
+
+        <p class="lead">{{callToAction.headline}}</p>
+        {% for button in callToAction.buttons %}
+            <a href="{{button.buttonLink}}"><button class="{{button.style}}">{{button.label}}</button></a>
+        {% endfor %}
+
+    </section>
+
+</section>
+
+{% includeJsFile "/js/vendors/jquery/jquery-3.1.0.min.js" %}
 {% includeJsFile "/js/main.js" %}
 
 {% endblock %}

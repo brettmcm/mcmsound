@@ -98,3 +98,14 @@ article {
     }
 
 }
+
+section.article-footer {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    background: $background-highlight;
+    width: 100%;
+    padding:0 5% 15em 5%;
+}

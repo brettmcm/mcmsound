@@ -78,4 +78,14 @@ article {
       article section.video video {
         width: 100%; }
 
+section.article-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  background: #1c1d1f;
+  width: 100%;
+  padding: 0 5% 15em 5%; }
+
 /*# sourceMappingURL=news.css.map */

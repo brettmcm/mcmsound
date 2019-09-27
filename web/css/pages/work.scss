@@ -8,14 +8,16 @@
     justify-content: flex-start;
     align-items: flex-end;
     border-bottom:1px solid rgba(255,255,255,0.1);
-    padding: 8em 0 0 0;
+    padding: 10em 0 0 0;
     margin: 0 5vw;
     list-style: none;
+    overflow-x: scroll;
     .tab {
         display: inline-block;
         list-style: none;
         padding:1em 1.5em;
         border-bottom:2px solid rgba(0,0,0,0);
+        white-space: nowrap;
         &.active {
             border-bottom:2px solid $primary-highlight;
         }
