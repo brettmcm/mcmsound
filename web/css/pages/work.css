@@ -224,8 +224,10 @@ section.cta {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 10em 0 0 0;
   margin: 0 5vw;
-  list-style: none;
-  overflow-x: scroll; }
+  list-style: none; }
+  @media screen and (max-width: 510px) {
+    .tabs {
+      overflow-x: scroll; } }
   .tabs .tab {
     display: inline-block;
     list-style: none;

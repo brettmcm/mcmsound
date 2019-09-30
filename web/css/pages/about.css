@@ -225,7 +225,7 @@ section.content-section {
   margin: 5%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center; }
   section.content-section .copy, section.content-section img {
     width: 100%;
@@ -287,7 +287,8 @@ section.ig-feed {
         height: 100%;
         width: 100%;
         transform: scale(1.02);
-        transition: transform 0.3s; }
+        transition: transform 0.3s;
+        object-fit: cover; }
         section.ig-feed .ig-post .post-holder img:hover {
           transform: scale(1); }
   @media screen and (min-width: 960px) {
