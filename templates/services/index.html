@@ -8,13 +8,14 @@
 
 {% include "components/header" with { "clear" : false, "active" : "services" } %}
 
-
-
-<section class="intro first">
+<section class="overview hero lead"
+    style="background-image: url('{{entry.posterImage.one().getUrl()}}')"
+>
     <h4>{{entry.headline}}</h4>
     <h1>{{entry.title}}</h1>
     {{entry.body}}
 </section>
+
 
 
 <section class="services section">

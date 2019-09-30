@@ -12,7 +12,7 @@ section.content-section {
     margin: 5%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     .copy, img {
         width: 100%;
@@ -81,6 +81,7 @@ section.ig-feed {
                 width: 100%;
                 transform: scale(1.02);
                 transition: transform 0.3s;
+                object-fit: cover;
                 &:hover {
                     transform: scale(1);
                 }
