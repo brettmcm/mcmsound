@@ -11,7 +11,9 @@
     padding: 10em 0 0 0;
     margin: 0 5vw;
     list-style: none;
-    overflow-x: scroll;
+    @media screen and (hover: none) and {(max-width:$break-large) {
+        overflow-x: scroll;
+    }
     .tab {
         display: inline-block;
         list-style: none;
