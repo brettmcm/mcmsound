@@ -616,16 +616,18 @@ section.services {
     section.services {
       flex-direction: row; }
       section.services .service {
-        width: calc(33.33% - 0.5em);
+        width: calc(50% - 0.5em);
         padding: 5%;
-        margin-right: 0.75em;
         border-bottom: none; }
         section.services .service:not(:last-child) {
-          border-right: 1px solid rgba(255, 255, 255, 0.05);
+          border-right: 0;
           border-bottom: 0; }
         section.services .service:nth-child(3n+3) {
           margin-right: 0;
           border-right: 0; } }
+  @media screen and (min-width: 1920px) {
+    section.services .service {
+      width: calc(25% - 0.5em); } }
 
 .grid {
   position: relative;

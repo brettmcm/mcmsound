@@ -37,12 +37,11 @@ section.services {
     @media screen and (min-width: $break-large) {
         flex-direction:row;
         .service {
-            width: calc(33.33% - 0.5em);
+            width: calc(50% - 0.5em);
             padding: 5%;
-            margin-right: 0.75em;
             border-bottom:none;
             &:not(:last-child) {
-                border-right:1px solid rgba(255,255,255,0.05);
+                border-right:0;
                 border-bottom:0;
             }
             &:nth-child(3n+3) {
@@ -50,6 +49,10 @@ section.services {
                 border-right: 0;
             }
         }
-
+    }
+    @media screen and (min-width: $break-xxxl) {
+        .service {
+            width: calc(25% - 0.5em);
+        }
     }
 }
