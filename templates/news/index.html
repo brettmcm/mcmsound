@@ -5,33 +5,53 @@
 
 {% block content %}
 
-{% include "components/header" with { "clear" : false, "active" : "news" } %}
+{% include "components/header" with { "clear" : false, "active" : "blog" } %}
 
 
 
-<section class="intro first">
+
+
+{% set featured = entry.featuredPost.one() %}
+<section class="hero">
+  <img src="{{featured.posterImage.one().getUrl()}}" class="bg">
+  <div class="copy">
+      <p class="caption date">{{featured.postDate|date("F d, y")}}</p>
+      <h3>{{featured.title}}</h3>
+      {{featured.body}}
+      <a href="{{featured.getUrl()}}"><button class="primary">Read More</button></a/>
+  </div>
+</section>
+
+
+{# <section class="intro first">
     <div class="copy">
         <h4>{{entry.headline}}</h4>
         <h1>{{entry.title}}</h1>
         {{entry.body}}
     </div>
-</section>
+</section> #}
+
+
 
 
 <section class="cards solo">
 
     {% set articles = craft.entries().section('newsFeed').all() %}
     {% for article in articles %}
-        {% set coverImage = article.posterImage.one() %}
-        <a href="{{article.getUrl()}}" class="card">
-            {% if coverImage is defined and coverImage is not null %}
-                <img src="{{coverImage.getUrl()}}" />
-            {% endif %}
-            <p class="caption date">{{article.postDate|date("F d, y")}}</p>
-            <h3>{{article.title}}</h3>
-            <p>{{article.body}}</p>
-            <button class="text">Read More</button>
-        </a>
+
+        {% if article.slug != featured.slug %}
+            {% set coverImage = article.posterImage.one() %}
+            <a href="{{article.getUrl()}}" class="card">
+                {% if coverImage is defined and coverImage is not null %}
+                    <img src="{{coverImage.getUrl()}}" />
+                {% endif %}
+                <p class="caption date">{{article.postDate|date("F d, y")}}</p>
+                <h3>{{article.title}}</h3>
+                <p>{{article.body}}</p>
+                <button class="text">Read More</button>
+            </a>
+        {% endif %}
+
     {% endfor %}
 
     <section class="cta">
