@@ -8,23 +8,47 @@ section.overview {
     padding: calc(6em + 5vw) 5% 0 5%;
     width: 100%;
 
+    background-position: center center;
+    background-size: cover;
+
     h4  {
         margin-bottom: 1em;
     }
     p {
         max-width: 750px;
+        margin-bottom: 0;
     }
     @media screen and (min-width: $break-large) {
-        align-items: center;
-        h4, h2, p { text-align: center; }
+        align-items: flex-start;
     }
-    &.lead {
-        h2 {
-            font-size: 2.7em;
+    &.title {
+        padding: calc(3em + 5vw) 5%;
+    }
+    &.hero {
+        padding: 0 5%;
+        height: calc(80vh - 6em);
+        img.bg {
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        p {
-            font-size: 1.25em;
-            line-height: 1.3em;
+        .copy {
+            z-index:1;
+            box-sizing: border-box;
+            max-width: 750px;
+            border-radius: 3px;
+            h4 { display: inline; }
+            a { margin-top: 1em; }
+
+            &.left { align-self: flex-start; text-align: left; }
+            &.center { align-self: center; text-align: center; }
+            &.right { align-self: flex-end; text-align: right; }
+
+            &.bg-1 { background: rgba(0, 0, 0, 0.81); padding: 3%; }
+
         }
     }
 }

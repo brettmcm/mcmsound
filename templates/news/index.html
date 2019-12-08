@@ -12,24 +12,15 @@
 
 
 {% set featured = entry.featuredPost.one() %}
-<section class="hero">
+<section class="overview hero">
   <img src="{{featured.posterImage.one().getUrl()}}" class="bg">
-  <div class="copy">
-      <p class="caption date">{{featured.postDate|date("F d, y")}}</p>
+  <div class="copy {{entry.align}} bg-{{entry.background}}">
+      <h4>{{entry.title}}</h4>
       <h3>{{featured.title}}</h3>
       {{featured.body}}
       <a href="{{featured.getUrl()}}"><button class="primary">Read More</button></a/>
   </div>
 </section>
-
-
-{# <section class="intro first">
-    <div class="copy">
-        <h4>{{entry.headline}}</h4>
-        <h1>{{entry.title}}</h1>
-        {{entry.body}}
-    </div>
-</section> #}
 
 
 
@@ -45,7 +36,7 @@
                 {% if coverImage is defined and coverImage is not null %}
                     <img src="{{coverImage.getUrl()}}" />
                 {% endif %}
-                <p class="caption date">{{article.postDate|date("F d, y")}}</p>
+                <p class="caption date">{{article.postDate|date("F d, Y")}}</p>
                 <h3>{{article.title}}</h3>
                 <p>{{article.body}}</p>
                 <button class="text">Read More</button>

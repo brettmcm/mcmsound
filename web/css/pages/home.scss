@@ -8,7 +8,7 @@ section.hero {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    padding: 8em 0 6em 0;
+    padding: 3em 0 6em 0;
     overflow:hidden;
     background: $background;
 
@@ -27,7 +27,6 @@ section.hero {
         width: 150vw;
         margin-bottom:2em;
         transform: translate(-40vw, 0);
-        margin-top: 4em;
     }
     .copy {
         position: relative;
@@ -69,6 +68,7 @@ section.hero {
                 left:0;
                 width: 200%;
                 transform: translateX(-40%);
+                margin-top: 6em;
             }
         }
         .copy {

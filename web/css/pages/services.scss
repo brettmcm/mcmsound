@@ -1,12 +1,5 @@
 @import "./base/variables";
 
-section.overview.hero {
-    background-position: center center;
-    background-size: cover;
-    box-sizing: border-box;
-    padding: calc(8em + 5vw) 5% 0 5%;
-}
-
 section.services.section {
     background-image: linear-gradient($background,$background-highlight);
     margin-top:0;

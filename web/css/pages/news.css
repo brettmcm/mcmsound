@@ -1,35 +1,5 @@
 @-ms-viewport {
   width: device-width; }
-section.hero {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 8em 0 0 0;
-  overflow: hidden;
-  background: #111;
-  width: 100%;
-  height: calc(100vh - 10em); }
-  section.hero img.bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.5; }
-  section.hero .copy {
-    position: relative;
-    width: 90vw;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center; }
-
 section.cards {
   background: #1c1d1f;
   border-bottom: 1px solid #212224; }
