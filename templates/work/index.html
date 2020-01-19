@@ -12,9 +12,7 @@
     .slug("work")
     .one() %}
 
-<section class="overview title"
-    style="background-image: url('{{section.posterImage.one().getUrl()}}')"
->
+<section class="overview title" style="background-image: url('{{section.posterImage.one().getUrl()}}')">
     <h4>{{section.headline}}</h4>
     <h1>{{section.title}}</h1>
     {{section.body}}
@@ -26,11 +24,11 @@
 } %}
 
 {% if category is defined %}
-    {% set query = query|merge({
+{% set query = query|merge({
         search : 'work-categories:'~category.slug
     }) %}
 {% else %}
-    {% set query = query|merge({
+{% set query = query|merge({
         search : 'work-categories'
     }) %}
 {% endif %}
@@ -40,9 +38,12 @@
 
 <div class="subnav">
     <ul class="tabs" id="filtermenu">
-        <li><a id="all" href="{{siteUrl}}work/" class="{% if category is defined %}tab{% else %}tab active{% endif %}">All</a></li>
+        <li><a id="all" href="{{siteUrl}}work/"
+                class="{% if category is defined %}tab{% else %}tab active{% endif %}">All</a></li>
         {% for cat in craft.categories.all() %}
-            <li><a id="{{cat.slug}}" href="{{siteUrl}}work/{{cat.slug}}" class="tab {% if category is defined and category|replace(' ', '-')|lower is same as(cat.slug) %}active{% endif %}">{{cat.title}}</a></li>
+        <li><a id="{{cat.slug}}" href="{{siteUrl}}work/{{cat.slug}}"
+                class="tab {% if category is defined and category|replace(' ', '-')|lower is same as(cat.slug) %}active{% endif %}">{{cat.title}}</a>
+        </li>
         {% endfor %}
     </ul>
 </div>
@@ -53,38 +54,49 @@
     <section class="grid">
 
         {% if category is defined %}
-            {% set workCollection = craft.entries.relatedTo(category) %}
+        {% set workCollection = craft.entries.relatedTo(category) %}
         {% else %}
-            {% set workCollection = craft.entries.section('videos') %}
+        {% set workCollection = craft.entries.section('videos') %}
         {% endif %}
 
 
-            {% for video in workCollection.all() %}
+        {% for video in workCollection.all() %}
 
-                {% set quicktime = video.quicktime.one().getUrl() %}
-                {% set poster = video.posterImage.one().getUrl() %}
+        {% set quicktime = video.quicktime.one().getUrl() %}
+        {% set poster = video.posterImage.one().getUrl() %}
 
-                <div class="video">
-                    <video controls poster="{{poster}}">
-                        <source src="{{quicktime}}" type="video/mp4">
-                    </video>
-                </div>
+        <div class="video">
+            <video controls poster="{{poster}}">
+                <source src="{{quicktime}}" type="video/mp4">
+            </video>
+        </div>
 
+        {% endfor %}
+
+        <section class="loader">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+                <title>circle-03</title>
+                <g stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" fill="#76eac8" stroke="#76eac8">
+                    <g class="nc-loop_circle-03-64" transform="rotate(322.4599217674364 32 32)">
+                        <circle opacity="0.4" fill="none" stroke="#76eac8" stroke-miterlimit="10" cx="32" cy="32"
+                            r="30"></circle>
+                        <path data-color="color-2" fill="none" stroke-miterlimit="10"
+                            d="M32,2c16.56854,0,30,13.43146,30,30" stroke-linecap="butt"></path>
+                    </g>
+                    <script>!function () { function t(t) { return .5 > t ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1 } function i(t) { this.element = t, this.animationId, this.start = null, this.init() } if (!window.requestAnimationFrame) { var n = null; window.requestAnimationFrame = function (t, i) { var e = (new Date).getTime(); n || (n = e); var a = Math.max(0, 16 - (e - n)), o = window.setTimeout(function () { t(e + a) }, a); return n = e + a, o } } i.prototype.init = function () { var t = this; this.animationId = window.requestAnimationFrame(t.triggerAnimation.bind(t)) }, i.prototype.reset = function () { var t = this; window.cancelAnimationFrame(t.animationId) }, i.prototype.triggerAnimation = function (i) { var n = this; this.start || (this.start = i); var e = i - this.start; 900 > e || (this.start = this.start + 900), this.element.setAttribute("transform", "rotate(" + Math.min(900 * t(e / 900) / 2.5, 360) + " 32 32)"); if (document.documentElement.contains(this.element)) window.requestAnimationFrame(n.triggerAnimation.bind(n)) }; var e = document.getElementsByClassName("nc-loop_circle-03-64"), a = []; if (e) for (var o = 0; e.length > o; o++)!function (t) { a.push(new i(e[t])) }(o); document.addEventListener("visibilitychange", function () { "hidden" == document.visibilityState ? a.forEach(function (t) { t.reset() }) : a.forEach(function (t) { t.init() }) }) }();</script>
+                </g>
+            </svg>
+        </section>
+
+
+        <section class="cta">
+
+            <p class="lead">{{callToAction.headline}}</p>
+            {% for button in callToAction.buttons %}
+            <a href="{{button.buttonLink}}"><button class="{{button.style}}">{{button.label}}</button></a>
             {% endfor %}
 
-            <section class="loader">
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><title>circle-03</title><g stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" fill="#76eac8" stroke="#76eac8"><g class="nc-loop_circle-03-64" transform="rotate(322.4599217674364 32 32)"> <circle opacity="0.4" fill="none" stroke="#76eac8" stroke-miterlimit="10" cx="32" cy="32" r="30"></circle> <path data-color="color-2" fill="none" stroke-miterlimit="10" d="M32,2c16.56854,0,30,13.43146,30,30" stroke-linecap="butt"></path> </g> <script>!function(){function t(t){return.5>t?4*t*t*t:(t-1)*(2*t-2)*(2*t-2)+1}function i(t){this.element=t,this.animationId,this.start=null,this.init()}if(!window.requestAnimationFrame){var n=null;window.requestAnimationFrame=function(t,i){var e=(new Date).getTime();n||(n=e);var a=Math.max(0,16-(e-n)),o=window.setTimeout(function(){t(e+a)},a);return n=e+a,o}}i.prototype.init=function(){var t=this;this.animationId=window.requestAnimationFrame(t.triggerAnimation.bind(t))},i.prototype.reset=function(){var t=this;window.cancelAnimationFrame(t.animationId)},i.prototype.triggerAnimation=function(i){var n=this;this.start||(this.start=i);var e=i-this.start;900>e||(this.start=this.start+900),this.element.setAttribute("transform","rotate("+Math.min(900*t(e/900)/2.5,360)+" 32 32)");if(document.documentElement.contains(this.element))window.requestAnimationFrame(n.triggerAnimation.bind(n))};var e=document.getElementsByClassName("nc-loop_circle-03-64"),a=[];if(e)for(var o=0;e.length>o;o++)!function(t){a.push(new i(e[t]))}(o);document.addEventListener("visibilitychange",function(){"hidden"==document.visibilityState?a.forEach(function(t){t.reset()}):a.forEach(function(t){t.init()})})}();</script></g></svg>
-            </section>
-
-
-            <section class="cta">
-
-                <p class="lead">{{callToAction.headline}}</p>
-                {% for button in callToAction.buttons %}
-                    <a href="{{button.buttonLink}}"><button class="{{button.style}}">{{button.label}}</button></a>
-                {% endfor %}
-
-            </section>
+        </section>
 
     </section>
 
