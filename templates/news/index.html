@@ -12,8 +12,16 @@
 
 
 {% set featured = entry.featuredPost.one() %}
+
+{% if featured.heroBanner is defined and featured.heroBanner is not empty %}
+    {% set banner = featured.heroBanner.one() %}
+{% else %}
+    {% set banner = featured.posterImage.one() %}
+{% endif %}    
+
+
 <section class="overview hero">
-  <img src="{{featured.posterImage.one().getUrl()}}" class="bg">
+  <img src="{{banner.getUrl()}}" class="bg">
   <div class="copy {{entry.align}} bg-{{entry.background}}">
       <h4>{{entry.title}}</h4>
       <h3>{{featured.title}}</h3>
