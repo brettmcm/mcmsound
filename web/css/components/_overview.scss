@@ -1,4 +1,5 @@
 section.overview {
+    position: relative;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -23,6 +24,9 @@ section.overview {
     }
     &.title {
         padding: calc(3em + 5vw) 5%;
+    }
+    &.condensed {
+        padding: calc(3em + 5vw) 5% 2em 5%;
     }
     &.hero {
         padding: 0 5%;

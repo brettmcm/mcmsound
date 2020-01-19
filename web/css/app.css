@@ -482,6 +482,7 @@ section.intro {
     max-width: 700px; }
 
 section.overview {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -501,6 +502,8 @@ section.overview {
       align-items: flex-start; } }
   section.overview.title {
     padding: calc(3em + 5vw) 5%; }
+  section.overview.condensed {
+    padding: calc(3em + 5vw) 5% 2em 5%; }
   section.overview.hero {
     padding: 0 5%;
     height: calc(80vh - 6em); }
