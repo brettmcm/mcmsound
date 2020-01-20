@@ -26,11 +26,11 @@ section.overview {
         padding: calc(3em + 5vw) 5%;
     }
     &.condensed {
-        padding: calc(3em + 5vw) 5% 2em 5%;
+        padding: 4em 5% 2em 5%;
     }
     &.hero {
         padding: 0 5%;
-        height: calc(80vh - 6em);
+        height: calc(70vh - 6em);
         img.bg {
             position: absolute;
             top:0;

@@ -503,10 +503,10 @@ section.overview {
   section.overview.title {
     padding: calc(3em + 5vw) 5%; }
   section.overview.condensed {
-    padding: calc(3em + 5vw) 5% 2em 5%; }
+    padding: 4em 5% 2em 5%; }
   section.overview.hero {
     padding: 0 5%;
-    height: calc(80vh - 6em); }
+    height: calc(70vh - 6em); }
     section.overview.hero img.bg {
       position: absolute;
       top: 0;
