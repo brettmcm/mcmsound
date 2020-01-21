@@ -5,33 +5,57 @@
 
 {% block content %}
 
-{% include "components/header" with { "clear" : false, "active" : "news" } %}
+{% include "components/header" with { "clear" : false, "active" : "blog" } %}
 
 
 
-<section class="intro first">
-    <div class="copy">
-        <h4>{{entry.headline}}</h4>
-        <h1>{{entry.title}}</h1>
-        {{entry.body}}
-    </div>
+
+
+{% set featured = entry.featuredPost.one() %}
+
+{% if featured.heroBanner is defined and featured.heroBanner is not empty %}
+    {% set banner = featured.heroBanner.one() %}
+{% else %}
+    {% set banner = featured.posterImage.one() %}
+{% endif %}    
+
+
+<section class="overview hero">
+  <img src="{{banner.getUrl()}}" class="bg">
+  <div class="copy {{entry.align}} bg-{{entry.background}}">
+      <h4>{{entry.title}}</h4>
+      <h3>{{featured.title}}</h3>
+      {{featured.body}}
+      <a href="{{featured.getUrl()}}"><button class="primary">Read More</button></a/>
+  </div>
 </section>
 
+
+
+<section class="overview condensed">
+    <h4>{{entry.headline}}</h4>
+    <h1>{{entry.title}}</h1>
+    {{entry.body}}
+</section>
 
 <section class="cards solo">
 
     {% set articles = craft.entries().section('newsFeed').all() %}
     {% for article in articles %}
-        {% set coverImage = article.posterImage.one() %}
-        <a href="{{article.getUrl()}}" class="card">
-            {% if coverImage is defined and coverImage is not null %}
-                <img src="{{coverImage.getUrl()}}" />
-            {% endif %}
-            <p class="caption date">{{article.postDate|date("F d, y")}}</p>
-            <h3>{{article.title}}</h3>
-            <p>{{article.body}}</p>
-            <button class="text">Read More</button>
-        </a>
+
+        {% if article.slug != featured.slug %}
+            {% set coverImage = article.posterImage.one() %}
+            <a href="{{article.getUrl()}}" class="card">
+                {% if coverImage is defined and coverImage is not null %}
+                    <img src="{{coverImage.getUrl()}}" />
+                {% endif %}
+                <p class="caption date">{{article.postDate|date("F d, Y")}}</p>
+                <h3>{{article.title}}</h3>
+                <p>{{article.body}}</p>
+                <button class="text">Read More</button>
+            </a>
+        {% endif %}
+
     {% endfor %}
 
     <section class="cta">

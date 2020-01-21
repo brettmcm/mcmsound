@@ -1,11 +1,5 @@
 @-ms-viewport {
   width: device-width; }
-section.overview.hero {
-  background-position: center center;
-  background-size: cover;
-  box-sizing: border-box;
-  padding: calc(8em + 5vw) 5% 0 5%; }
-
 section.services.section {
   background-image: linear-gradient(#111, #1c1d1f);
   margin-top: 0; }

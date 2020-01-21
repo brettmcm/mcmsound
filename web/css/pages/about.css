@@ -63,7 +63,7 @@ p {
 h1, h2, h3, h4 {
   color: white;
   font-weight: 700;
-  letter-spacing: 0.2vw;
+  letter-spacing: 0.1vw;
   margin: 0;
   padding: 0;
   line-height: 1em; }
@@ -175,8 +175,7 @@ button {
   justify-content: flex-start;
   align-items: flex-end;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 10em 0 0 0;
-  margin: 0 5vw;
+  padding: 0 5%;
   list-style: none; }
   .breadcrumb a {
     display: inline-block;
@@ -215,18 +214,12 @@ section.cta {
       section.cta p {
         margin: 0 2em 0 0; } }
 
-section.overview.hero {
-  background-position: center center;
-  background-size: cover;
-  box-sizing: border-box;
-  padding: calc(8em + 5vw) 5% 0 5%; }
-
 section.content-section {
   margin: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: flex-start; }
   section.content-section .copy, section.content-section img {
     width: 100%;
     max-width: 700px;

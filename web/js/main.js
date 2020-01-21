@@ -66,9 +66,11 @@ $(document).ready(function () {
       $('body').on('click', '#filtermenu a', onFilterClick);
   });
 
+
   // Event handler for the filter click
   function onFilterClick (e)
   {
+
       e.preventDefault();
       var $filter = $(e.currentTarget);
       var href = $filter.attr('href');
@@ -78,6 +80,10 @@ $(document).ready(function () {
       }
       $.ajax($filter.attr("href"), {
           dataType : 'html',
+          beforeSend: function() {
+             $('.video').hide();
+             $('.loader').show();
+          },
           success : function (response) {
               refreshProjects(response);
           }
@@ -93,6 +99,8 @@ $(document).ready(function () {
       // Update the .projects DOM element with new HTML
       var $html = $('<div />').append(html);
       $('.category-content').html($html.find('.category-content').html());
+      $('.video').show();
+      $('.loader').hide();
 
   }
 

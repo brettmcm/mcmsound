@@ -63,7 +63,7 @@ p {
 h1, h2, h3, h4 {
   color: white;
   font-weight: 700;
-  letter-spacing: 0.2vw;
+  letter-spacing: 0.1vw;
   margin: 0;
   padding: 0;
   line-height: 1em; }
@@ -175,8 +175,7 @@ button {
   justify-content: flex-start;
   align-items: flex-end;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 10em 0 0 0;
-  margin: 0 5vw;
+  padding: 0 5%;
   list-style: none; }
   .breadcrumb a {
     display: inline-block;
@@ -251,7 +250,7 @@ section.hero {
       font-weight: normal;
       font-size: 0.8em;
       text-transform: uppercase;
-      letter-spacing: 0.5em;
+      letter-spacing: 0.05em;
       color: #35ee91; }
     section.hero .copy h1 {
       margin: 0.25em 0 0 0; }
@@ -259,7 +258,7 @@ section.hero {
       margin: 0;
       padding: 0;
       text-transform: uppercase;
-      letter-spacing: 0.15em; }
+      letter-spacing: 0.05em; }
       section.hero .copy h4 span {
         display: inline;
         white-space: nowrap; }

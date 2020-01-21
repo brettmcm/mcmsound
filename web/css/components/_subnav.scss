@@ -1,0 +1,31 @@
+.subnav {
+    position:relative;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    padding: 0;
+    .tabs {
+        display:flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+        list-style: none;
+        padding: 0 5%;
+        .tab {
+            display: inline-block;
+            list-style: none;
+            padding:1.5em;
+            border-bottom:2px solid rgba(0,0,0,0);
+            white-space: nowrap;
+            &.active {
+                border-bottom:2px solid $primary-highlight;
+            }
+        }
+
+        @media screen and (max-width:$break-small) {
+            overflow-x: scroll;
+        }
+    }
+}

@@ -63,7 +63,7 @@ p {
 h1, h2, h3, h4 {
   color: white;
   font-weight: 700;
-  letter-spacing: 0.2vw;
+  letter-spacing: 0.1vw;
   margin: 0;
   padding: 0;
   line-height: 1em; }
@@ -175,8 +175,7 @@ button {
   justify-content: flex-start;
   align-items: flex-end;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 10em 0 0 0;
-  margin: 0 5vw;
+  padding: 0 5%;
   list-style: none; }
   .breadcrumb a {
     display: inline-block;
@@ -244,12 +243,13 @@ header {
   position: fixed;
   z-index: 1000;
   width: 100%;
+  height: 6em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   top: 0;
   box-sizing: border-box;
-  padding: 2em 5%;
+  padding: 0 5%;
   pointer-events: none;
   border-bottom: 1px solid #1d1d1d; }
   header .header-bg {
@@ -359,6 +359,12 @@ header {
     @media screen and (min-width: 960px) {
       header .menu {
         display: none; } }
+
+.header-spacer {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 6em; }
 
 footer {
   position: relative;
@@ -476,27 +482,59 @@ section.intro {
     max-width: 700px; }
 
 section.overview {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   box-sizing: border-box;
   padding: calc(6em + 5vw) 5% 0 5%;
-  width: 100%; }
+  width: 100%;
+  background-position: center center;
+  background-size: cover; }
   section.overview h4 {
     margin-bottom: 1em; }
   section.overview p {
-    max-width: 750px; }
+    max-width: 750px;
+    margin-bottom: 0; }
   @media screen and (min-width: 960px) {
     section.overview {
-      align-items: center; }
-      section.overview h4, section.overview h2, section.overview p {
-        text-align: center; } }
-  section.overview.lead h2 {
-    font-size: 2.7em; }
-  section.overview.lead p {
-    font-size: 1.5em;
-    line-height: 1.3em; }
+      align-items: flex-start; } }
+  section.overview.title {
+    padding: calc(3em + 5vw) 5%; }
+  section.overview.condensed {
+    padding: 4em 5% 2em 5%; }
+  section.overview.hero {
+    padding: 0 5%;
+    height: calc(70vh - 6em); }
+    section.overview.hero img.bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+    section.overview.hero .copy {
+      z-index: 1;
+      box-sizing: border-box;
+      max-width: 750px;
+      border-radius: 3px; }
+      section.overview.hero .copy h4 {
+        display: inline; }
+      section.overview.hero .copy a {
+        margin-top: 1em; }
+      section.overview.hero .copy.left {
+        align-self: flex-start;
+        text-align: left; }
+      section.overview.hero .copy.center {
+        align-self: center;
+        text-align: center; }
+      section.overview.hero .copy.right {
+        align-self: flex-end;
+        text-align: right; }
+      section.overview.hero .copy.bg-1 {
+        background: rgba(0, 0, 0, 0.81);
+        padding: 3%; }
 
 @-ms-viewport {
   width: device-width; }
@@ -674,5 +712,32 @@ section.services {
       object-fit: cover; }
     .grid .card .copy {
       padding: calc(2em + 2vw); }
+
+.subnav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0; }
+  .subnav .tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    list-style: none;
+    padding: 0 5%; }
+    .subnav .tabs .tab {
+      display: inline-block;
+      list-style: none;
+      padding: 1.5em;
+      border-bottom: 2px solid rgba(0, 0, 0, 0);
+      white-space: nowrap; }
+      .subnav .tabs .tab.active {
+        border-bottom: 2px solid #35eec6; }
+    @media screen and (max-width: 640px) {
+      .subnav .tabs {
+        overflow-x: scroll; } }
 
 /*# sourceMappingURL=app.css.map */
