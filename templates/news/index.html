@@ -9,27 +9,29 @@
 
 
 
+{% if entry.featuredPost is defined and entry.featuredPost is not empty %}
 
 
-{% set featured = entry.featuredPost.one() %}
+    {% set featured = entry.featuredPost.one() %}
 
-{% if featured.heroBanner is defined and featured.heroBanner is not empty %}
-    {% set banner = featured.heroBanner.one() %}
-{% else %}
-    {% set banner = featured.posterImage.one() %}
-{% endif %}    
+    {% if featured.heroBanner is defined and featured.heroBanner is not empty %}
+        {% set banner = featured.heroBanner.one() %}
+    {% else %}
+        {% set banner = featured.posterImage.one() %}
+    {% endif %}
 
 
-<section class="overview hero">
-  <img src="{{banner.getUrl()}}" class="bg">
-  <div class="copy {{entry.align}} bg-{{entry.background}}">
-      <h4>{{entry.title}}</h4>
-      <h3>{{featured.title}}</h3>
-      {{featured.body}}
-      <a href="{{featured.getUrl()}}"><button class="primary">Read More</button></a/>
-  </div>
-</section>
+    <section class="overview hero">
+        <img src="{{banner.getUrl()}}" class="bg">
+        <div class="copy {{entry.align}} bg-{{entry.background}}">
+            <h4>{{entry.title}}</h4>
+            <h3>{{featured.title}}</h3>
+            {{featured.body}}
+            <a href="{{featured.getUrl()}}"><button class="primary">Read More</button></a />
+        </div>
+    </section>
 
+{% endif %}
 
 
 <section class="overview condensed">
@@ -43,18 +45,25 @@
     {% set articles = craft.entries().section('newsFeed').all() %}
     {% for article in articles %}
 
-        {% if article.slug != featured.slug %}
-            {% set coverImage = article.posterImage.one() %}
-            <a href="{{article.getUrl()}}" class="card">
-                {% if coverImage is defined and coverImage is not null %}
-                    <img src="{{coverImage.getUrl()}}" />
-                {% endif %}
-                <p class="caption date">{{article.postDate|date("F d, Y")}}</p>
-                <h3>{{article.title}}</h3>
-                <p>{{article.body}}</p>
-                <button class="text">Read More</button>
-            </a>
-        {% endif %}
+    {% if entry.featuredPost is defined and entry.featuredPost is not empty %}
+        {% set featurecheck = featured.slug  %}
+    {% else %}
+        {% set featurecheck = null %}    
+    {% endif %}
+
+    {% if article.slug != featurecheck %}
+        {% set coverImage = article.posterImage.one() %}
+        <a href="{{article.getUrl()}}" class="card">
+            {% if coverImage is defined and coverImage is not null %}
+            <img src="{{coverImage.getUrl()}}" />
+            {% endif %}
+            <p class="caption date">{{article.postDate|date("F d, Y")}}</p>
+            <h3>{{article.title}}</h3>
+            <p>{{article.body}}</p>
+            <button class="text">Read More</button>
+        </a>
+     {% else %}   
+    {% endif %}
 
     {% endfor %}
 
@@ -62,7 +71,7 @@
 
         <p class="lead">{{callToAction.headline}}</p>
         {% for button in callToAction.buttons %}
-            <a href="{{button.buttonLink}}"><button class="{{button.style}}">{{button.label}}</button></a>
+        <a href="{{button.buttonLink}}"><button class="{{button.style}}">{{button.label}}</button></a>
         {% endfor %}
 
     </section>
