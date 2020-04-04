@@ -280,7 +280,7 @@ section.loader {
 
 div.content-viewer {
   position: fixed;
-  top: calc(var(--vh, 1vh) * 100);
+  top: calc(100vh + 100px);
   left: 0;
   width: 100vw;
   height: calc(var(--vh, 1vh) * 100);
