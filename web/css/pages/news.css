@@ -93,6 +93,7 @@ article section.image-with-text p.featured {
   }
 }
 article section.gallery {
+  width: 100%;
   max-width: 1400px;
   display: flex;
   flex-direction: column;

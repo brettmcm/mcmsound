@@ -1,7 +1,20 @@
+{% import '_macros/_utils' as m_utils %}
+
 {% block blockContent %}
     <section class="gallery {% if block.images|length > 1 %}diptych{% endif %}">
         {% for image in block.images %}
-            <img src="{{image.getUrl()}}" />
+            <img src="{{image.getUrl()}}"
+                 srcset="{{ m_utils.img(image) }}"
+                 {% if block.images|length > 1 %}
+                    sizes="(min-width: 1400px) 700px, 100vw"
+                 {% else %}
+                    sizes="(min-width: 1400px) 1400px, 100vw"
+                 {% endif %}   
+                 />
         {% endfor %}
     </section>
+
+    
+    
+
 {% endblock %}

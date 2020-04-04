@@ -1,8 +1,12 @@
+{% import '_macros/_utils' as m_utils %}
+
 {% block blockContent %}
     <section class="image-with-text {{block.imagePlacement}}">
         {% set image = block.image.first() %}
         {% if image is defined and image is not null %}
-            <img src="{{image.getUrl()}}" />
+            <img src="{{image.getUrl()}}"
+                 srcset="{{ m_utils.img(image) }}"
+                 sizes="(min-width: 960px) 840px, 100vw" />
         {% endif %}
         <p class="{% if block.featuredText %}featured{% endif %}">{{ block.text }}</p>
     </section>
