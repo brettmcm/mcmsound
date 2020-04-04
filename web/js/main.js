@@ -105,4 +105,17 @@ $(document).ready(function () {
   }
 
 
+  $('a.campaign').click(function (e) {
+    e.preventDefault();
+    $("body").addClass("no-scroll");
+    $(".content-viewer").addClass("enabled");
+  });
+
+  $('.content-viewer').find('.close').click(function (e) {
+    e.preventDefault();
+    $("body").removeClass("no-scroll");
+    $(".content-viewer").removeClass("enabled");
+  });
+
+
 });

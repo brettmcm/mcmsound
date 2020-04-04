@@ -14,3 +14,30 @@ section.loader {
     padding: 5%;
     text-align: center;
 }
+
+div.content-viewer {
+    position: fixed;
+    top:100vh;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    z-index:1000;
+    background: $background;
+
+    transition: top 0.3s cubic-bezier(0.8, 0, 0.2, 1);
+
+    svg.close {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+        fill: $foreground;
+        &:hover {
+            cursor: pointer;
+            opacity:0.8;
+        }
+    }
+
+    &.enabled {
+        top: 0;
+    }
+}

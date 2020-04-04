@@ -10,6 +10,9 @@ html, body {
   font-weight: 300;
   line-height: 1.5rem;
 }
+html.no-scroll, body.no-scroll {
+  overflow: hidden;
+}
 
 pre {
   color: white;

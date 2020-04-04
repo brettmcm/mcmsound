@@ -10,6 +10,9 @@ html, body {
   font-weight: 300;
   line-height: 1.5rem;
 }
+html.no-scroll, body.no-scroll {
+  overflow: hidden;
+}
 
 pre {
   color: white;
@@ -273,6 +276,30 @@ section.loader {
   width: 100%;
   padding: 5%;
   text-align: center;
+}
+
+div.content-viewer {
+  position: fixed;
+  top: 100vh;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background: #111;
+  transition: top 0.3s cubic-bezier(0.8, 0, 0.2, 1);
+}
+div.content-viewer svg.close {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  fill: white;
+}
+div.content-viewer svg.close:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+div.content-viewer.enabled {
+  top: 0;
 }
 
 /*# sourceMappingURL=work.css.map */
