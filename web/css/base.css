@@ -116,9 +116,14 @@ button {
   border: none;
   outline: none;
   border-radius: 2px;
+  justify-content: center;
+  align-items: center;
   font-size: 0.8em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+button svg {
+  margin: -1px 0 0 0.5em;
 }
 button:hover {
   cursor: pointer;
@@ -142,11 +147,13 @@ button.secondary {
   border: 1px solid white;
   background: none;
   color: white;
+  fill: white;
   box-shadow: none;
 }
 button.secondary:hover {
   border: 1px solid #35eec6;
   color: #111;
+  fill: #111;
   background: #35eec6;
   box-shadow: 0 10px 35px rgba(53, 238, 198, 0.3);
   transform: translateY(-1px);

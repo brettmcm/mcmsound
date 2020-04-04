@@ -1,3 +1,5 @@
+{% import '_macros/_utils' as m_utils %}
+
 {# Load CSS #}
 {% do view.registerCssFile("/css/pages/work.css") %}
 
@@ -62,14 +64,43 @@
 
         {% for video in workCollection.all() %}
 
-        {% set quicktime = video.quicktime.one().getUrl() %}
-        {% set poster = video.posterImage.one().getUrl() %}
+            {% set quicktime = video.quicktime.one().getUrl() %}
+            {% set poster = video.posterImage.one() %}
+            {% set campaign = video.associatedCampaign.one() %}
+            {% if campaign is defined and campaign is not null %}
+                {% set isCampaign = true %}
+            {% else %}
+                {% set isCampaign = false %}
+            {% endif %}
 
-        <div class="video">
-            <video controls poster="{{poster}}">
-                <source src="{{quicktime}}" type="video/mp4">
-            </video>
-        </div>
+            {% if poster is defined and poster is not null %}
+                <div class="poster">
+                    <img src="{{poster.getUrl()}}" class="poster" srcset="{{ m_utils.img(poster) }}"
+                    sizes="(min-width: 960px) 50vw, 100vw" />
+                    <a href="#" class="hoverstate {% if isCampaign %}campaign{% endif %}">
+                        <h2>{{video.title}}</h2>
+                        <button class="secondary">
+                            {% if isCampaign %}
+                                View Campaign
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 12 12">
+                                    <polygon points="6.793 3.793 0.586 10 2 11.414 8.207 5.207 11 8 11 1 4 1 6.793 3.793"></polygon>
+                                </svg>
+                            {% else %}
+                                Play Video
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 12 12">
+                                    <path d="M2.783.088A.5.5,0,0,0,2,.5v11a.5.5,0,0,0,.268.442A.49.49,0,0,0,2.5,12a.5.5,0,0,0,.283-.088l8-5.5a.5.5,0,0,0,0-.824Z"></path>
+                                </svg>
+                            {% endif %}
+                        </button>
+                    </a>
+                </div>
+            {% endif %}
+
+            <!-- <div class="video">
+                <video controls poster="{{poster}}">
+                    <source src="{{quicktime}}" type="video/mp4">
+                </video>
+            </div> -->
 
         {% endfor %}
 
