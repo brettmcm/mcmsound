@@ -22,7 +22,7 @@
             margin: 0;
             transition: opacity 0.3s;
         }
-        .hoverstate {
+        .work-piece {
             position: absolute;
             top: 0;
             left: 0;
@@ -36,6 +36,8 @@
             transition: opacity 0.3s cubic-bezier(0.7, 0, 0.3, 1);
             h2 {
                 margin-bottom: 1em;
+                width: 90%;
+                text-align: center;
             }
             h2, button {
                 transform: translateY(0.25em);
@@ -44,7 +46,7 @@
         }
         &:hover {
             img { opacity: 0.2; }
-            .hoverstate {
+            .work-piece {
                 opacity: 1;
                 h2, button {
                     transform: translateY(0);

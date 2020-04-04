@@ -77,7 +77,8 @@
                 <div class="poster">
                     <img src="{{poster.getUrl()}}" class="poster" srcset="{{ m_utils.img(poster) }}"
                     sizes="(min-width: 960px) 50vw, 100vw" />
-                    <a href="#" class="hoverstate {% if isCampaign %}campaign{% endif %}">
+                    <a href="#" class="work-piece"
+                        data-content="{% if isCampaign %}{{campaign.getUrl()}}{% else %}{{video.getUrl()}}{% endif %}">
                         <h2>{{video.title}}</h2>
                         <button class="secondary">
                             {% if isCampaign %}
@@ -95,12 +96,6 @@
                     </a>
                 </div>
             {% endif %}
-
-            <!-- <div class="video">
-                <video controls poster="{{poster}}">
-                    <source src="{{quicktime}}" type="video/mp4">
-                </video>
-            </div> -->
 
         {% endfor %}
 
@@ -139,6 +134,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="close">
         <polygon points="27.314 7.515 24.485 4.686 16 13.172 7.515 4.686 4.686 7.515 13.172 16 4.686 24.485 7.515 27.314 16 18.828 24.485 27.314 27.314 24.485 18.828 16 27.314 7.515"></polygon>
     </svg>
+    <div class="campaign-body"></div>
 </div>
 
 {% includeJsFile "/js/vendors/jquery/jquery-3.1.0.min.js" %}

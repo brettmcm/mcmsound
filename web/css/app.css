@@ -856,7 +856,7 @@ section.services .service h4 {
   margin: 0;
   transition: opacity 0.3s;
 }
-.grid .poster .hoverstate {
+.grid .poster .work-piece {
   position: absolute;
   top: 0;
   left: 0;
@@ -869,20 +869,22 @@ section.services .service h4 {
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.7, 0, 0.3, 1);
 }
-.grid .poster .hoverstate h2 {
+.grid .poster .work-piece h2 {
   margin-bottom: 1em;
+  width: 90%;
+  text-align: center;
 }
-.grid .poster .hoverstate h2, .grid .poster .hoverstate button {
+.grid .poster .work-piece h2, .grid .poster .work-piece button {
   transform: translateY(0.25em);
   transition: transform 0.6s cubic-bezier(0.7, 0, 0.3, 1);
 }
 .grid .poster:hover img {
   opacity: 0.2;
 }
-.grid .poster:hover .hoverstate {
+.grid .poster:hover .work-piece {
   opacity: 1;
 }
-.grid .poster:hover .hoverstate h2, .grid .poster:hover .hoverstate button {
+.grid .poster:hover .work-piece h2, .grid .poster:hover .work-piece button {
   transform: translateY(0);
 }
 .grid .video {
