@@ -300,7 +300,8 @@ header {
   position: fixed;
   z-index: 1000;
   width: 100%;
-  height: 6em;
+  height: calc(4em + 5vw);
+  max-height: 150px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -324,7 +325,8 @@ header a {
   pointer-events: all;
 }
 header .logo {
-  height: 2em;
+  height: calc(1em + 5vw);
+  max-height: 3em;
 }
 header .nav {
   position: fixed;
@@ -614,14 +616,15 @@ section.overview p {
   }
 }
 section.overview.title {
-  padding: calc(3em + 5vw) 5%;
+  padding: calc(8em + 5vw) 5% calc(3em + 5vw) 5%;
 }
 section.overview.condensed {
   padding: 4em 5% 2em 5%;
 }
 section.overview.hero {
   padding: 0 5%;
-  height: calc(70vh - 6em);
+  height: calc(90vh - 6em);
+  min-height: 40em;
 }
 section.overview.hero img.bg {
   position: absolute;

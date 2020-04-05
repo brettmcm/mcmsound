@@ -272,8 +272,8 @@ section.hero {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  padding: 3em 0;
-  min-height: 100vh;
+  padding: 3em;
+  min-height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
   background: #111;
   transition: height 0.5s ease-in-out;
@@ -290,59 +290,63 @@ section.hero img.bg, section.hero video.bg {
 }
 section.hero img.logo {
   position: relative;
-  width: 150vw;
+  width: 60vw;
+  max-width: 300px;
   margin-bottom: 2em;
-  transform: translate(-40vw, 0);
+  align-self: center;
+  margin-top: auto;
+  transform: translateY(1.5em);
 }
-section.hero .copy {
+section.hero h3 {
   position: relative;
-  width: 90vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  margin-top: auto;
+  text-align: center;
+  line-height: 1.3em;
 }
-section.hero .copy h1 {
-  margin: 0.25em 0 0 0;
+section.hero h3 .ctas {
+  font-size: 0.6em;
+  line-height: 1em;
+  margin-top: 0.75em;
 }
-section.hero .copy .ctas button {
-  display: inline-block;
+section.hero h3 .ctas a {
+  position: relative;
+  margin: 0.75em;
 }
-section.hero .copy .ctas button:not(:last-child) {
-  margin-right: 0.5em;
+section.hero h3 .ctas a:after {
+  position: absolute;
+  bottom: -0.4em;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  content: "";
+  background: rgba(255, 255, 255, 0.3);
+  transition: 0.2s ease-in-out;
 }
-section.hero .copy .scroll-arrow {
-  display: block;
-  margin-top: 2em;
-  animation-name: scrollBounce;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+section.hero h3 .ctas a:hover:after {
+  left: 0;
+  width: 100%;
+  bottom: -0.2em;
+  background: #35eec6;
 }
 @media screen and (min-width: 960px) {
   section.hero {
     flex-direction: row;
   }
-  section.hero .logo {
-    position: relative;
-    width: 40%;
+  section.hero img.logo, section.hero h3 {
+    margin-top: 0;
   }
-  section.hero .logo img.logo {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 200%;
-    transform: translateX(-40%);
-    margin-top: 6em;
+  section.hero img.logo {
+    margin-right: 3em;
   }
-  section.hero .copy {
-    position: relative;
-    width: 90%;
-    margin-top: 1em;
+  section.hero h3 {
+    font-size: 2.5em;
+    text-align: left;
   }
-  section.hero .copy h1 {
-    max-width: 700px;
+  section.hero h3 .ctas {
+    margin-top: 0;
+  }
+  section.hero h3 .ctas a:first-child {
+    margin-left: 0;
   }
 }
 
