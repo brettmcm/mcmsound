@@ -7,11 +7,15 @@
 
 {% include "components/header" with { "clear" : false, "active" : "home" } %}
 
+
 <section class="hero">
-  <img src="/lib/img/bg/desktop.jpg" class="bg">
-  <div class="logo">
+    <video class="bg" autoplay loop playsinline>
+        <source src="/lib/vid/mcm-videobg-01.mp4" type="video/mp4">
+    </video>
+  <!-- <img src="/lib/img/bg/desktop.jpg" class="bg"> -->
+  <!-- <div class="logo">
       <img src="/lib/img/branding/mcm-logo.svg" class="logo">
-  </div>
+  </div> -->
   <div class="copy">
     <h4>McM Sound</h4>
     <h1>{{entry.headline}}</h1>
@@ -93,10 +97,5 @@
 </section>
 
 
-
-
-
-{% includeJsFile "/js/vendors/jquery/jquery-3.1.0.min.js" %}
-{% includeJsFile "/js/main.js" %}
 
 {% endblock %}

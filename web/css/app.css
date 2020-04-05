@@ -79,8 +79,7 @@ p.lead {
 
 h1, h2, h3, h4 {
   color: white;
-  font-weight: 700;
-  letter-spacing: 0.1vw;
+  font-weight: 500;
   margin: 0;
   padding: 0;
   line-height: 1em;
@@ -102,6 +101,7 @@ h4 {
   font-size: 0.8em;
   text-transform: uppercase;
   color: #35eec6;
+  font-weight: 700;
 }
 
 h5 {
@@ -308,7 +308,6 @@ header {
   box-sizing: border-box;
   padding: 0 5%;
   pointer-events: none;
-  border-bottom: 1px solid #1d1d1d;
 }
 header .header-bg {
   position: absolute;
@@ -318,13 +317,8 @@ header .header-bg {
   height: 100%;
   background: #111;
   z-index: -2;
-  opacity: 1;
+  opacity: 0;
   pointer-events: none;
-}
-@media screen and (min-width: 960px) {
-  header .header-bg.clear {
-    opacity: 0;
-  }
 }
 header a {
   pointer-events: all;

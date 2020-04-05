@@ -79,8 +79,7 @@ p.lead {
 
 h1, h2, h3, h4 {
   color: white;
-  font-weight: 700;
-  letter-spacing: 0.1vw;
+  font-weight: 500;
   margin: 0;
   padding: 0;
   line-height: 1em;
@@ -102,6 +101,7 @@ h4 {
   font-size: 0.8em;
   text-transform: uppercase;
   color: #35eec6;
+  font-weight: 700;
 }
 
 h5 {
@@ -272,19 +272,21 @@ section.hero {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  padding: 3em 0 6em 0;
+  padding: 3em 0;
+  min-height: 100vh;
   overflow: hidden;
   background: #111;
+  transition: height 0.5s ease-in-out;
   width: 100%;
 }
-section.hero img.bg {
+section.hero img.bg, section.hero video.bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5;
+  opacity: 0.9;
 }
 section.hero img.logo {
   position: relative;
@@ -310,7 +312,7 @@ section.hero .copy .ctas button:not(:last-child) {
   margin-right: 0.5em;
 }
 section.hero .copy .scroll-arrow {
-  display: none;
+  display: block;
   margin-top: 2em;
   animation-name: scrollBounce;
   animation-duration: 1s;
@@ -321,7 +323,6 @@ section.hero .copy .scroll-arrow {
 @media screen and (min-width: 960px) {
   section.hero {
     flex-direction: row;
-    justify-content: space-between;
   }
   section.hero .logo {
     position: relative;
@@ -337,14 +338,11 @@ section.hero .copy .scroll-arrow {
   }
   section.hero .copy {
     position: relative;
-    width: 45%;
+    width: 90%;
     margin-top: 1em;
   }
   section.hero .copy h1 {
     max-width: 700px;
-  }
-  section.hero .copy .scroll-arrow {
-    display: block;
   }
 }
 

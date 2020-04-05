@@ -67,8 +67,8 @@ p {
 }
 h1, h2, h3, h4 {
   color:$foreground;
-  font-weight:700;
-  letter-spacing:0.1vw;
+  font-weight:500;
+  // letter-spacing:0.1vw;
   margin:0;
   padding:0;
   line-height:1em;
@@ -82,6 +82,7 @@ h4  {
   font-size:0.8em;
   text-transform: uppercase;
   color: $primary-highlight;
+  font-weight:700;
 }
 h5  {
   font-size:0.9em;

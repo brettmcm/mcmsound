@@ -21,6 +21,18 @@ $(document).ready(function () {
     }
   });
 
+
+
+  $(window).on("load", function () {
+    $(window).scroll(function () {
+      $(".header-bg").css("opacity", $(".header-bg").offset().top / 200 );
+    }).scroll(); //invoke scroll-handler on page-load
+  });
+
+
+
+
+
   $('a.videotrigger').click(function(e) {
       e.preventDefault();
       var vidSource = $(this).attr('href');
