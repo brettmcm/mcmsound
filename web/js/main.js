@@ -1,3 +1,9 @@
+$(window).on("load", function () {
+  $(window).scroll(function () {
+    $(".header-bg").css("opacity", $(".header-bg").offset().top / 200);
+  }).scroll(); //invoke scroll-handler on page-load
+});
+
 $(document).ready(function () {
 
   let vh = window.innerHeight * 0.01;
@@ -20,17 +26,6 @@ $(document).ready(function () {
       }
     }
   });
-
-
-
-  $(window).on("load", function () {
-    $(window).scroll(function () {
-      $(".header-bg").css("opacity", $(".header-bg").offset().top / 200 );
-    }).scroll(); //invoke scroll-handler on page-load
-  });
-
-
-
 
 
   $('a.videotrigger').click(function(e) {
@@ -131,11 +126,85 @@ $(document).ready(function () {
       $("body").addClass("no-scroll");
       $(".content-viewer").addClass("enabled");
       $.get( $(this).data("content"), function (data) {
-        $('.content-viewer').find('.campaign-body').html(data).find('video').on('ended', function () {
-          closeWork(e);
-        });
+        $('.content-viewer').find('.campaign-body').html(data).find('video-carousel')
+        initCarousel($('.video-carousel'));
       });
     });
+
+    function initCarousel(carousel) {
+
+      var currentIndex = 0,
+          totalVids = $(carousel).data("total");
+
+      function adjustVids() {
+        var currentVid = ".video" + currentIndex,
+            prevVid = ".video" + (currentIndex - 1),
+            nextVid = ".video" + (currentIndex + 1);
+        $(carousel).find(currentVid).removeClass('prev').removeClass('next').addClass('active');
+        $(carousel).find(prevVid).removeClass('active').addClass('prev');
+        $(carousel).find(nextVid).removeClass('active').addClass('next');
+        $('video').trigger("pause").prop("currentTime", 0);
+        $('video.active').attr("controls", "controls").trigger("play");
+        $('video').not('.active').removeAttr('controls');
+        $(carousel).find('video').each(function () {
+          var multiplier = $(this).data("index");
+          $(this).css("transform", "translateX(" + (multiplier - currentIndex) * 102 + "%)");
+        });
+        $('.count').find('.current').html(currentIndex + 1);
+        if (currentIndex > 0) {
+          $('.nav-trigger.p').addClass('active');
+        } else {
+          $('.nav-trigger.p').removeClass('active');
+        }
+        if (currentIndex < totalVids) {
+          $('.nav-trigger.n').addClass('active');
+        } else {
+          $('.nav-trigger.n').removeClass('active');
+        }
+      }
+
+      adjustVids();
+
+      $(carousel).find('video').each(function () {
+        var multiplier = $(this).data("index");
+        $(this).css("transform", "translateX(" + multiplier * 102 + "%)");
+        $(this).on('ended', function () {
+          if ($(this).data("index") != $(this).data("total")) {
+            currentIndex++;
+            adjustVids();
+          } else {
+            closeWork(e);
+          }
+        });
+      });
+
+      $(carousel).find('.nav-trigger.n').click(function () {
+        currentIndex++;
+        adjustVids();
+      });
+
+      $(carousel).find('.nav-trigger.p').click(function () {
+        currentIndex--;
+        adjustVids();
+      });
+
+      $(document).keyup(function (e) {
+        if (e.keyCode === 37) {
+          if (currentIndex > 0) {
+            currentIndex--;
+            adjustVids();
+          }
+        } else if (e.keyCode === 39) {
+          if (currentIndex < totalVids) {
+            currentIndex++;
+            adjustVids();
+          }
+        }
+      });
+      
+    }
+
+
 
     function closeWork(e) {
       e.preventDefault();
@@ -144,9 +213,8 @@ $(document).ready(function () {
       $('.content-viewer').find('.campaign-body').empty();
     }
 
-    $('.content-viewer').find('.close').click(function (e) {
-      closeWork(e);
-    });
+    $('.content-viewer').find('.close').click(function (e) { closeWork(e); });
+    $('.content-viewer').find('.closer-capture').click(function (e) { closeWork(e); });
 
     $(document).keyup(function (e) {
       if (e.keyCode === 27) {

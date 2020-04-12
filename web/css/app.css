@@ -2,7 +2,7 @@
   width: device-width;
 }
 html, body {
-  background: #111;
+  background: #070707;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -107,7 +107,7 @@ h4 {
 h5 {
   font-size: 0.9em;
   text-transform: uppercase;
-  color: #595c62;
+  color: #53565e;
 }
 
 button {
@@ -135,12 +135,12 @@ button.primary {
   transition: box-shadow 0.6s, transform 0.6s;
   border: 1px solid #35eec6;
   background: #35eec6;
-  color: #111;
+  color: #070707;
   box-shadow: none;
 }
 button.primary:hover {
   border: 1px solid white;
-  color: #111;
+  color: #070707;
   background: white;
   box-shadow: 0 10px 35px rgba(53, 238, 198, 0.3);
   transform: translateY(-1px);
@@ -155,8 +155,8 @@ button.secondary {
 }
 button.secondary:hover {
   border: 1px solid #35eec6;
-  color: #111;
-  fill: #111;
+  color: #070707;
+  fill: #070707;
   background: #35eec6;
   box-shadow: 0 10px 35px rgba(53, 238, 198, 0.3);
   transform: translateY(-1px);
@@ -240,7 +240,7 @@ section.button {
 }
 
 section.cta {
-  background: #1c1d1f;
+  background: #17181a;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -316,7 +316,7 @@ header .header-bg {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #111;
+  background: #070707;
   z-index: -2;
   opacity: 0;
   pointer-events: none;
@@ -334,7 +334,7 @@ header .nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #111;
+  background: #070707;
   z-index: -1;
   padding: 4em 5%;
   display: none;
@@ -579,7 +579,7 @@ section.intro {
   box-sizing: border-box;
   margin-top: 5em;
   padding: 0 5%;
-  background: #111;
+  background: #070707;
 }
 section.intro.first {
   margin-top: calc(6.4em + 10vw);
@@ -676,7 +676,7 @@ section.cards {
   box-sizing: border-box;
   width: 100%;
   padding: 0 5%;
-  background-image: linear-gradient(#111, #1c1d1f);
+  background-image: linear-gradient(#070707, #17181a);
 }
 section.cards.services {
   align-items: stretch;
@@ -693,8 +693,8 @@ section.cards .card {
   padding: 2em;
   box-sizing: border-box;
   border-radius: 3px;
-  border: 1px solid #282a2c;
-  background: #111;
+  border: 1px solid #232428;
+  background: #070707;
   transition: transform 1s, box-shadow 1s;
   overflow: hidden;
 }
@@ -709,8 +709,8 @@ section.cards .card h4, section.cards .card p {
   text-align: left;
 }
 section.cards .card:hover {
-  border: 1px solid #404347;
-  background: #1c1d1f;
+  border: 1px solid #3b3d43;
+  background: #17181a;
   transform: translateY(-2px);
   box-shadow: 0 5px 45px rgba(0, 0, 0, 0.5);
   cursor: pointer;
@@ -733,7 +733,7 @@ section.cards .service {
   box-sizing: border-box;
 }
 section.cards .service:not(:last-child) {
-  border-bottom: 1em solid #111;
+  border-bottom: 1em solid #070707;
 }
 section.cards .service .icon {
   width: 20%;
@@ -759,7 +759,7 @@ section.cards.solo {
     text-align: center;
   }
   section.cards .service:not(:last-child) {
-    border-right: 1em solid #111;
+    border-right: 1em solid #070707;
     border-bottom: 0;
   }
 }
@@ -778,7 +778,7 @@ section.services {
   background-size: cover;
 }
 section.services.section {
-  background-image: linear-gradient(#111, #1c1d1f);
+  background-image: linear-gradient(#070707, #17181a);
   padding-bottom: 10em;
 }
 section.services .service {
@@ -852,6 +852,7 @@ section.services .service h4 {
   width: 100%;
   margin: 0;
   transition: opacity 0.3s;
+  border-radius: 2px;
 }
 .grid .poster .work-piece {
   position: absolute;

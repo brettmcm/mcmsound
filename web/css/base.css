@@ -2,7 +2,7 @@
   width: device-width;
 }
 html, body {
-  background: #111;
+  background: #070707;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -107,7 +107,7 @@ h4 {
 h5 {
   font-size: 0.9em;
   text-transform: uppercase;
-  color: #595c62;
+  color: #53565e;
 }
 
 button {
@@ -135,12 +135,12 @@ button.primary {
   transition: box-shadow 0.6s, transform 0.6s;
   border: 1px solid #35eec6;
   background: #35eec6;
-  color: #111;
+  color: #070707;
   box-shadow: none;
 }
 button.primary:hover {
   border: 1px solid white;
-  color: #111;
+  color: #070707;
   background: white;
   box-shadow: 0 10px 35px rgba(53, 238, 198, 0.3);
   transform: translateY(-1px);
@@ -155,8 +155,8 @@ button.secondary {
 }
 button.secondary:hover {
   border: 1px solid #35eec6;
-  color: #111;
-  fill: #111;
+  color: #070707;
+  fill: #070707;
   background: #35eec6;
   box-shadow: 0 10px 35px rgba(53, 238, 198, 0.3);
   transform: translateY(-1px);
@@ -240,7 +240,7 @@ section.button {
 }
 
 section.cta {
-  background: #1c1d1f;
+  background: #17181a;
   display: flex;
   flex-direction: column;
   justify-content: center;

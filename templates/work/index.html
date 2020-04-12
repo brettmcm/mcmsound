@@ -64,10 +64,8 @@
 
         {% for video in workCollection.all() %}
 
-            {% set quicktime = video.quicktime.one().getUrl() %}
             {% set poster = video.posterImage.one() %}
-            {% set campaign = video.associatedCampaign.one() %}
-            {% if campaign is defined and campaign is not null %}
+            {% if video.quicktime|length > 1 %}
                 {% set isCampaign = true %}
             {% else %}
                 {% set isCampaign = false %}
@@ -78,7 +76,7 @@
                     <img src="{{poster.getUrl()}}" class="poster" srcset="{{ m_utils.img(poster) }}"
                     sizes="(min-width: 960px) 50vw, 100vw" />
                     <a href="#" class="work-piece"
-                        data-content="{% if isCampaign %}{{campaign.getUrl()}}{% else %}{{video.getUrl()}}{% endif %}">
+                        data-content="{{video.getUrl()}}">
                         <h2>{{video.title}}</h2>
                         <button class="secondary">
                             {% if isCampaign %}
@@ -134,6 +132,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="close">
         <polygon points="27.314 7.515 24.485 4.686 16 13.172 7.515 4.686 4.686 7.515 13.172 16 4.686 24.485 7.515 27.314 16 18.828 24.485 27.314 27.314 24.485 18.828 16 27.314 7.515"></polygon>
     </svg>
+    <div class="closer-capture"></div>
     <div class="campaign-body"></div>
 </div>
 
