@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Open+Sans@1&display=swap");
 @-ms-viewport {
   width: device-width;
 }
@@ -6,12 +7,17 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 300;
   line-height: 1.5rem;
 }
 html.no-scroll, body.no-scroll {
   overflow: hidden;
+}
+
+.hero-font {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 
 pre {
@@ -79,7 +85,8 @@ p.lead {
 
 h1, h2, h3, h4 {
   color: white;
-  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   line-height: 1em;
@@ -99,9 +106,10 @@ h3 {
 
 h4 {
   font-size: 0.8em;
+  line-height: 3em;
   text-transform: uppercase;
   color: #35eec6;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 h5 {
@@ -239,32 +247,6 @@ section.button {
   width: 100%;
 }
 
-section.cta {
-  background: #17181a;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 3em 5%;
-  margin: calc(3em + 5vw) 0 0 0;
-  width: 100%;
-  border-radius: 2px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-section.cta p {
-  text-align: center;
-}
-@media screen and (min-width: 960px) {
-  section.cta {
-    flex-direction: row;
-  }
-  section.cta p {
-    margin: 0 2em 0 0;
-  }
-}
-
 section.grid {
   background-image: linear-gradient(#070707, #17181a);
   padding-bottom: 10em;
@@ -291,6 +273,7 @@ div.content-viewer {
   align-items: center;
   background: rgba(7, 7, 7, 0.7);
   -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s cubic-bezier(0.8, 0, 0.2, 1);
@@ -323,9 +306,11 @@ div.content-viewer .campaign-body {
   opacity: 0;
   transform: translateY(1.5em);
   transition: opacity 0.75s cubic-bezier(0.7, 0, 0.3, 1), transform 0.75s cubic-bezier(0.7, 0, 0.3, 1);
+  pointer-events: none;
 }
-div.content-viewer .campaign-body h2, div.content-viewer .campaign-body .count {
+div.content-viewer .campaign-body h2, div.content-viewer .campaign-body .details {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 90%;
@@ -334,7 +319,13 @@ div.content-viewer .campaign-body h2, div.content-viewer .campaign-body .count {
   color: white;
   height: 5vh;
 }
-div.content-viewer .campaign-body h2 span, div.content-viewer .campaign-body .count span {
+div.content-viewer .campaign-body h2 .vid-title, div.content-viewer .campaign-body .details .vid-title {
+  margin-bottom: 1em;
+}
+div.content-viewer .campaign-body h2 .count, div.content-viewer .campaign-body .details .count {
+  margin-bottom: 2em;
+}
+div.content-viewer .campaign-body h2 .count span, div.content-viewer .campaign-body .details .count span {
   margin: 0 0.5em;
 }
 div.content-viewer .campaign-body .video-carousel {
@@ -354,6 +345,7 @@ div.content-viewer .campaign-body .video-carousel video {
   border-radius: 3px;
   position: absolute;
   transition: transform 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+  pointer-events: all;
 }
 div.content-viewer .campaign-body .video-carousel video.prev, div.content-viewer .campaign-body .video-carousel video.next {
   filter: brightness(0.25);

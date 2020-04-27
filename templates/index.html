@@ -1,3 +1,5 @@
+{% import '_macros/_utils' as m_utils %}
+
 {# Load CSS #}
 {% includeCssFile "/css/pages/home.css" %}
 
@@ -9,55 +11,60 @@
 
 
 <section class="hero">
-    <video class="bg" autoplay loop playsinline>
+    <video class="bg" autoplay loop playsinline muted>
         <source src="/lib/vid/mcm-videobg-01.mp4" type="video/mp4">
+        </source>
     </video>
-  <!-- <img src="/lib/img/bg/desktop.jpg" class="bg"> -->
-  <!-- <div class="logo">
-  </div> -->
 
     <img src="/lib/img/branding/mcm-icon.svg" class="logo">
     <h3>
         {{entry.headline}}<br>
         <div class="ctas">
             {% for button in entry.buttons.all() %}
-                <a href="{{button.buttonLink}}">{{button.label}}</a>
+            <a href="{{button.buttonLink}}">{{button.label}}</a>
             {% endfor %}
         </div>
     </h3>
-  <!-- <div class="copy"> -->
-    <!-- <div class="sep"></div> -->
-    <!-- <div class="ctas">
-        {% for button in entry.buttons.all() %}
-            <a href="{{button.buttonLink}}"><button class="{{button.style}}">{{button.label}}</button></a>
-        {% endfor %}
-    </div> -->
-    <!-- <svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>arrow-down</title><g fill="#ffffff"><path fill="#ffffff" d="M12.707,22.707L20.414,15L19,13.586l-6,6V2c0-0.553-0.448-1-1-1s-1,0.447-1,1v17.586l-6-6L3.586,15 l7.707,7.707C11.684,23.098,12.316,23.098,12.707,22.707z"></path></g></svg> -->
-  <!-- </div> -->
 </section>
 
 
-<section class="overview">
-        <h4>{{entry.caption}}</h4>
-        <h2>{{entry.leadText}}</h2>
-        {{entry.body}}
-</section>
+
+
+
 
 <section class="services">
 
-    {% set categories = craft.categories().group('workCategories').all() %}
-    {% for category in categories %}
-        <div class="service">
-            <img src="lib/img/icon-{{category.slug}}.svg" class="icon" />
-            {# <h4>{{category.headline}}</h4> #}
-            {# <div class="sep primary"></div> #}
-            <h3>{{category.title}}</h3>
+
+    <div class="overview">
+        <!-- <h4>{{entry.caption}}</h4>
+        <h2>{{entry.leadText}}</h2>
+        {{entry.body}} -->
+        <h4>{{entry.caption}}</h4>
+        <h2>{{entry.leadText}}</h2>
+        {{entry.body}}
+        <h2>—</h2>
+    </div>
+
+    <ul class="list">
+        {% set categories = craft.categories().group('workCategories').all() %}
+        {% for category in categories %}
+        <li class="service">
+            <div class="title">
+                <img src="lib/img/icon-{{category.slug}}.svg" class="icon" /><h3>{{category.title}}</h3>
+            </div>
             {{category.body}}
-            <a href="/work/{{category.slug}}"><button class="secondary">View {{category.title}} Work</button></a>
-        </div>
-    {% endfor %}
+            <a href="/work/{{category.slug}}" class="primary">Hear Examples</a>
+            <!-- <a href="/work/{{category.slug}}"><button class="secondary">View {{category.title}} Work</button></a> -->
+            <div>—</div>
+        </li>
+        {% endfor %}
+    </ul>
+    
 
 </section>
+
+
+
 
 
 
@@ -67,7 +74,7 @@
         element: 'items',
         cache: 60
     } %}
-    {% set spotifyFeed = craft.feedme.feed(spotifyParams) %}
+{% set spotifyFeed = craft.feedme.feed(spotifyParams) %}
 
 
 
@@ -88,18 +95,10 @@
     <div class="logos">
         {% set clients = craft.entries.section('clients').level(1).all() %}
         {% for client in clients %}
-            <div class="logo"><img src="{{client.logo.one().getUrl()}}"></div>
+        <div class="logo"><img src="{{client.logo.one().getUrl()}}"></div>
         {% endfor %}
     </div>
 
-    <section class="cta">
-
-        <p class="lead">{{callToAction.headline}}</p>
-        {% for button in callToAction.buttons %}
-            <a href="{{button.buttonLink}}"><button class="{{button.style}}">{{button.label}}</button></a>
-        {% endfor %}
-
-    </section>
 
 </section>
 

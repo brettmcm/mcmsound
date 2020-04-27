@@ -17,30 +17,23 @@
 </section>
 
 
-
 <section class="services section">
 
-    {% set categories = craft.categories().group('workCategories').all() %}
-    {% for category in categories %}
-        <div class="service">
-            <img src="lib/img/icon-{{category.slug}}.svg" class="icon" />
-            {# <h4>{{category.headline}}</h4> #}
-            {# <div class="sep primary"></div> #}
-            <h3>{{category.title}}</h3>
+    <ul class="list">
+        {% set categories = craft.categories().group('workCategories').all() %}
+        {% for category in categories %}
+        <li class="service">
+            <div class="title">
+                <img src="lib/img/icon-{{category.slug}}.svg" class="icon" />
+                <h3>{{category.title}}</h3>
+            </div>
             {{category.body}}
+            <!-- <a href="/work/{{category.slug}}" class="primary">View {{category.title}} Work</a> -->
             <a href="/work/{{category.slug}}"><button class="secondary">View {{category.title}} Work</button></a>
-        </div>
-    {% endfor %}
-
-
-    <section class="cta">
-
-        <p class="lead">{{callToAction.headline}}</p>
-        {% for button in callToAction.buttons %}
-            <a href="{{button.buttonLink}}"><button class="{{button.style}}">{{button.label}}</button></a>
+        </li>
         {% endfor %}
+    </ul>
 
-    </section>
 
 </section>
 

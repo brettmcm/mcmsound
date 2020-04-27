@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Open+Sans@1&display=swap");
 @-ms-viewport {
   width: device-width;
 }
@@ -6,12 +7,17 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 300;
   line-height: 1.5rem;
 }
 html.no-scroll, body.no-scroll {
   overflow: hidden;
+}
+
+.hero-font {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 
 pre {
@@ -79,7 +85,8 @@ p.lead {
 
 h1, h2, h3, h4 {
   color: white;
-  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   line-height: 1em;
@@ -99,9 +106,10 @@ h3 {
 
 h4 {
   font-size: 0.8em;
+  line-height: 3em;
   text-transform: uppercase;
   color: #35eec6;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 h5 {
@@ -237,32 +245,6 @@ section.button {
   align-items: center;
   padding: 5%;
   width: 100%;
-}
-
-section.cta {
-  background: #17181a;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 3em 5%;
-  margin: calc(3em + 5vw) 0 0 0;
-  width: 100%;
-  border-radius: 2px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-section.cta p {
-  text-align: center;
-}
-@media screen and (min-width: 960px) {
-  section.cta {
-    flex-direction: row;
-  }
-  section.cta p {
-    margin: 0 2em 0 0;
-  }
 }
 
 section.hero {

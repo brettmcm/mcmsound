@@ -2,7 +2,7 @@
 
 <div class="video-carousel" data-total="{{entry.quicktime|length - 1}}">
     {% for video in entry.quicktime %}
-        <video class="video{{loop.index0}}" data-index="{{loop.index0}}" data-total="{{loop.length - 1}}">
+        <video class="video{{loop.index0}}" data-index="{{loop.index0}}" data-total="{{loop.length - 1}}" data-title="{{video.title}}">
             <source src="{{video.getUrl()}}" type="video/mp4">
         </video>
     {% endfor %}
@@ -31,10 +31,14 @@
     {% endif %}
 </div>
 
-<div class="count">
-    {% if entry.quicktime|length > 1 %}
-        <span class="current">1</span>
-        of
-        <span class="total">{{entry.quicktime|length}}</span>
-    {% endif %}
+
+<div class="details">
+    <div class="vid-title"></div>
+    <div class="count">
+        {% if entry.quicktime|length > 1 %}
+            <span class="current">1</span>
+            of
+            <span class="total">{{entry.quicktime|length}}</span>
+        {% endif %}
+    </div>
 </div>

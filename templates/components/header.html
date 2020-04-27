@@ -7,7 +7,7 @@
     <a href="/" class="logo outer-link"><img src="/lib/img/branding/mcm-icon.svg" class="logo"></a>
 
     {% set mainMenu = craft.entries.section('mainMenu').level(1).all() %}
-    <ul class="nav">
+    <ul class="nav hero-font">
         {% for section in mainMenu %}
             <a href="{{section.associatedSection.one().getUrl()}}" class="outer-link {%if active == section.title|lower %}active{% endif %}"><li>{{section.title}}</li></a>
         {% endfor %}

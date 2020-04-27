@@ -1,6 +1,7 @@
 $(window).on("load", function () {
   $(window).scroll(function () {
     $(".header-bg").css("opacity", $(".header-bg").offset().top / 200);
+    $(".subnav-bg").css("opacity", $(".header-bg").offset().top / 200);
   }).scroll(); //invoke scroll-handler on page-load
 });
 
@@ -63,6 +64,14 @@ $(document).ready(function () {
   function showWork(category) {
       $(menu).find('#' + category).addClass('active');
       $(menu).find('a').not('#' + category).removeClass('active');
+      if ((64 + ($(document).width() * 0.05)) < 150 ) {
+        var subnavOffset = (63 + ($(document).width() * 0.05));
+      } else {
+        var subnavOffset = 149;
+      }
+      $('html, body').animate({
+        scrollTop: ($('.subnav').offset().top - subnavOffset)
+      }, 300);
   }
 
 
@@ -136,7 +145,8 @@ $(document).ready(function () {
       var currentIndex = 0,
           totalVids = $(carousel).data("total");
 
-      function adjustVids() {
+      function adjustVids(adj) {
+        currentIndex = currentIndex + adj;
         var currentVid = ".video" + currentIndex,
             prevVid = ".video" + (currentIndex - 1),
             nextVid = ".video" + (currentIndex + 1);
@@ -151,6 +161,7 @@ $(document).ready(function () {
           $(this).css("transform", "translateX(" + (multiplier - currentIndex) * 102 + "%)");
         });
         $('.count').find('.current').html(currentIndex + 1);
+        $('.vid-title').html( $('video.active').data("title") );
         if (currentIndex > 0) {
           $('.nav-trigger.p').addClass('active');
         } else {
@@ -163,15 +174,14 @@ $(document).ready(function () {
         }
       }
 
-      adjustVids();
+      adjustVids(0);
 
       $(carousel).find('video').each(function () {
         var multiplier = $(this).data("index");
         $(this).css("transform", "translateX(" + multiplier * 102 + "%)");
-        $(this).on('ended', function () {
+        $(this).on('ended', function (e) {
           if ($(this).data("index") != $(this).data("total")) {
-            currentIndex++;
-            adjustVids();
+            adjustVids(1);
           } else {
             closeWork(e);
           }
@@ -179,25 +189,23 @@ $(document).ready(function () {
       });
 
       $(carousel).find('.nav-trigger.n').click(function () {
-        currentIndex++;
-        adjustVids();
+        adjustVids(1);
       });
 
       $(carousel).find('.nav-trigger.p').click(function () {
-        currentIndex--;
-        adjustVids();
+        adjustVids(-1);
       });
+
+      
 
       $(document).keyup(function (e) {
         if (e.keyCode === 37) {
           if (currentIndex > 0) {
-            currentIndex--;
-            adjustVids();
+            adjustVids(-1);
           }
         } else if (e.keyCode === 39) {
           if (currentIndex < totalVids) {
-            currentIndex++;
-            adjustVids();
+            adjustVids(1);
           }
         }
       });

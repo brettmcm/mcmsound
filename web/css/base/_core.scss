@@ -1,14 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Open+Sans@1&display=swap');
+
 html, body {
   background:$background;
   height:100%;
   margin:0;
   padding:0;
-  font-family: 'Montserrat', sans-serif;
-  font-weight:300;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 300;
   line-height:1.5rem;
   &.no-scroll {
     overflow: hidden;
   }
+}
+.hero-font {
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
 }
 pre {
   color:$foreground;
@@ -67,8 +73,8 @@ p {
 }
 h1, h2, h3, h4 {
   color:$foreground;
-  font-weight:500;
-  // letter-spacing:0.1vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
   margin:0;
   padding:0;
   line-height:1em;
@@ -80,9 +86,10 @@ h3 {
 }
 h4  {
   font-size:0.8em;
+  line-height: 3em;
   text-transform: uppercase;
   color: $primary-highlight;
-  font-weight:700;
+  font-weight:500;
 }
 h5  {
   font-size:0.9em;
@@ -225,28 +232,4 @@ section.button {
     align-items: center;
     padding: 5%;
     width: 100%;
-}
-
-section.cta {
-    background:$background-highlight;
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-
-    box-sizing: border-box;
-    padding: 3em 5%;
-    margin: calc(3em + 5vw) 0 0 0;
-
-    width: 100%;
-    border-radius: 2px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    border:1px solid rgba(255,255,255,0.05);
-
-    p { text-align: center; }
-
-    @media screen and (min-width: $break-large)  {
-        flex-direction: row;
-        p { margin: 0 2em 0 0; }
-    }
 }

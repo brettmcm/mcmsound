@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Open+Sans@1&display=swap");
 @-ms-viewport {
   width: device-width;
 }
@@ -6,12 +7,17 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: 300;
   line-height: 1.5rem;
 }
 html.no-scroll, body.no-scroll {
   overflow: hidden;
+}
+
+.hero-font {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 
 pre {
@@ -79,7 +85,8 @@ p.lead {
 
 h1, h2, h3, h4 {
   color: white;
-  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   line-height: 1em;
@@ -99,9 +106,10 @@ h3 {
 
 h4 {
   font-size: 0.8em;
+  line-height: 3em;
   text-transform: uppercase;
   color: #35eec6;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 h5 {
@@ -237,32 +245,6 @@ section.button {
   align-items: center;
   padding: 5%;
   width: 100%;
-}
-
-section.cta {
-  background: #17181a;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 3em 5%;
-  margin: calc(3em + 5vw) 0 0 0;
-  width: 100%;
-  border-radius: 2px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-section.cta p {
-  text-align: center;
-}
-@media screen and (min-width: 960px) {
-  section.cta {
-    flex-direction: row;
-  }
-  section.cta p {
-    margin: 0 2em 0 0;
-  }
 }
 
 .scroll-indicator {
@@ -596,30 +578,29 @@ section.overview {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   box-sizing: border-box;
-  padding: calc(6em + 5vw) 5% 0 5%;
+  padding: calc(6em + 5vw) 5%;
+  min-height: calc(var(--vh, 1vh) * 60);
   width: 100%;
   background-position: center center;
   background-size: cover;
-}
-section.overview h4 {
-  margin-bottom: 1em;
 }
 section.overview p {
   max-width: 750px;
   margin-bottom: 0;
 }
-@media screen and (min-width: 960px) {
-  section.overview {
-    align-items: flex-start;
-  }
-}
-section.overview.title {
-  padding: calc(8em + 5vw) 5% calc(3em + 5vw) 5%;
+section.overview .subnav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 section.overview.condensed {
   padding: 4em 5% 2em 5%;
+  min-height: 0;
+  align-items: flex-start;
 }
 section.overview.hero {
   padding: 0 5%;
@@ -768,12 +749,11 @@ section.services {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
   box-sizing: border-box;
   width: 100%;
-  padding: 5%;
+  padding: calc(4em + 5vw) 5%;
   border-radius: 2px;
   background-size: cover;
 }
@@ -781,49 +761,41 @@ section.services.section {
   background-image: linear-gradient(#070707, #17181a);
   padding-bottom: 10em;
 }
-section.services .service {
+section.services .overview {
+  max-width: 700px;
+}
+section.services .overview h2 {
+  font-size: calc(4em + 1vw);
+}
+section.services ul.list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 3em 0 0 0;
+  margin: 0;
+  width: 100%;
+}
+section.services ul.list li.service {
+  padding: calc(2em + 2vw) 0;
+  flex-grow: 1;
+  color: white;
+}
+section.services ul.list li.service .title {
+  display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  text-align: center;
-  width: 100%;
-  padding: calc(3em + 5%) 0;
-  box-sizing: border-box;
+  margin-bottom: 2em;
 }
-section.services .service:not(:last-child) {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+section.services ul.list li.service .title img {
+  width: 2.5em;
+  margin-right: 1em;
 }
-section.services .service .icon {
-  width: 30%;
-  max-width: 125px;
-  margin-bottom: 3em;
-}
-section.services .service h4 {
-  margin-bottom: 1em;
-}
-@media screen and (min-width: 960px) {
-  section.services {
-    flex-direction: row;
-  }
-  section.services .service {
-    width: calc(50% - 0.5em);
-    padding: 5%;
-    border-bottom: none;
-  }
-  section.services .service:not(:last-child) {
-    border-right: 0;
-    border-bottom: 0;
-  }
-  section.services .service:nth-child(3n+3) {
-    margin-right: 0;
-    border-right: 0;
-  }
-}
-@media screen and (min-width: 1920px) {
-  section.services .service {
-    width: calc(25% - 0.5em);
-  }
+section.services ul.list li.service p {
+  max-width: 500px;
+  padding-right: 5vw;
 }
 
 .grid {
@@ -932,16 +904,30 @@ section.services .service h4 {
   padding: calc(2em + 2vw);
 }
 
+@-ms-viewport {
+  width: device-width;
+}
 .subnav {
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-end;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #17181a;
   padding: 0;
 }
+.subnav .subnav-bg {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #070707;
+  opacity: 0;
+}
 .subnav .tabs {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;

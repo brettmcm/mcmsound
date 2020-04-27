@@ -5,5 +5,8 @@ section.services.section {
   background-image: linear-gradient(#070707, #17181a);
   margin-top: 0;
 }
+section.services.section ul.list {
+  padding: 0;
+}
 
 /*# sourceMappingURL=services.css.map */
