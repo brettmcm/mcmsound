@@ -29,7 +29,10 @@
             </div>
             {{category.body}}
             <!-- <a href="/work/{{category.slug}}" class="primary">View {{category.title}} Work</a> -->
-            <a href="/work/{{category.slug}}"><button class="secondary">View {{category.title}} Work</button></a>
+            {# <a href="/work/{{category.slug}}"><button class="secondary">View {{category.title}} Work</button></a> #}
+            <div class="ctas hero-font">
+                <a href="/work/{{category.slug}}" class="primary">Hear Examples</a>
+            </div>
         </li>
         {% endfor %}
     </ul>

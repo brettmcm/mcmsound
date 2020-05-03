@@ -9,10 +9,6 @@ section.services {
     padding:calc(4em + 10vw) 5%;
     border-radius: 2px;
     background-size: cover;
-    &.section {
-        background-image: linear-gradient($background,$background-highlight);
-        padding-bottom: 10em;
-    }
 
     .bg {
         position: fixed;
@@ -27,6 +23,7 @@ section.services {
     .overview {
         width: 100%;
         max-width: 700px;
+        margin-bottom: 3em;
         h2 {
             font-size: calc(4em + 1vw);
         }
@@ -35,7 +32,7 @@ section.services {
     .list {
         display:  flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         align-items: center;
         flex-wrap: wrap;
         padding: 0;
@@ -47,10 +44,13 @@ section.services {
         // border-bottom: 1px solid rgba(255,255,255,0.1);
 
         .service {
+            width: 100%;
+            max-width: 500px;
             padding: 2em 0;
             color: white;
             opacity: 0.5;
             transition: opacity 0.2s;
+            flex-direction: column;
             .title {
                 display: flex;
                 flex-direction: row;
@@ -58,15 +58,15 @@ section.services {
                 align-items: center;
                 img {
                     width: 3.5em;
-                    margin: 0 2em;
+                    margin: 0 2em 0 0 ;
                 }
             }
-            &.odd {
-                text-align: right;
-                .title {
-                    flex-direction: row-reverse;
-                }
-            }
+            // &.odd {
+            //     text-align: right;
+            //     .title {
+            //         flex-direction: row-reverse;
+            //     }
+            // }
             p {
                 max-width: 500px;
                 padding-right: 5vw;
@@ -75,7 +75,7 @@ section.services {
                 opacity: 1;
             }
         }
-        .break { width: 100%; }
+        // .break { width: 100%; }
 
     }
 
@@ -88,7 +88,36 @@ section.services {
         }
     }
 
+
+    &.section {
+        background-image: linear-gradient($background,$background-highlight);
+        padding: 10em 5%;
+        .list {
+            margin-left: 0;
+            .service {
+                width: 100%;
+                max-width: none;
+                margin-bottom: 6em;
+                opacity:1;
+                p {
+                    max-width: none;
+                }
+            }
+        }
+    }
+
     @media screen and (min-width: $break-large) {
         flex-direction: row;
+        .list {
+            justify-content: center;
+        }
+        &.section {
+            .list {
+                .service {
+                    width: 50%;
+                    max-width: 900px;
+                }
+            }
+        }
     }
 }

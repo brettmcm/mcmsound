@@ -13,6 +13,9 @@ section.overview {
 
     background-position: center center;
     background-size: cover;
+    h1 {
+        font-size: calc(4em + 1vw);
+    }
     p {
         max-width: 750px;
         margin-bottom: 0;

@@ -13,7 +13,9 @@ footer {
     box-sizing: border-box;
 
     .cta {
+        width: 100%;
         align-self: center;
+        margin-bottom: 2em;
         h2 {
             margin-bottom: 0.5em;
         }
@@ -23,10 +25,12 @@ footer {
     
 
     .nav {
-        flex-grow: 1;
-        align-self: center;
-        margin-left: 5%;
-        background: red;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        line-height: 2em;
     }
 
     .contact {
@@ -82,8 +86,54 @@ footer {
     }
 
     
+    @media screen and (min-width: $break-small){
+        .cta {
+            text-align: center;
+            width: auto;
+        }
+        .contact {
+            width: auto;
+            justify-content: center;
+            .item.primary {
+                justify-content: center;
+            }
+            .branding {
+                justify-content: center;
+            }
+        }
+        .nav {
+            width: auto;
+            align-self: center;
+            flex-direction: row;
+            a {
+                margin: 0 2vw;
+            }
+        }
+    }
 
     @media screen and (min-width: $break-large){
         flex-direction: row;
+        .cta {
+            text-align: left;
+            margin-bottom: 0;
+        }
+        .contact {
+            width: 100%;
+            justify-content: flex-start;
+            .item.primary {
+                justify-content: flex-start;
+            }
+            .branding {
+                justify-content: flex-end;
+            }
+        }
+        .nav {
+            flex-direction: column;
+            align-items: flex-end;
+            margin: 0;
+            a {
+                margin: 0;
+            }
+        }
     }
 }

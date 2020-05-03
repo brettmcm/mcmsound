@@ -439,16 +439,20 @@ footer {
   box-sizing: border-box;
 }
 footer .cta {
+  width: 100%;
   align-self: center;
+  margin-bottom: 2em;
 }
 footer .cta h2 {
   margin-bottom: 0.5em;
 }
 footer .nav {
-  flex-grow: 1;
-  align-self: center;
-  margin-left: 5%;
-  background: red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  line-height: 2em;
 }
 footer .contact {
   display: flex;
@@ -503,9 +507,55 @@ footer .contact .branding img {
     justify-content: flex-end;
   }
 }
+@media screen and (min-width: 640px) {
+  footer .cta {
+    text-align: center;
+    width: auto;
+  }
+  footer .contact {
+    width: auto;
+    justify-content: center;
+  }
+  footer .contact .item.primary {
+    justify-content: center;
+  }
+  footer .contact .branding {
+    justify-content: center;
+  }
+  footer .nav {
+    width: auto;
+    align-self: center;
+    flex-direction: row;
+  }
+  footer .nav a {
+    margin: 0 2vw;
+  }
+}
 @media screen and (min-width: 960px) {
   footer {
     flex-direction: row;
+  }
+  footer .cta {
+    text-align: left;
+    margin-bottom: 0;
+  }
+  footer .contact {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  footer .contact .item.primary {
+    justify-content: flex-start;
+  }
+  footer .contact .branding {
+    justify-content: flex-end;
+  }
+  footer .nav {
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0;
+  }
+  footer .nav a {
+    margin: 0;
   }
 }
 
@@ -543,6 +593,9 @@ section.overview {
   width: 100%;
   background-position: center center;
   background-size: cover;
+}
+section.overview h1 {
+  font-size: calc(4em + 1vw);
 }
 section.overview p {
   max-width: 750px;
@@ -714,10 +767,6 @@ section.services {
   border-radius: 2px;
   background-size: cover;
 }
-section.services.section {
-  background-image: linear-gradient(#070707, #17181a);
-  padding-bottom: 10em;
-}
 section.services .bg {
   position: fixed;
   top: 0;
@@ -730,6 +779,7 @@ section.services .bg {
 section.services .overview {
   width: 100%;
   max-width: 700px;
+  margin-bottom: 3em;
 }
 section.services .overview h2 {
   font-size: calc(4em + 1vw);
@@ -737,7 +787,7 @@ section.services .overview h2 {
 section.services .list {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   padding: 0;
@@ -746,10 +796,13 @@ section.services .list {
   margin-left: 10%;
 }
 section.services .list .service {
+  width: 100%;
+  max-width: 500px;
   padding: 2em 0;
   color: white;
   opacity: 0.5;
   transition: opacity 0.2s;
+  flex-direction: column;
 }
 section.services .list .service .title {
   display: flex;
@@ -759,13 +812,7 @@ section.services .list .service .title {
 }
 section.services .list .service .title img {
   width: 3.5em;
-  margin: 0 2em;
-}
-section.services .list .service.odd {
-  text-align: right;
-}
-section.services .list .service.odd .title {
-  flex-direction: row-reverse;
+  margin: 0 2em 0 0;
 }
 section.services .list .service p {
   max-width: 500px;
@@ -773,9 +820,6 @@ section.services .list .service p {
 }
 section.services .list .service:hover {
   opacity: 1;
-}
-section.services .list .break {
-  width: 100%;
 }
 section.services .ctas {
   font-size: 1.25em;
@@ -785,9 +829,32 @@ section.services .ctas {
 section.services .ctas a:first-child {
   margin-right: 1.5em;
 }
+section.services.section {
+  background-image: linear-gradient(#070707, #17181a);
+  padding: 10em 5%;
+}
+section.services.section .list {
+  margin-left: 0;
+}
+section.services.section .list .service {
+  width: 100%;
+  max-width: none;
+  margin-bottom: 6em;
+  opacity: 1;
+}
+section.services.section .list .service p {
+  max-width: none;
+}
 @media screen and (min-width: 960px) {
   section.services {
     flex-direction: row;
+  }
+  section.services .list {
+    justify-content: center;
+  }
+  section.services.section .list .service {
+    width: 50%;
+    max-width: 900px;
   }
 }
 
