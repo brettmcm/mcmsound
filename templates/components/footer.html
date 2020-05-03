@@ -5,41 +5,14 @@
 
     <div class="cta">
         <h2>{{callToAction.headline}}</h2>
+        <h2>—</h2>
         {% for button in callToAction.buttons %}
         <a href="{{button.buttonLink}}"><button class="{{button.style}}">{{button.label}}</button></a>
         {% endfor %}
     </div>
 
-    <div class="contact">
-        <div class="item"><img src="/lib/img/icon-email.svg" class="icon"><a
-                href="mailto:info@themcmsound.com">info@themcmsound.com</a></div>
-        <div class="item"><img src="/lib/img/icon-phone.svg" class="icon">201.891.1460</div>
-        {# <div class="item"><img src="/lib/img/icon-portal.svg" class="icon"><a href="https://wave.evolphin.com/login.php">Client Login</a></div> #}
-        <div class="social">
-            <a href="https://open.spotify.com/user/{{social.spotifyHandle}}">
-                <img src="/lib/img/logo-spotify.svg" class="logo">
-            </a>
-            <a href="http://mixcloud.com/{{social.mixcloudHandle}}">
-                <img src="/lib/img/logo-mixcloud.png" class="logo">
-            </a>
-            <a href="http://soundcloud.com/{{social.soundcloudHandle}}">
-                <img src="/lib/img/logo-soundcloud.svg" class="logo">
-            </a>
-            <a href="http://youtube.com/channel/{{social.youtubeChannel}}">
-                <img src="/lib/img/logo-youtube.svg" class="logo">
-            </a>
-            <a href="http://instagram.com/{{social.instagramHandle}}">
-                <img src="/lib/img/logo-ig.svg" class="logo">
-            </a>
-            <a href="http://twitter.com/{{social.twitterHandle}}">
-                <img src="/lib/img/logo-twitter.svg" class="logo">
-            </a>
-        </div>
-    </div>
-
-
-
-    <div class="nav">
+    
+    <div class="nav hero-font">
         {% set mainMenu = craft.entries.section('mainMenu').level(1).all() %}
         {% for section in mainMenu %}
             <a href="{{section.associatedSection.one().getUrl()}}" class="outer-link">{{section.title}}</a>
@@ -47,8 +20,16 @@
     </div>
 
         
-    <div class="branding">
-        <a href="/" class="logo outer-link"><img src="/lib/img/branding/mcm-logo-small.svg" class="footer-logo"></a>
+    <div class="contact hero-font">
+        <div class="item primary"><img src="/lib/img/icon-email.svg" class="icon"><a href="mailto:info@themcmsound.com">info@themcmsound.com</a></div>
+        <div class="item primary no-hover"><img src="/lib/img/icon-phone.svg" class="icon">201.891.1460</div>
+        <a class="item" href="https://open.spotify.com/user/{{social.spotifyHandle}}"><img src="/lib/img/logo-spotify.svg" class="logo"></a>
+        <a class="item" href="http://mixcloud.com/{{social.mixcloudHandle}}"><img src="/lib/img/logo-mixcloud.png" class="logo"></a>
+        <a class="item" href="http://soundcloud.com/{{social.soundcloudHandle}}"><img src="/lib/img/logo-soundcloud.svg" class="logo"></a>
+        <a class="item" href="http://youtube.com/channel/{{social.youtubeChannel}}"><img src="/lib/img/logo-youtube.svg" class="logo"></a>
+        <a class="item" href="http://instagram.com/{{social.instagramHandle}}"><img src="/lib/img/logo-ig.svg" class="logo"></a>
+        <a class="item" href="http://twitter.com/{{social.twitterHandle}}"><img src="/lib/img/logo-twitter.svg" class="logo"></a>
+        <div class="branding"><a href="/" class="logo outer-link"><img src="/lib/img/branding/mcm-logo-small.svg" class="footer-logo"></a></div>
     </div>
 
 

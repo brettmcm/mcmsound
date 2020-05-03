@@ -22,34 +22,34 @@ pre {
 ul { margin: 0; list-style-type: none; }
 ul li { margin-left: 0px; }
 a {
-    display: inline-block;
+  position: relative;
+  display: inline-block;
   text-decoration: none;
   font-weight: 400;
   color: $foreground;
   transition: color 0.3s;
   &.primary {
-      position:relative;
       &:after {
-          position:absolute;
-          content:'';
-          width:6px;
-          height:6px;
-          top:6px;
-          right:-12px;
-          transform: rotate(-45deg);
-          border-right: 2px solid $foreground;
-          border-bottom: 2px solid $foreground;
-          transition: border 0.3s, right 0.3s;
+          position: absolute;
+          bottom: -0.4em;
+          left: 5%;
+          width: 90%;
+          height: 1px;
+          content: '';
+          background: rgba($foreground, 0.3);
+          transition: 0.2s ease-in-out;
       }
+      
   }
   &:hover {
     color: $primary-highlight;
     &.primary {
         &:after {
-            right: -15px;
-            border-right: 2px solid $primary-highlight;
-            border-bottom: 2px solid $primary-highlight;
-        }
+          left: 0;
+          width: 100%;
+          bottom: -0.2em;
+          background: $primary-highlight;
+      }
     }
   }
 }

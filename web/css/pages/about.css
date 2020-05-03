@@ -34,34 +34,31 @@ ul li {
 }
 
 a {
+  position: relative;
   display: inline-block;
   text-decoration: none;
   font-weight: 400;
   color: white;
   transition: color 0.3s;
 }
-a.primary {
-  position: relative;
-}
 a.primary:after {
   position: absolute;
+  bottom: -0.4em;
+  left: 5%;
+  width: 90%;
+  height: 1px;
   content: "";
-  width: 6px;
-  height: 6px;
-  top: 6px;
-  right: -12px;
-  transform: rotate(-45deg);
-  border-right: 2px solid white;
-  border-bottom: 2px solid white;
-  transition: border 0.3s, right 0.3s;
+  background: rgba(255, 255, 255, 0.3);
+  transition: 0.2s ease-in-out;
 }
 a:hover {
   color: #35eec6;
 }
 a:hover.primary:after {
-  right: -15px;
-  border-right: 2px solid #35eec6;
-  border-bottom: 2px solid #35eec6;
+  left: 0;
+  width: 100%;
+  bottom: -0.2em;
+  background: #35eec6;
 }
 
 p {
