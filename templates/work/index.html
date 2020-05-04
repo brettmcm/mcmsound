@@ -78,7 +78,7 @@
                     <img src="{{poster.getUrl()}}" class="poster" srcset="{{ m_utils.img(poster) }}"
                     sizes="(min-width: 960px) 50vw, 100vw" />
                     <a href="#" class="work-piece"
-                        data-content="{{video.url}}">
+                        data-content="{{video.getUrl()}}">
                         <h2>{{video.title}}</h2>
                         <button class="secondary">
                             {% if isCampaign %}
