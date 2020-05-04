@@ -58,9 +58,9 @@
     <section class="grid">
 
         {% if category is defined %}
-        {% set workCollection = craft.entries.relatedTo(category) %}
+            {% set workCollection = craft.entries.relatedTo(category) %}
         {% else %}
-        {% set workCollection = craft.entries.section('videos') %}
+            {% set workCollection = craft.entries.section('videos') %}
         {% endif %}
 
 
@@ -78,7 +78,7 @@
                     <img src="{{poster.getUrl()}}" class="poster" srcset="{{ m_utils.img(poster) }}"
                     sizes="(min-width: 960px) 50vw, 100vw" />
                     <a href="#" class="work-piece"
-                        data-content="{{video.getUrl()}}">
+                        data-content="{{video.url}}">
                         <h2>{{video.title}}</h2>
                         <button class="secondary">
                             {% if isCampaign %}
