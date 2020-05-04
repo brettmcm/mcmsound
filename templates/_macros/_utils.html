@@ -1,0 +1,15 @@
+<!-- Responsive Image Macro -->
+
+{% macro img(image) %}
+
+  {%- set outputWidths = [640, 1024, 1600] -%}
+  {%- set srcset = [] -%}
+  {%- for outputWidth in outputWidths -%}
+    {%- if outputWidth <= image.width -%}
+      {%- set srcset = srcset | merge([image.url({ width: outputWidth }) ~ ' ' ~ outputWidth ~ 'w']) -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {{- srcset | join(', ') -}}
+
+{% endmacro %}

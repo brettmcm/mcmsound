@@ -3,34 +3,38 @@ section.overview {
     display:flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
 
     box-sizing: border-box;
-    padding: calc(6em + 5vw) 5% 0 5%;
+    padding: calc(6em + 5vw) 5%;
+    min-height: calc(var(--vh, 1vh) * 60);;
     width: 100%;
 
     background-position: center center;
     background-size: cover;
-
-    h4  {
-        margin-bottom: 1em;
+    h1 {
+        font-size: calc(4em + 1vw);
     }
     p {
         max-width: 750px;
         margin-bottom: 0;
     }
-    @media screen and (min-width: $break-large) {
-        align-items: flex-start;
-    }
-    &.title {
-        padding: calc(3em + 5vw) 5%;
+    .subnav {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
     }
     &.condensed {
         padding: 4em 5% 2em 5%;
+        min-height: 0;
+        align-items: flex-start;
     }
     &.hero {
         padding: 0 5%;
-        height: calc(70vh - 6em);
+        height: calc(90vh - 6em);
+        min-height: 40em;
         img.bg {
             position: absolute;
             top:0;

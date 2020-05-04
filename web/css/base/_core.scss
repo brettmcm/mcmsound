@@ -1,11 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Open+Sans@1&display=swap');
+
 html, body {
   background:$background;
   height:100%;
   margin:0;
   padding:0;
-  font-family: 'Montserrat', sans-serif;
-  font-weight:300;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 300;
   line-height:1.5rem;
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+.hero-font {
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
 }
 pre {
   color:$foreground;
@@ -13,34 +22,34 @@ pre {
 ul { margin: 0; list-style-type: none; }
 ul li { margin-left: 0px; }
 a {
-    display: inline-block;
+  position: relative;
+  display: inline-block;
   text-decoration: none;
   font-weight: 400;
   color: $foreground;
   transition: color 0.3s;
   &.primary {
-      position:relative;
       &:after {
-          position:absolute;
-          content:'';
-          width:6px;
-          height:6px;
-          top:6px;
-          right:-12px;
-          transform: rotate(-45deg);
-          border-right: 2px solid $foreground;
-          border-bottom: 2px solid $foreground;
-          transition: border 0.3s, right 0.3s;
+          position: absolute;
+          bottom: -0.4em;
+          left: 5%;
+          width: 90%;
+          height: 1px;
+          content: '';
+          background: rgba($foreground, 0.3);
+          transition: 0.2s ease-in-out;
       }
+      
   }
   &:hover {
     color: $primary-highlight;
     &.primary {
         &:after {
-            right: -15px;
-            border-right: 2px solid $primary-highlight;
-            border-bottom: 2px solid $primary-highlight;
-        }
+          left: 0;
+          width: 100%;
+          bottom: -0.2em;
+          background: $primary-highlight;
+      }
     }
   }
 }
@@ -64,8 +73,8 @@ p {
 }
 h1, h2, h3, h4 {
   color:$foreground;
-  font-weight:700;
-  letter-spacing:0.1vw;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
   margin:0;
   padding:0;
   line-height:1em;
@@ -77,8 +86,10 @@ h3 {
 }
 h4  {
   font-size:0.8em;
+  line-height: 3em;
   text-transform: uppercase;
   color: $primary-highlight;
+  font-weight:500;
 }
 h5  {
   font-size:0.9em;
@@ -96,10 +107,16 @@ button {
   outline:none;
   border-radius:2px;
 
+  justify-content: center;
+  align-items: center;
+
   font-size:0.8em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 
+  svg {
+    margin: -1px 0 0 0.5em;
+  }
 
   &:hover {
     cursor: pointer;
@@ -125,10 +142,12 @@ button {
     border: 1px solid $foreground;
     background: none;
     color: $foreground;
+    fill: $foreground;
     box-shadow:none;
     &:hover {
       border: 1px solid $primary-highlight;
       color: $background;
+      fill: $background;
       background: $primary-highlight;
       box-shadow:0 10px 35px rgba(53, 238, 198,0.3);
       transform: translateY(-1px);
@@ -193,7 +212,7 @@ button {
     justify-content: flex-start;
     align-items: flex-end;
     border-bottom:1px solid rgba(255,255,255,0.1);
-    padding: 0 5%;
+    padding: calc(4em + 5vw) 5% 0 5%;
     list-style: none;
     a {
         display: inline-block;
@@ -213,28 +232,4 @@ section.button {
     align-items: center;
     padding: 5%;
     width: 100%;
-}
-
-section.cta {
-    background:$background-highlight;
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-
-    box-sizing: border-box;
-    padding: 3em 5%;
-    margin: calc(3em + 5vw) 0 0 0;
-
-    width: 100%;
-    border-radius: 2px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    border:1px solid rgba(255,255,255,0.05);
-
-    p { text-align: center; }
-
-    @media screen and (min-width: $break-large)  {
-        flex-direction: row;
-        p { margin: 0 2em 0 0; }
-    }
 }

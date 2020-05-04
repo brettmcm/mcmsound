@@ -2,8 +2,8 @@
   width: device-width;
 }
 section.cards {
-  background: #1c1d1f;
-  border-bottom: 1px solid #212224;
+  background: #17181a;
+  border-bottom: 1px solid #1c1d1f;
 }
 
 article {
@@ -12,7 +12,7 @@ article {
   justify-content: center;
   align-items: center;
   margin-top: 3.5em;
-  background-image: linear-gradient(#111, #1c1d1f);
+  background-image: linear-gradient(#070707, #17181a);
   box-sizing: border-box;
   padding: 2em 5% 6em 5%;
 }
@@ -93,6 +93,7 @@ article section.image-with-text p.featured {
   }
 }
 article section.gallery {
+  width: 100%;
   max-width: 1400px;
   display: flex;
   flex-direction: column;
@@ -126,7 +127,7 @@ section.article-footer {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  background: #1c1d1f;
+  background: #17181a;
   width: 100%;
   padding: 0 5% 15em 5%;
 }

@@ -1,3 +1,5 @@
+{% import '_macros/_utils' as m_utils %}
+
 {# Load CSS #}
 {% do view.registerCssFile("/css/pages/work.css") %}
 
@@ -13,9 +15,23 @@
     .one() %}
 
 <section class="overview title" style="background-image: url('{{section.posterImage.one().getUrl()}}')">
-    <h4>{{section.headline}}</h4>
+    <!-- <h4>{{section.headline}}</h4> -->
     <h1>{{section.title}}</h1>
     {{section.body}}
+
+    <div class="subnav hero-font" id="work-subnav">
+        <div class="subnav-bg"></div>
+        <ul class="tabs" id="filtermenu">
+            <li><a id="all" href="{{siteUrl}}work/"
+                    class="{% if category is defined %}tab{% else %}tab active{% endif %}">All</a></li>
+            {% for cat in craft.categories.all() %}
+            <li><a id="{{cat.slug}}" href="{{siteUrl}}work/{{cat.slug}}"
+                    class="tab {% if category is defined and category|replace(' ', '-')|lower is same as(cat.slug) %}active{% endif %}">{{cat.title}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
 </section>
 
 {% set query = {
@@ -36,18 +52,6 @@
 {# Fetch entries #}
 {% set entries = craft.entries(query) %}
 
-<div class="subnav">
-    <ul class="tabs" id="filtermenu">
-        <li><a id="all" href="{{siteUrl}}work/"
-                class="{% if category is defined %}tab{% else %}tab active{% endif %}">All</a></li>
-        {% for cat in craft.categories.all() %}
-        <li><a id="{{cat.slug}}" href="{{siteUrl}}work/{{cat.slug}}"
-                class="tab {% if category is defined and category|replace(' ', '-')|lower is same as(cat.slug) %}active{% endif %}">{{cat.title}}</a>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
-
 <div class="category-content">
 
 
@@ -62,14 +66,36 @@
 
         {% for video in workCollection.all() %}
 
-        {% set quicktime = video.quicktime.one().getUrl() %}
-        {% set poster = video.posterImage.one().getUrl() %}
+            {% set poster = video.posterImage.one() %}
+            {% if video.quicktime|length > 1 %}
+                {% set isCampaign = true %}
+            {% else %}
+                {% set isCampaign = false %}
+            {% endif %}
 
-        <div class="video">
-            <video controls poster="{{poster}}">
-                <source src="{{quicktime}}" type="video/mp4">
-            </video>
-        </div>
+            {% if poster is defined and poster is not null %}
+                <div class="poster">
+                    <img src="{{poster.getUrl()}}" class="poster" srcset="{{ m_utils.img(poster) }}"
+                    sizes="(min-width: 960px) 50vw, 100vw" />
+                    <a href="#" class="work-piece"
+                        data-content="{{video.getUrl()}}">
+                        <h2>{{video.title}}</h2>
+                        <button class="secondary">
+                            {% if isCampaign %}
+                                View Campaign
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 12 12">
+                                    <polygon points="6.793 3.793 0.586 10 2 11.414 8.207 5.207 11 8 11 1 4 1 6.793 3.793"></polygon>
+                                </svg>
+                            {% else %}
+                                Play Video
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 12 12">
+                                    <path d="M2.783.088A.5.5,0,0,0,2,.5v11a.5.5,0,0,0,.268.442A.49.49,0,0,0,2.5,12a.5.5,0,0,0,.283-.088l8-5.5a.5.5,0,0,0,0-.824Z"></path>
+                                </svg>
+                            {% endif %}
+                        </button>
+                    </a>
+                </div>
+            {% endif %}
 
         {% endfor %}
 
@@ -88,20 +114,18 @@
             </svg>
         </section>
 
-
-        <section class="cta">
-
-            <p class="lead">{{callToAction.headline}}</p>
-            {% for button in callToAction.buttons %}
-            <a href="{{button.buttonLink}}"><button class="{{button.style}}">{{button.label}}</button></a>
-            {% endfor %}
-
-        </section>
-
     </section>
 
 
 
+</div>
+
+<div class="content-viewer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="close">
+        <polygon points="27.314 7.515 24.485 4.686 16 13.172 7.515 4.686 4.686 7.515 13.172 16 4.686 24.485 7.515 27.314 16 18.828 24.485 27.314 27.314 24.485 18.828 16 27.314 7.515"></polygon>
+    </svg>
+    <div class="closer-capture"></div>
+    <div class="campaign-body"></div>
 </div>
 
 {% includeJsFile "/js/vendors/jquery/jquery-3.1.0.min.js" %}

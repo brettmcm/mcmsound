@@ -2,8 +2,11 @@
   width: device-width;
 }
 section.services.section {
-  background-image: linear-gradient(#111, #1c1d1f);
+  background-image: linear-gradient(#070707, #17181a);
   margin-top: 0;
+}
+section.services.section ul.list {
+  padding: 0;
 }
 
 /*# sourceMappingURL=services.css.map */

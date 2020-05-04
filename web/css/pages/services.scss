@@ -3,4 +3,7 @@
 section.services.section {
     background-image: linear-gradient($background,$background-highlight);
     margin-top:0;
+    ul.list {
+        padding:0; 
+    }
 }
