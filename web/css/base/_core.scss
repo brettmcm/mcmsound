@@ -212,7 +212,7 @@ button {
     justify-content: flex-start;
     align-items: flex-end;
     border-bottom:1px solid rgba(255,255,255,0.1);
-    padding: 0 5%;
+    padding: calc(4em + 5vw) 5% 0 5%;
     list-style: none;
     a {
         display: inline-block;

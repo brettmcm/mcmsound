@@ -1,7 +1,17 @@
 $(window).on("load", function () {
+
+  // var workSubnav = $("#work-subnav");
+
   $(window).scroll(function () {
     $(".header-bg").css("opacity", $(".header-bg").offset().top / 200);
     $(".subnav-bg").css("opacity", $(".header-bg").offset().top / 200);
+
+    // if (workSubnav.offset().top < 100) {
+    //   workSubnav.addClass("pinned");
+    // } else {
+    //   workSubnav.removeClass("pinned");
+    // }
+
   }).scroll(); //invoke scroll-handler on page-load
 });
 
@@ -59,7 +69,9 @@ $(document).ready(function () {
   });
 
 
-  var menu = $('#filtermenu');
+  var menu = $('#filtermenu')
+
+  
 
   function showWork(category) {
       $(menu).find('#' + category).addClass('active');
