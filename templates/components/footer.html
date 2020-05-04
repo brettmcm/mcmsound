@@ -2,22 +2,24 @@
 
 
 <footer>
-
+{# 
     <div class="cta">
         <h2>{{callToAction.headline}}</h2>
         <h2>—</h2>
         {% for button in callToAction.buttons %}
         <a href="{{button.buttonLink}}"><button class="{{button.style}}">{{button.label}}</button></a>
         {% endfor %}
-    </div>
+    </div> #}
 
     
-    <div class="nav hero-font">
+    {# <div class="nav hero-font">
         {% set mainMenu = craft.entries.section('mainMenu').level(1).all() %}
         {% for section in mainMenu %}
             <a href="{{section.associatedSection.one().getUrl()}}" class="outer-link">{{section.title}}</a>
         {% endfor %}
-    </div>
+    </div> #}
+
+    <h3>{{callToAction.headline}}</h3>
 
         
     <div class="contact hero-font">

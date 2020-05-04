@@ -6,7 +6,7 @@ footer {
 
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
     flex-wrap: wrap;
 
     padding: calc(3em + 3vw) 5%;
@@ -87,6 +87,7 @@ footer {
 
     
     @media screen and (min-width: $break-small){
+        align-items: center;
         .cta {
             text-align: center;
             width: auto;

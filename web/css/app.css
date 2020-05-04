@@ -433,7 +433,7 @@ footer {
   color: white;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   flex-wrap: wrap;
   padding: calc(3em + 3vw) 5%;
   box-sizing: border-box;
@@ -508,6 +508,9 @@ footer .contact .branding img {
   }
 }
 @media screen and (min-width: 640px) {
+  footer {
+    align-items: center;
+  }
   footer .cta {
     text-align: center;
     width: auto;
