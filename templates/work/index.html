@@ -25,9 +25,11 @@
             <li><a id="all" href="{{siteUrl}}work/"
                     class="{% if category is defined %}tab{% else %}tab active{% endif %}">All</a></li>
             {% for cat in craft.categories.all() %}
-            <li><a id="{{cat.slug}}" href="{{siteUrl}}work/{{cat.slug}}"
-                    class="tab {% if category is defined and category|replace(' ', '-')|lower is same as(cat.slug) %}active{% endif %}">{{cat.title}}</a>
-            </li>
+                {% if cat.slug != "remote-recording" %}
+                    <li><a id="{{cat.slug}}" href="{{siteUrl}}work/{{cat.slug}}"
+                            class="tab {% if category is defined and category|replace(' ', '-')|lower is same as(cat.slug) %}active{% endif %}">{{cat.title}}</a>
+                    </li>
+                {% endif %}
             {% endfor %}
         </ul>
     </div>

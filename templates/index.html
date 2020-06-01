@@ -54,7 +54,7 @@
     <div class="list">
         {% set categories = craft.categories().group('workCategories').all() %}
         {% for category in categories %}
-            <a href="/work/{{category.slug}}" class="service {{ cycle(['odd', 'even'], loop.index0) }}">
+            <a href="/work/{{category.slug != "remote-recording" ? category.slug : ""}}" class="service {{ cycle(['odd', 'even'], loop.index0) }}">
                 <div class="title">
                     <img src="lib/img/icon-{{category.slug}}.svg" class="icon" /><h3>{{category.title}}</h3>
                 </div>
