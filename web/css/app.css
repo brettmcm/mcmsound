@@ -855,6 +855,12 @@ section.services.section .list .service p {
   section.services .list {
     justify-content: center;
   }
+  section.services.section {
+    justify-content: center;
+  }
+  section.services.section .list {
+    max-width: 1800px;
+  }
   section.services.section .list .service {
     width: 50%;
     max-width: 900px;

@@ -112,7 +112,9 @@ section.services {
             justify-content: center;
         }
         &.section {
+            justify-content: center;
             .list {
+                max-width: 1800px;
                 .service {
                     width: 50%;
                     max-width: 900px;
