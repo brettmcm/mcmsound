@@ -116,6 +116,9 @@ section.services {
                 .service {
                     width: 50%;
                     max-width: 900px;
+                    &:last-child {
+                        margin-right: auto;
+                    }
                 }
             }
         }

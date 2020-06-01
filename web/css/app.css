@@ -859,6 +859,9 @@ section.services.section .list .service p {
     width: 50%;
     max-width: 900px;
   }
+  section.services.section .list .service:last-child {
+    margin-right: auto;
+  }
 }
 
 .grid {
