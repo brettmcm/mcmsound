@@ -3,6 +3,8 @@
 
         {% if block.video is defined and block.video is not empty %}
             {% set video = block.video.first().url %}
+        {% else %}
+            {% set video = block.vimeoUrl %}
         {% endif %}
         {% if block.poster is defined and block.poster is not empty %}
             {% set poster = block.poster.first().url %}
