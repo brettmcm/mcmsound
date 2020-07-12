@@ -1,13 +1,25 @@
 <h2>{{entry.title}}</h2>
 
-<div class="video-carousel" data-total="{{entry.quicktime|length - 1}}">
-    {% for video in entry.quicktime %}
+
+{% set vimeoVids = entry.vimeoUrl.all() %}
+{% set qtVids = entry.quicktime.all() %}
+
+{% if qtVids|length > 0 %}
+    {% set totalVids = qtVids|length - 1 %}
+    {% set vidGroup = qtVids %}
+{% else %}
+    {% set totalVids = vimeoVids|length - 1 %}
+    {% set vidGroup = vimeoVids %}
+{% endif %}
+
+<div class="video-carousel" data-total="{{totalVids}}">
+    {% for video in vidGroup %}
         <video class="video{{loop.index0}}" data-index="{{loop.index0}}" data-total="{{loop.length - 1}}" data-title="{{video.headline}}">
-            <source src="{{video.getUrl()}}" type="video/mp4">
+            <source src="{{qtVids|length > 0 ? video.getUrl() : video.vimeoUrl}}" type="video/mp4">
         </video>
     {% endfor %}
 
-    {% if entry.quicktime|length > 1 %}
+    {% if totalVids > 1 %}
         <div class="carousel-nav">
             <div class="nav-trigger p">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -35,10 +47,10 @@
 <div class="details">
     <div class="vid-title"></div>
     <div class="count">
-        {% if entry.quicktime|length > 1 %}
+        {% if totalVids > 1 %}
             <span class="current">1</span>
             of
-            <span class="total">{{entry.quicktime|length}}</span>
+            <span class="total">{{totalVids}}</span>
         {% endif %}
     </div>
 </div>
