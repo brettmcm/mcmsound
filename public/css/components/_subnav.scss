@@ -39,6 +39,7 @@
 
         @media screen and (max-width:$break-small) {
             overflow-x: scroll;
+            overflow-y: no-scroll;
         }
     }
 }
