@@ -1,5 +1,5 @@
 /.env
 /.idea
 /vendor
-/web/lib/assets
+/public/lib/assets
 .DS_Store
