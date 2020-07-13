@@ -9,7 +9,7 @@ footer {
     align-items: flex-start;
     flex-wrap: wrap;
 
-    padding: calc(3em + 3vw) 5%;
+    padding: 5%;
     box-sizing: border-box;
 
     .cta {
@@ -121,6 +121,7 @@ footer {
         .contact {
             width: 100%;
             justify-content: flex-start;
+            margin-top: 0;
             .item.primary {
                 justify-content: flex-start;
             }
