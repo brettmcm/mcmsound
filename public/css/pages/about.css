@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans&display=swap");
 @-ms-viewport {
   width: device-width; }
 
@@ -206,6 +206,165 @@ section.button {
   align-items: center;
   padding: 5%;
   width: 100%; }
+
+section.studio {
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  section.studio section.intro {
+    width: 100%;
+    max-width: 1400px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0; }
+    section.studio section.intro .copy {
+      width: 100%; }
+    section.studio section.intro svg {
+      display: none;
+      width: 50%; }
+      @media screen and (min-width: 960px) {
+        section.studio section.intro svg {
+          display: block; } }
+    @media screen and (min-width: 960px) {
+      section.studio section.intro .copy {
+        box-sizing: border-box;
+        width: 40%; } }
+  section.studio section.gear {
+    margin: 5% 0;
+    width: 100%;
+    max-width: 1400px;
+    color: white;
+    columns: 1; }
+    section.studio section.gear .subnav {
+      justify-content: flex-start; }
+      section.studio section.gear .subnav .tabs {
+        padding: 0; }
+    section.studio section.gear ul.hardware, section.studio section.gear ul.software {
+      padding: 5% 0;
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid; }
+      section.studio section.gear ul.hardware li, section.studio section.gear ul.software li {
+        padding-bottom: 1em; }
+        section.studio section.gear ul.hardware li span, section.studio section.gear ul.software li span {
+          display: block;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 700; }
+    @media screen and (min-width: 640px) {
+      section.studio section.gear {
+        columns: 2; } }
+  section.studio svg.hr {
+    margin: 10vw 0; }
+  section.studio section.gallery {
+    margin: 5% 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    section.studio section.gallery .carousel {
+      width: 100%;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      white-space: nowrap;
+      padding-bottom: 1em;
+      margin-bottom: 1em; }
+      section.studio section.gallery .carousel img {
+        display: inline-block;
+        height: 70vw;
+        width: auto;
+        max-width: 90%;
+        object-fit: cover;
+        scroll-snap-align: center;
+        margin-right: 1em; }
+        @media screen and (min-width: 960px) {
+          section.studio section.gallery .carousel img {
+            height: 70vh; } }
+      section.studio section.gallery .carousel .grid {
+        width: 200%;
+        height: 70vh;
+        padding: 0;
+        margin-bottom: 3em;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; }
+        section.studio section.gallery .carousel .grid img {
+          width: 100%;
+          object-fit: cover;
+          justify-self: stretch;
+          align-self: stretch; }
+          section.studio section.gallery .carousel .grid img:nth-child(1) {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 3; }
+          section.studio section.gallery .carousel .grid img:nth-child(2) {
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 5; }
+          section.studio section.gallery .carousel .grid img:nth-child(3) {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 7; }
+          section.studio section.gallery .carousel .grid img:nth-child(4) {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 5;
+            grid-row-end: 7; }
+          section.studio section.gallery .carousel .grid img:nth-child(5) {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 5;
+            grid-row-end: 7; }
+          section.studio section.gallery .carousel .grid img:nth-child(6) {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 7; }
+          section.studio section.gallery .carousel .grid img:nth-child(7) {
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 4; }
+          section.studio section.gallery .carousel .grid img:nth-child(8) {
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 4;
+            grid-row-end: 7; }
+          section.studio section.gallery .carousel .grid img:nth-child(9) {
+            grid-column-start: 6;
+            grid-column-end: 7;
+            grid-row-start: 1;
+            grid-row-end: 7; }
+    section.studio section.gallery .copy {
+      width: 100%;
+      max-width: 1400px;
+      display: flex;
+      flex-direction: column; }
+      @media screen and (min-width: 960px) {
+        section.studio section.gallery .copy {
+          flex-direction: row;
+          justify-content: space-between; } }
+      section.studio section.gallery .copy .header {
+        margin-right: 5vw; }
+      section.studio section.gallery .copy p {
+        max-width: 500px;
+        margin-right: auto; }
+      section.studio section.gallery .copy .arrows {
+        display: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none; }
+        section.studio section.gallery .copy .arrows svg:hover {
+          cursor: pointer; }
+        @media screen and (min-width: 960px) {
+          section.studio section.gallery .copy .arrows {
+            display: inline; } }
 
 section.content-section {
   margin: 5%;

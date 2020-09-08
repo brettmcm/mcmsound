@@ -19,23 +19,146 @@
 
 {% for section in entry.sections.all() %}
 
-    <section class="content-section {{section.justify}}">
+<section class="content-section {{section.justify}}">
 
-        {% if section.photo is defined and section.photo is not empty %}
-            <img src="{{section.photo.one().getUrl()}}">
-        {% endif %}
+    {% if section.photo is defined and section.photo is not empty %}
+    <img src="{{section.photo.one().getUrl()}}">
+    {% endif %}
 
-        <div class="copy">
-            <h4>{{section.subhead}}</h4>
-            <h2>{{section.headline}}</h2>
-            {{section.body}}
-        </div>
-        {# <img src="/lib/assets/photos/jd.jpg"> #}
+    <div class="copy">
+        <h4>{{section.subhead}}</h4>
+        <h2>{{section.headline}}</h2>
+        {{section.body}}
+    </div>
+    {# <img src="/lib/assets/photos/jd.jpg"> #}
 
 
-    </section>
+</section>
 
 {% endfor %}
+
+<section class="studio">
+
+    <section class="gallery">
+        <div class="carousel" id="gallery-carousel">
+            <img src="lib/img/studio-gallery/IMG_3481.jpg" id="gallery-photo-01">
+            <img src="lib/img/studio-gallery/IMG_3560.jpg" id="gallery-photo-02">
+            <img src="lib/img/studio-gallery/IMG_3544.jpg" id="gallery-photo-03">
+            <img src="lib/img/studio-gallery/IMG_3504.jpg" id="gallery-photo-04">
+            <img src="lib/img/studio-gallery/IMG_3500.jpg" id="gallery-photo-05">
+            <img src="lib/img/studio-gallery/IMG_3552.jpg" id="gallery-photo-06">
+            <img src="lib/img/studio-gallery/IMG_3505.jpg" id="gallery-photo-07">
+            <img src="lib/img/studio-gallery/IMG_3502.jpg" id="gallery-photo-08">
+            <img src="lib/img/studio-gallery/IMG_3506.jpg" id="gallery-photo-09">
+        </div>
+        <div class="copy">
+            <div class="header">
+                <h4>Sounds Great In Here</h4>
+                <h1>The Studio</h1>
+            </div>
+            <p>The right space, and the ability to playback at the highest quality seem like they may not matter that much, but they are paramount to attaining success in sound. If you can't properly hear what's going on, you might as well be working with earplugs in. We have built our studio to the highest standards to make sure that we hear what you don't.</p>
+            <div class="arrows">
+                <svg id="gallery-arrow-left" class="left" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M38 44L26 32L38 20" stroke="#35EEC6" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <svg id="gallery-arrow-right" class="right" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M26 20L38 32L26 44" stroke="#35EEC6" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+
+            </div>
+
+        </div>
+    </section>
+
+    <svg class="hr" width="129" height="33" viewBox="0 0 129 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M1 19.8955H45.5299L49.5236 11.6219L53.5173 31.8967L59.5079 1.89355L63.5016 25.1687L68.0943 11.6219L74.0849 31.8967L78.7775 8.62154L82.7712 23.6231L87.364 19.8955H128"
+            stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="round" />
+    </svg>
+
+    <section class="intro">
+        <div class="copy">
+            <h4>Studio Gear</h4>
+            <h1>Not just the tools, but knowing how to wield them.</h1>
+        </div>
+        <svg viewBox="0 0 415 275" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M207.5 83.1347C222.474 83.1347 236.088 89.2028 245.864 99.1099C255.641 109.017 261.829 122.515 261.829 137.5C261.829 152.485 255.765 166.107 245.864 175.89C236.088 185.673 222.474 191.865 207.5 191.865C192.526 191.865 178.912 185.797 169.136 175.89C159.359 166.107 153.171 152.485 153.171 137.5C153.171 122.515 159.235 108.893 169.136 99.1099C179.036 89.3266 192.526 83.1347 207.5 83.1347Z"
+                stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="square" />
+            <path
+                d="M90.3914 205.295L102.724 226.568L122.035 218.423L141.346 210.278C146.604 215.069 152.339 219.285 158.362 222.83C164.481 226.376 170.981 229.251 177.673 231.455L180.254 252.248L182.836 273.042H207.404H231.973L234.554 252.248L237.136 231.455C243.923 229.251 250.424 226.376 256.447 222.83C262.469 219.285 268.301 215.069 273.463 210.278L292.774 218.423L312.085 226.568L324.417 205.199"
+                stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="square" />
+            <path
+                d="M324.609 69.7052L312.276 48.3366L292.965 56.5774L273.654 64.7224C268.396 59.9312 262.756 55.715 256.638 52.1695C250.519 48.6241 244.019 45.7494 237.327 43.5455L234.65 22.7519L232.069 1.95824H207.5H182.931L180.35 22.7519L177.769 43.5455C170.981 45.7494 164.481 48.6241 158.458 52.1695C152.339 55.715 146.604 59.9312 141.441 64.7224L122.035 56.5774L102.724 48.3366L90.3914 69.7052"
+                stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="square" />
+            <path
+                d="M114.549 174.926C109.669 162.92 107.303 150.321 107.303 137.574C107.303 124.827 109.669 112.08 114.549 100.223"
+                stroke="#35EEC6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="square" />
+            <path
+                d="M298.208 100.074C303.087 112.08 305.453 124.679 305.453 137.426C305.453 150.173 303.087 162.92 298.208 174.777"
+                stroke="#35EEC6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="square" />
+            <path
+                d="M82.904 187.821C76.3975 171.813 73.1443 154.62 73.1443 137.574C73.1443 120.529 76.3975 103.335 82.904 87.3275"
+                stroke="#35EEC6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="square" />
+            <path
+                d="M329.853 87.1792C336.359 103.187 339.612 120.381 339.612 137.426C339.612 154.471 336.359 171.665 329.853 187.673"
+                stroke="#35EEC6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="square" />
+            <path
+                d="M48.8931 201.605C40.6121 181.151 36.4717 159.363 36.4717 137.574C36.4717 115.786 40.6121 93.9974 48.8931 73.543"
+                stroke="#35EEC6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="square" />
+            <path
+                d="M363.864 73.3947C372.144 93.8491 376.285 115.637 376.285 137.426C376.285 159.214 372.144 181.003 363.864 201.457"
+                stroke="#35EEC6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="square" />
+            <path
+                d="M17.8396 214.204C7.93212 189.748 2.90442 163.661 2.90442 137.426C2.90442 111.191 7.93212 85.2523 17.8396 60.6478"
+                stroke="#35EEC6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="square" />
+            <path d="M395.065 60.796C404.972 85.4006 410 111.487 410 137.574C410 163.661 404.972 189.748 395.065 214.352"
+                stroke="#35EEC6" stroke-width="3" stroke-miterlimit="10" stroke-linecap="square" />
+        </svg>
+    </section>
+    
+    <section class="gear">
+        {# <div class="subnav">
+            <ul class="tabs">
+                <li><a id="all" href="#" class="tab active">Hardware</a></li>
+                <li><a id="all" href="#" class="tab">Software</a></li>
+            </ul>
+        </div> #}
+        <ul class="hardware">
+            <li><h4>Hardware</h4></li>
+            <li>
+                <span>Mac Pro 3.3 GHz 12-Core Intel Xeon W</span>
+                144 GB DDR4 RAM<br>
+                OWC Accelsior 4M2 NVMe SSD RAIDs<br>
+                BlackMagic DeckLink
+            </li>
+            <li><span>Apogee Symphony I/O</span>16x16</li>
+            <li><span>Mackie XR624</span>5.1 Surround Sound Monitoring System</li>
+            <li><span>TC Electronic Clarity M</span>5.1 Loudness Metering System</li>
+            <li><span>AVID S3</span>Control Surface</li>
+        </ul>
+        <ul class="software">
+            <li>
+                <h4>Software</h4>
+            </li>
+            <li><span>Pro Tools Ultimate 2020</span></li>
+            <li><span>Soundminer v5</span></li>
+            <li><span>iZotope RX v6</span></li>
+            <li><span>Melodyne</span></li>
+            <li><span>Source-Connect</span></li>
+            <li><span>Phone Patch</span></li>
+            <li><span>Adobe Creative Suite</span></li>
+            <li><span>Native Instruments Komplete Ultimate</span></li>
+            <li><span>World Class Plug-in Collection</span></li>
+        </ul>
+    </section>
+
+</section>
+
+
+
 
 <!--
 <section class="section-header">
@@ -82,5 +205,6 @@
 
 {% includeJsFile "/js/vendors/jquery/jquery-3.1.0.min.js" %}
 {% includeJsFile "/js/main.js" %}
+{% includeJsFile "/js/about.js" %}
 
 {% endblock %}
