@@ -1,6 +1,7 @@
 $(document).ready(function () {
     
     let currentGalleryPhoto = 0,
+        currentPage = 1,
         vwPad = window.innerWidth * 0.05,
         photoPos = [
             $('#gallery-photo-01').offset().left - vwPad,
@@ -32,23 +33,31 @@ $(document).ready(function () {
     console.log(currentGalleryPhoto);
 
     $('#gallery-arrow-left').click(function (e) {
-        if (currentGalleryPhoto > 0) {
-            currentGalleryPhoto--;
+        // if (currentGalleryPhoto > 0) {
+        //     currentGalleryPhoto--;
+        // }
+        // $('#gallery-carousel').animate({
+        //     scrollLeft: photoPos[currentGalleryPhoto]
+        // }, 300);
+        if (currentPage > 1) {
+            currentPage--;
         }
-        $('#gallery-carousel').animate({
-            scrollLeft: photoPos[currentGalleryPhoto]
-        }, 300);
-        console.log(currentGalleryPhoto);
+        $('.page1').toggleClass("active");
+        $('.page2').toggleClass("active");
     });
 
     $('#gallery-arrow-right').click(function (e) {
-        if (currentGalleryPhoto < photoPos.length - 1) {
-            currentGalleryPhoto++;
+        // if (currentGalleryPhoto < photoPos.length - 1) {
+        //     currentGalleryPhoto++;
+        // }
+        // $('#gallery-carousel').animate({
+        //     scrollLeft: photoPos[currentGalleryPhoto]
+        // }, 300);
+        if (currentPage < 2) {
+            currentPage++;
         }
-        $('#gallery-carousel').animate({
-            scrollLeft: photoPos[currentGalleryPhoto]
-        }, 300);
-        console.log(currentGalleryPhoto);
+        $('.page1').toggleClass("active");
+        $('.page2').toggleClass("active");
     });
 
 
