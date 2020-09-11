@@ -1,180 +1,38 @@
-dateApplied: '2020-07-12 21:40:20'
+dateApplied: '2020-09-11 00:39:42'
 changes:
   -
     message: 'Update timestamp for project config'
     changed:
       dateModified:
-        from: 1594589674
-        to: 1594590020
+        from: 1599784771
+        to: 1599784782
   -
-    added:
-      matrixBlockTypes.71a82ba7-3a25-4eff-8feb-5836d42e6acc.fields.e6af580c-e50e-4e4f-b294-916e15697f51.settings.showUnpermittedFiles: false
-      matrixBlockTypes.71a82ba7-3a25-4eff-8feb-5836d42e6acc.fields.e6af580c-e50e-4e4f-b294-916e15697f51.settings.showUnpermittedVolumes: true
-    message: 'Save matrix block type “text” for parent field “contentModules”'
-    changed:
-      matrixBlockTypes.71a82ba7-3a25-4eff-8feb-5836d42e6acc.fields.e6af580c-e50e-4e4f-b294-916e15697f51.instructions:
-        from: null
-        to: ''
-      matrixBlockTypes.71a82ba7-3a25-4eff-8feb-5836d42e6acc.fields.e6af580c-e50e-4e4f-b294-916e15697f51.settings.purifierConfig:
-        from: null
-        to: ''
-      matrixBlockTypes.71a82ba7-3a25-4eff-8feb-5836d42e6acc.fields.e6af580c-e50e-4e4f-b294-916e15697f51.settings.purifyHtml:
-        from: null
-        to: ''
-      matrixBlockTypes.71a82ba7-3a25-4eff-8feb-5836d42e6acc.fields.e6af580c-e50e-4e4f-b294-916e15697f51.settings.removeEmptyTags:
-        from: 1
-        to: '1'
-      matrixBlockTypes.71a82ba7-3a25-4eff-8feb-5836d42e6acc.fields.e6af580c-e50e-4e4f-b294-916e15697f51.settings.removeInlineStyles:
-        from: 1
-        to: '1'
-      matrixBlockTypes.71a82ba7-3a25-4eff-8feb-5836d42e6acc.fields.e6af580c-e50e-4e4f-b294-916e15697f51.settings.removeNbsp:
-        from: 1
-        to: '1'
-  -
-    added:
-      matrixBlockTypes.933062bc-dc41-4a7b-9238-347a1945482f.fields.1066cc40-d5b2-4491-aa9d-1f08a5bc585a.settings.allowSelfRelations: ''
-      matrixBlockTypes.933062bc-dc41-4a7b-9238-347a1945482f.fields.1066cc40-d5b2-4491-aa9d-1f08a5bc585a.settings.showUnpermittedFiles: false
-      matrixBlockTypes.933062bc-dc41-4a7b-9238-347a1945482f.fields.1066cc40-d5b2-4491-aa9d-1f08a5bc585a.settings.showUnpermittedVolumes: true
-    message: 'Save matrix block type “gallery” for parent field “contentModules”'
-    changed:
-      matrixBlockTypes.933062bc-dc41-4a7b-9238-347a1945482f.fields.1066cc40-d5b2-4491-aa9d-1f08a5bc585a.instructions:
-        from: null
-        to: ''
-      matrixBlockTypes.933062bc-dc41-4a7b-9238-347a1945482f.fields.1066cc40-d5b2-4491-aa9d-1f08a5bc585a.settings.defaultUploadLocationSubpath:
-        from: null
-        to: ''
-      matrixBlockTypes.933062bc-dc41-4a7b-9238-347a1945482f.fields.1066cc40-d5b2-4491-aa9d-1f08a5bc585a.settings.limit:
-        from: null
-        to: ''
-      matrixBlockTypes.933062bc-dc41-4a7b-9238-347a1945482f.fields.1066cc40-d5b2-4491-aa9d-1f08a5bc585a.settings.restrictFiles:
-        from: null
-        to: ''
-      matrixBlockTypes.933062bc-dc41-4a7b-9238-347a1945482f.fields.1066cc40-d5b2-4491-aa9d-1f08a5bc585a.settings.singleUploadLocationSubpath:
-        from: null
-        to: ''
-      matrixBlockTypes.933062bc-dc41-4a7b-9238-347a1945482f.fields.1066cc40-d5b2-4491-aa9d-1f08a5bc585a.settings.validateRelatedElements:
-        from: null
-        to: ''
-  -
-    added:
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.4c2a0219-c944-4574-b109-f9ce79cbaebe.settings.allowSelfRelations: ''
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.4c2a0219-c944-4574-b109-f9ce79cbaebe.settings.showUnpermittedFiles: false
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.4c2a0219-c944-4574-b109-f9ce79cbaebe.settings.showUnpermittedVolumes: true
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.95f46f92-ad5d-456d-b791-b70b7c586420.settings.byteLimit: null
-    message: 'Save matrix block type “imageWithText” for parent field “contentModules”'
-    changed:
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.269db98d-faa9-459f-891a-4287f4a451ea.instructions:
-        from: null
-        to: ''
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.269db98d-faa9-459f-891a-4287f4a451ea.settings.options.0.__assoc__.2.1:
-        from: 1
-        to: '1'
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.269db98d-faa9-459f-891a-4287f4a451ea.settings.options.1.__assoc__.2.1:
-        from: null
-        to: ''
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.269db98d-faa9-459f-891a-4287f4a451ea.settings.options.2.__assoc__.2.1:
-        from: null
-        to: ''
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.4c2a0219-c944-4574-b109-f9ce79cbaebe.instructions:
-        from: null
-        to: ''
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.4c2a0219-c944-4574-b109-f9ce79cbaebe.settings.defaultUploadLocationSubpath:
-        from: null
-        to: ''
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.4c2a0219-c944-4574-b109-f9ce79cbaebe.settings.limit:
-        from: 1
-        to: '1'
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.4c2a0219-c944-4574-b109-f9ce79cbaebe.settings.restrictFiles:
-        from: null
-        to: ''
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.4c2a0219-c944-4574-b109-f9ce79cbaebe.settings.singleUploadLocationSubpath:
-        from: null
-        to: ''
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.4c2a0219-c944-4574-b109-f9ce79cbaebe.settings.validateRelatedElements:
-        from: null
-        to: ''
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.95f46f92-ad5d-456d-b791-b70b7c586420.instructions:
-        from: null
-        to: ''
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.95f46f92-ad5d-456d-b791-b70b7c586420.settings.code:
-        from: null
-        to: ''
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.95f46f92-ad5d-456d-b791-b70b7c586420.settings.initialRows:
-        from: 4
-        to: '4'
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.95f46f92-ad5d-456d-b791-b70b7c586420.settings.multiline:
-        from: null
-        to: ''
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.95f46f92-ad5d-456d-b791-b70b7c586420.settings.placeholder:
-        from: null
-        to: ''
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.99c69fc6-d45d-4b11-8717-a9ee549f2944.instructions:
-        from: null
-        to: ''
-      matrixBlockTypes.6027cd5d-17d8-4d74-b8af-572db8f60383.fields.99c69fc6-d45d-4b11-8717-a9ee549f2944.settings.default:
-        from: null
-        to: ''
-  -
-    added:
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fieldLayouts.88232a8b-b797-4216-83e7-01431d0509a4.tabs.0.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.required: false
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fieldLayouts.88232a8b-b797-4216-83e7-01431d0509a4.tabs.0.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.sortOrder: 3
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.contentColumnType: text
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.fieldGroup: null
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.handle: vimeoUrl
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.instructions: ''
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.name: 'Vimeo URL'
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.searchable: true
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.settings.byteLimit: null
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.settings.charLimit: null
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.settings.code: ''
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.settings.columnType: null
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.settings.initialRows: '4'
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.settings.multiline: ''
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.settings.placeholder: ''
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.translationKeyFormat: null
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.translationMethod: none
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.6df0e4b6-e97b-4e90-9c70-cf30ade40227.type: craft\fields\PlainText
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.bfb2778a-c3ad-4591-88fb-7db8cb9eaa03.settings.allowSelfRelations: ''
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.bfb2778a-c3ad-4591-88fb-7db8cb9eaa03.settings.showUnpermittedFiles: false
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.bfb2778a-c3ad-4591-88fb-7db8cb9eaa03.settings.showUnpermittedVolumes: true
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.d5092430-bc2d-4d20-bbf6-a31d5c073ff8.settings.allowSelfRelations: ''
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.d5092430-bc2d-4d20-bbf6-a31d5c073ff8.settings.showUnpermittedFiles: false
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.d5092430-bc2d-4d20-bbf6-a31d5c073ff8.settings.showUnpermittedVolumes: true
-    message: 'Save matrix block type “video” for parent field “contentModules”'
-    changed:
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.bfb2778a-c3ad-4591-88fb-7db8cb9eaa03.instructions:
-        from: null
-        to: ''
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.bfb2778a-c3ad-4591-88fb-7db8cb9eaa03.settings.defaultUploadLocationSubpath:
-        from: null
-        to: ''
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.bfb2778a-c3ad-4591-88fb-7db8cb9eaa03.settings.limit:
-        from: 1
-        to: '1'
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.bfb2778a-c3ad-4591-88fb-7db8cb9eaa03.settings.restrictFiles:
-        from: 1
-        to: '1'
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.bfb2778a-c3ad-4591-88fb-7db8cb9eaa03.settings.singleUploadLocationSubpath:
-        from: null
-        to: ''
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.bfb2778a-c3ad-4591-88fb-7db8cb9eaa03.settings.validateRelatedElements:
-        from: null
-        to: ''
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.d5092430-bc2d-4d20-bbf6-a31d5c073ff8.instructions:
-        from: null
-        to: ''
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.d5092430-bc2d-4d20-bbf6-a31d5c073ff8.settings.defaultUploadLocationSubpath:
-        from: null
-        to: ''
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.d5092430-bc2d-4d20-bbf6-a31d5c073ff8.settings.limit:
-        from: 1
-        to: '1'
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.d5092430-bc2d-4d20-bbf6-a31d5c073ff8.settings.restrictFiles:
-        from: 1
-        to: '1'
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.d5092430-bc2d-4d20-bbf6-a31d5c073ff8.settings.singleUploadLocationSubpath:
-        from: null
-        to: ''
-      matrixBlockTypes.1b13ac1c-c0d2-4205-b731-b2b2ac39ed3a.fields.d5092430-bc2d-4d20-bbf6-a31d5c073ff8.settings.validateRelatedElements:
-        from: null
-        to: ''
+    removed:
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.contentColumnType: string
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.fieldGroup: 63c2256a-3384-4cab-ba04-28d8f691fb7b
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.handle: gallery
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.instructions: ''
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.name: Gallery
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.searchable: true
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.allowSelfRelations: ''
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.allowedKinds.0: image
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.defaultUploadLocationSource: 'volume:ef07c259-2ab5-46b9-9b36-4ec732f5c39f'
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.defaultUploadLocationSubpath: ''
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.limit: ''
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.localizeRelations: false
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.restrictFiles: '1'
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.selectionLabel: 'Select Images'
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.showUnpermittedFiles: false
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.showUnpermittedVolumes: false
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.singleUploadLocationSource: 'volume:ef07c259-2ab5-46b9-9b36-4ec732f5c39f'
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.singleUploadLocationSubpath: ''
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.source: null
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.sources: '*'
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.targetSiteId: null
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.useSingleFolder: false
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.validateRelatedElements: ''
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.settings.viewMode: list
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.translationKeyFormat: null
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.translationMethod: site
+      fields.3306d825-5748-4fc0-a216-833edb2e05f7.type: craft\fields\Assets
+    message: 'Delete the “gallery” field'

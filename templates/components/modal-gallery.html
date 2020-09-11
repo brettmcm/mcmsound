@@ -1,0 +1,44 @@
+<div class="modal-gallery">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="close">
+        <polygon
+            points="27.314 7.515 24.485 4.686 16 13.172 7.515 4.686 4.686 7.515 13.172 16 4.686 24.485 7.515 27.314 16 18.828 24.485 27.314 27.314 24.485 18.828 16 27.314 7.515">
+        </polygon>
+    </svg>
+    <div class="closer-capture"></div>
+    <div class="modal-body">
+
+        <div class="carousel" data-total="{{galleryTotal}}">
+            {% for image in galleryImages %}
+                <img src="{{image}}" class="image{{loop.index0}}" data-index="{{loop.index0}}" data-total="{{loop.length - 1}}">
+            {% endfor %}
+        
+            {% if galleryTotal > 1 %}
+                <div class="carousel-nav">
+                    <div class="nav-trigger p">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <g stroke-linecap="square" stroke-linejoin="miter" stroke-width="1" transform="translate(0.5 0.5)"
+                                fill="white" stroke="white">
+                                <line fill="none" stroke-miterlimit="10" x1="22" y1="12" x2="2" y2="12" stroke-linecap="butt">
+                                </line>
+                                <polyline fill="none" stroke="white" stroke-miterlimit="10" points="9,19 2,12 9,5 "></polyline>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="nav-trigger n">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <g stroke-linecap="square" stroke-linejoin="miter" stroke-width="1" transform="translate(0.5 0.5)"
+                                fill="white" stroke="white">
+                                <line fill="none" stroke-miterlimit="10" x1="2" y1="12" x2="22" y2="12" stroke-linecap="butt">
+                                </line>
+                                <polyline fill="none" stroke="white" stroke-miterlimit="10" points="15,5 22,12 15,19 "></polyline>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        
+
+    </div>
+</div>
+

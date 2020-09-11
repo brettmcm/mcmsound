@@ -17,6 +17,8 @@
     {{entry.body}}
 </section>
 
+{% set galleryImages = [] %}
+
 {% for section in entry.sections.all() %}
 
 <section class="content-section {{section.justify}}">
@@ -29,6 +31,15 @@
         <h4>{{section.subhead}}</h4>
         <h2>{{section.headline}}</h2>
         {{section.body}}
+        {% if section.gallery is defined and section.gallery is not empty %}
+            <a href="#" class="contact"><button class="secondary" id="gallery-launch">View Gallery</button></a>
+            {% for galleryImage in section.gallery %}
+                {% if galleryImage not in galleryImages %}
+                    {% set galleryImages = galleryImages|merge([galleryImage.url]) %}
+                {% endif %}
+            {% endfor %}
+            
+        {% endif %}
     </div>
     {# <img src="/lib/assets/photos/jd.jpg"> #}
 
@@ -202,9 +213,13 @@
 -->
 
 
+{% include "components/modal-gallery" with { "galleryImages" : galleryImages, "galleryTotal" : galleryImages|length } %}
+
+
 
 {% includeJsFile "/js/vendors/jquery/jquery-3.1.0.min.js" %}
 {% includeJsFile "/js/main.js" %}
 {% includeJsFile "/js/about.js" %}
+{% includeJsFile "/js/modal-gallery.js" %}
 
 {% endblock %}
