@@ -232,6 +232,8 @@ section.studio {
       section.studio section.intro .copy {
         box-sizing: border-box;
         width: 40%; } }
+    section.studio section.intro.flipped {
+      flex-direction: row-reverse; }
   section.studio section.gear {
     margin: 5% 0;
     width: 100%;
