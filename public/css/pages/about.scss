@@ -1,6 +1,9 @@
 @import "../base/variables";
 @import "../base/core";
 
+section.content-body {
+    background-image: linear-gradient($background,$background-highlight);
+}
 
 section.studio {
     margin: 5%;
@@ -16,6 +19,7 @@ section.studio {
         justify-content: space-between;
         align-items: center;
         padding:0;
+        background: none;
         .copy {
             width:100%;
         }

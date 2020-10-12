@@ -207,6 +207,9 @@ section.button {
   padding: 5%;
   width: 100%; }
 
+section.content-body {
+  background-image: linear-gradient(#070707, #17181a); }
+
 section.studio {
   margin: 5%;
   display: flex;
@@ -219,7 +222,8 @@ section.studio {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0; }
+    padding: 0;
+    background: none; }
     section.studio section.intro .copy {
       width: 100%; }
     section.studio section.intro svg {
