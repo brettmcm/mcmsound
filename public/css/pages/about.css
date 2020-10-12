@@ -208,10 +208,10 @@ section.button {
   width: 100%; }
 
 section.content-body {
-  background-image: linear-gradient(#070707, #17181a); }
+  background-image: linear-gradient(#070707, #17181a);
+  padding: 5%; }
 
 section.studio {
-  margin: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -381,7 +381,7 @@ section.studio {
             display: inline; } }
 
 section.content-section {
-  margin: 5%;
+  margin: 5% 0;
   display: flex;
   flex-direction: column;
   justify-content: center;

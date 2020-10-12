@@ -3,10 +3,10 @@
 
 section.content-body {
     background-image: linear-gradient($background,$background-highlight);
+    padding: 5%;
 }
 
 section.studio {
-    margin: 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -240,7 +240,7 @@ section.studio {
 }
 
 section.content-section {
-    margin: 5%;
+    margin: 5% 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
