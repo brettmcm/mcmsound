@@ -1,0 +1,6 @@
+{% block blockContent %}
+<section class="spotifyPlaylist">
+    <iframe src="https://open.spotify.com/embed/playlist/{{block.playlistUri|split(':')[2]}}" width="100%" height="{{block.embedHeight}}" frameborder="0"
+        allowtransparency="true" allow="encrypted-media"></iframe>
+</section>
+{% endblock %}

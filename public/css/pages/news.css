@@ -92,6 +92,9 @@ article {
       max-width: 1200px; }
       article section.video video {
         width: 100%; }
+    article section.spotifyPlaylist {
+      width: 100%;
+      max-width: 900px; }
   article .ender-icon {
     width: 100px;
     opacity: 0.1;

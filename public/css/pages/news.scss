@@ -114,6 +114,11 @@ article {
                 width: 100%;
             }
         }
+        &.spotifyPlaylist {
+            width: 100%;
+            max-width: 900px;
+        }
+        
     }
 
     .ender-icon {
